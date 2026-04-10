@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-10T12:12:01.953Z",
+  "entries": {
+    "memory:memory/2026-04-09.md:39:64": {
+      "key": "memory:memory/2026-04-09.md:39:64",
+      "path": "memory/2026-04-09.md",
+      "startLine": 39,
+      "endLine": 64,
+      "source": "memory",
+      "snippet": "- Key finding: Must click label[role=\"tab\"] (Computer files) BEFORE uploading via browser upload tool — React needs tab activation - [x] Build actual Notion templates ✅ (08:30 AM) - Finance Dashboard: 7 databases with properties + sample data, published & duplicatable - https://mousy-governor-f03.notion.site/Finance-Dashboard-Template-33b99ce82630815eb271d069f14b10e9?duplicate=true - Content Calendar: 5 databases with properties + sample data, published & duplicatable - https://mousy-governor-f03.notion.site/Content-Calendar-Social-Media-System-33d99ce82630810285a3e723c7de3573?duplicate=true - [x] Update Gumroad product summaries with real template links ✅ - [ ] Nyx research cy",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3939643323421478,
+      "maxScore": 0.3939643323421478,
+      "firstRecalledAt": "2026-04-09T06:35:48.179Z",
+      "lastRecalledAt": "2026-04-09T06:35:48.179Z",
+      "queryHashes": [
+        "6594ef06e06a"
+      ],
+      "recallDays": [
+        "2026-04-09"
+      ],
+      "conceptTags": [
+        "key",
+        "finding",
+        "must",
+        "click",
+        "label",
+        "role",
+        "tab",
+        "computer"
+      ]
+    },
+    "memory:memory/2026-04-08.md:37:81": {
+      "key": "memory:memory/2026-04-08.md:37:81",
+      "path": "memory/2026-04-08.md",
+      "startLine": 37,
+      "endLine": 81,
+      "source": "memory",
+      "snippet": "- [x] Check Discord #logs for completed missions - [ ] Verify bridge file (claude-outbox.md) for Claude directives - [x] If idle >2h, prompt Nyx for new research - [x] Set up Community Intelligence cron (lisa-community-intel @ 10:00 daily) - [x] Configure HEARTBEAT.md with proactive tasks - [x] Browser health: Chrome running on port 18800, CDP connected - [x] Verify browser auto-restart capability ## Decisions Made - None (session initialization) ## Revenue Impact - $0 (startup phase) --- ## 12:00 PM — Midday Sync Analysis ### Critical Findings **AGENT COORDINATION FAILURE**: Kael non-responsive 36+ hours - 3 missions stalled: Digital Products, High-Ticket Affiliate, Faceless YouTube -",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.1522730350494386,
+      "maxScore": 0.3901719808578491,
+      "firstRecalledAt": "2026-04-09T12:00:44.616Z",
+      "lastRecalledAt": "2026-04-10T12:12:01.953Z",
+      "queryHashes": [
+        "300027f90d79",
+        "071882cbc7ab",
+        "2df8f5ad6772"
+      ],
+      "recallDays": [
+        "2026-04-09",
+        "2026-04-10"
+      ],
+      "conceptTags": [
+        "claude-outbox.md",
+        "lisa-community-intel",
+        "heartbeat.md",
+        "auto-restart",
+        "non-responsive",
+        "high-ticket",
+        "check",
+        "discord"
+      ]
+    },
+    "memory:memory/2026-04-09.md:74:104": {
+      "key": "memory:memory/2026-04-09.md:74:104",
+      "path": "memory/2026-04-09.md",
+      "startLine": 74,
+      "endLine": 104,
+      "source": "memory",
+      "snippet": "- Test run results (2026-04-07 22:17): LABU ($144 Put, $23.27 premium, 88.5%), NUGT ($175 Put, $15.69, 91.9%), SPXL ($170 Put, $12.50, 91.1%) - Best Trade pick: LABU $144.00 Put (highest premium) - Cron delivery had \"not-delivered\" status — report was manually relayed to Wilson - Manual test run triggered successfully on 2026-04-07 ~23:11 ## 13:26 PM — Hermes Agent P1-P5 Implementation COMPLETE ✅ Ported 5 key systems from Hermes Agent (https://github.com/NousResearch/hermes-agent) into OpenClaw: ### P1: Memory Nudge System - Script: `scripts/memory_nudge.py` - Checks for: unpromoted learnings, missing skill metadata, thin daily memory, unreviewed errors - State tracked in `memory/nudge_st",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3564013063907623,
+      "maxScore": 0.3564013063907623,
+      "firstRecalledAt": "2026-04-09T12:08:03.371Z",
+      "lastRecalledAt": "2026-04-09T12:08:03.371Z",
+      "queryHashes": [
+        "071882cbc7ab"
+      ],
+      "recallDays": [
+        "2026-04-09"
+      ],
+      "conceptTags": [
+        "23.27",
+        "88.5",
+        "15.69",
+        "91.9",
+        "12.50",
+        "91.1",
+        "144.00",
+        "not-delivered"
+      ]
+    },
+    "memory:memory/2026-04-09.md:24:42": {
+      "key": "memory:memory/2026-04-09.md:24:42",
+      "path": "memory/2026-04-09.md",
+      "startLine": 24,
+      "endLine": 42,
+      "source": "memory",
+      "snippet": "- Gumroad API supports: product list, product read, product delete, user info - Gumroad API does NOT support: product update, file upload, publish (all 404) ## 07:22 AM — All Gumroad Products FULLY SET UP ✅ All 3 products published via browser automation: - Finance Dashboard: content file uploaded, category (Personal Finance), tags (notion, finance, budget, template) - Content Calendar: content file uploaded, category (Social Media), tags (notion, content, social media, calendar) - Business Bundle: both products linked in bundle, category (Entrepreneurship), tags (notion, business, templates) - Content delivery: text files with Notion duplicate link (https://notion.so/33999ce826308191ab04f2",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9322670817375183,
+      "maxScore": 0.48577682673931116,
+      "firstRecalledAt": "2026-04-10T07:49:41.240Z",
+      "lastRecalledAt": "2026-04-10T11:28:08.246Z",
+      "queryHashes": [
+        "5f80ff0319be",
+        "eb6344a01629"
+      ],
+      "recallDays": [
+        "2026-04-10"
+      ],
+      "conceptTags": [
+        "notion.so/33999ce826308191ab04f2",
+        "gumroad",
+        "api",
+        "supports",
+        "product",
+        "list",
+        "read",
+        "delete"
+      ]
+    },
+    "memory:memory/2026-04-07.md:34:43": {
+      "key": "memory:memory/2026-04-07.md:34:43",
+      "path": "memory/2026-04-07.md",
+      "startLine": 34,
+      "endLine": 43,
+      "source": "memory",
+      "snippet": "- Daily_stock_analysis is designed for Chinese A-shares, not US ETF options - Options scanner runs separately via standalone Python script ## Deep Work Session — Notion Digital Products Landing Page - Built public-facing Notion landing page for digital products sales - Created 3-product showcase: Finance Dashboard ($39), Content Calendar ($29), POD Collection ($15-65) - Created detailed Finance Dashboard sub-page with complete template structure (5 databases, 5 views) - Landing page includes bundle deal CTA - Status: Product showcase complete. Next: Gumroad store setup + marketing",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4240897297859192,
+      "maxScore": 0.4240897297859192,
+      "firstRecalledAt": "2026-04-10T07:49:41.240Z",
+      "lastRecalledAt": "2026-04-10T07:49:41.240Z",
+      "queryHashes": [
+        "5f80ff0319be"
+      ],
+      "recallDays": [
+        "2026-04-10"
+      ],
+      "conceptTags": [
+        "daily-stock-analysis",
+        "a-shares",
+        "public-facing",
+        "3-product",
+        "15-65",
+        "sub-page",
+        "designed",
+        "chinese"
+      ]
+    },
+    "memory:memory/2026-04-09.md:1:29": {
+      "key": "memory:memory/2026-04-09.md:1:29",
+      "path": "memory/2026-04-09.md",
+      "startLine": 1,
+      "endLine": 29,
+      "source": "memory",
+      "snippet": "# 2026-04-09 Daily Log ## 06:22 AM — Morning Startup - Chrome restarted on port 18800 ✅ - Gumroad setup resumed after overnight interruption ## 07:06 AM — Gumroad API Setup Complete - API token generated ✅ - 3 products confirmed on Gumroad (USD pricing) - 3 SGD duplicates from API test deleted ✅ - **BLOCKED**: Gumroad API doesn't support product updates/file uploads/publishing (all return 404) - Products need manual browser setup for: file uploads, publishing, custom delivery URLs ## Product Status on Gumroad | Product | Price | URL | Status | |---------|-------|-----|--------| | Notion Finance Dashboard — Automated Wealth Tracking | $39 | https://lisaquest080.gumroad.com/l/yvsep | ✅ Publ",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.44126274883747096,
+      "maxScore": 0.44126274883747096,
+      "firstRecalledAt": "2026-04-10T11:28:08.246Z",
+      "lastRecalledAt": "2026-04-10T11:28:08.246Z",
+      "queryHashes": [
+        "eb6344a01629"
+      ],
+      "recallDays": [
+        "2026-04-10"
+      ],
+      "conceptTags": [
+        "updates/file",
+        "uploads/publishing",
+        "lisaquest080.gumroad.com/l/yvsep",
+        "log",
+        "morning",
+        "startup",
+        "chrome",
+        "restarted"
+      ]
+    },
+    "memory:memory/2026-04-09.md:39:67": {
+      "key": "memory:memory/2026-04-09.md:39:67",
+      "path": "memory/2026-04-09.md",
+      "startLine": 39,
+      "endLine": 67,
+      "source": "memory",
+      "snippet": "- Key finding: Must click label[role=\"tab\"] (Computer files) BEFORE uploading via browser upload tool — React needs tab activation - [x] Build actual Notion templates ✅ (08:30 AM) - Finance Dashboard: 7 databases with properties + sample data, published & duplicatable - https://mousy-governor-f03.notion.site/Finance-Dashboard-Template-33b99ce82630815eb271d069f14b10e9?duplicate=true - Content Calendar: 5 databases with properties + sample data, published & duplicatable - https://mousy-governor-f03.notion.site/Content-Calendar-Social-Media-System-33d99ce82630810285a3e723c7de3573?duplicate=true - [x] Update Gumroad product summaries with real template links ✅ - [ ] Nyx research cy",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.42529665827751156,
+      "maxScore": 0.42529665827751156,
+      "firstRecalledAt": "2026-04-10T11:28:08.246Z",
+      "lastRecalledAt": "2026-04-10T11:28:08.246Z",
+      "queryHashes": [
+        "eb6344a01629"
+      ],
+      "recallDays": [
+        "2026-04-10"
+      ],
+      "conceptTags": [
+        "key",
+        "finding",
+        "must",
+        "click",
+        "label",
+        "role",
+        "tab",
+        "computer"
+      ]
+    },
+    "memory:memory/2026-04-10.md:107:134": {
+      "key": "memory:memory/2026-04-10.md:107:134",
+      "path": "memory/2026-04-10.md",
+      "startLine": 107,
+      "endLine": 134,
+      "source": "memory",
+      "snippet": "- `Gumroad → revenue_status → zero_sales` (valid from 2026-04-09) - Diary entry: Mission #6 complete, distribution problem identified, marketing sprint planned **Integration:** - `memory/*.md` = raw daily logs - `MEMORY.md` = curated long-term memory - `MemPalace` = structured, queryable knowledge base with relationships ### Key Decisions from April 9 - **Mission #6 COMPLETE**: All 3 Gumroad products live with real Notion templates before 12:00 SGT deadline - **Distribution Problem Identified**: $0 revenue = marketing/distribution issue, not product issue - **Marketing Sprint Approved**: Full focus on Gumroad distribution (LeadFlow Pro paused) - **Discord Agent Coordination**: Confirmed br",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.38136812448501584,
+      "maxScore": 0.38136812448501584,
+      "firstRecalledAt": "2026-04-10T12:12:01.953Z",
+      "lastRecalledAt": "2026-04-10T12:12:01.953Z",
+      "queryHashes": [
+        "2df8f5ad6772"
+      ],
+      "recallDays": [
+        "2026-04-10"
+      ],
+      "conceptTags": [
+        "revenue-status",
+        "zero-sales",
+        "memory.md",
+        "long-term",
+        "marketing/distribution",
+        "gumroad",
+        "valid",
+        "diary"
+      ]
+    }
+  }
+}

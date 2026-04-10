@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Business Assessment Quiz - Personalized Automation Roadmap</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .cover {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+        .cover h1 { font-size: 2.5em; margin-bottom: 15px; }
+        .cover .subtitle { font-size: 1.3em; opacity: 0.9; margin-bottom: 25px; }
+        .cover .price {
+            font-size: 2em;
+            font-weight: bold;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .section { margin-bottom: 50px; }
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        .question {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .question ul {
+            list-style: none;
+        }
+        .question li {
+            padding: 10px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .question li:hover {
+            background: #667eea;
+            color: white;
+        }
+        .question li.selected {
+            background: #764ba2;
+            color: white;
+            font-weight: bold;
+        }
+        .scoring {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        .scoring h2 { margin-bottom: 25px; }
+        .scoring table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .scoring th, .scoring td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+        .scoring th { background: rgba(255,255,255,0.1); }
+        .cta {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .cta h2 { color: #667eea; margin-bottom: 20px; }
+        .highlight { color: #764ba2; font-weight: bold; }
+        @media print {
+            body { padding: 20px; }
+            .cover { background: #667eea; -webkit-print-color-adjust: exact; }
+            .question li { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <h1>🎯 AI Business Assessment Quiz</h1>
+        <div class="subtitle">50 Questions to Discover Your Automation Potential</div>
+        <div class="price">$97 Value</div>
+        <p style="margin-top: 20px; opacity: 0.9;">Get your personalized automation roadmap in 10 minutes</p>
+    </div>
+
+    <div class="section">
+        <h2>Section 1: Content Creation (10 questions)</h2>
+        
+        <div class="question">
+            <h3>Q1. How do you currently create marketing content?</h3>
+            <ul>
+                <li data-score="1">Hire a content writer ($2-5K/month)</li>
+                <li data-score="2">Write everything myself (10+ hours/week)</li>
+                <li data-score="3">Use basic AI tools occasionally</li>
+                <li data-score="4">Don't create content regularly</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q2. How much time do you spend on social media content per week?</h3>
+            <ul>
+                <li data-score="1">10+ hours</li>
+                <li data-score="2">5-10 hours</li>
+                <li data-score="3">2-5 hours</li>
+                <li data-score="4">Less than 2 hours</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q3. Do you have a content calendar?</h3>
+            <ul>
+                <li data-score="1">No, I create content on the fly</li>
+                <li data-score="2">Yes, but manually managed</li>
+                <li data-score="3">Yes, with basic scheduling tools</li>
+                <li data-score="4">Yes, with automated scheduling</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q4. How do you handle blog/content writing?</h3>
+            <ul>
+                <li data-score="1">Outsource to writers ($500-2K/article)</li>
+                <li data-score="2">Write everything myself (4-8 hours/article)</li>
+                <li data-score="3">Use AI assistants occasionally</li>
+                <li data-score="4">Don't have a blog</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q5. What's your biggest content challenge?</h3>
+            <ul>
+                <li data-score="1">Not enough time to create</li>
+                <li data-score="2">Inconsistent quality</li>
+                <li data-score="3">Running out of ideas</li>
+                <li data-score="4">Not seeing ROI from content</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q6. How do you create marketing visuals?</h3>
+            <ul>
+                <li data-score="1">Hire a designer ($500-2K/project)</li>
+                <li data-score="2">Use Canva/Figma myself (2-5 hours)</li>
+                <li data-score="3">Use AI image tools</li>
+                <li data-score="4">Don't use many visuals</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q7. Do you repurpose content across platforms?</h3>
+            <ul>
+                <li data-score="1">No, I create separately for each platform</li>
+                <li data-score="2">Sometimes, manually</li>
+                <li data-score="3">Yes, with some automation</li>
+                <li data-score="4">Yes, with full automation</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q8. How do you handle video content?</h3>
+            <ul>
+                <li data-score="1">Outsource production ($2-10K/video)</li>
+                <li data-score="2">Create myself (5-10 hours/video)</li>
+                <li data-score="3">Use AI tools for basic videos</li>
+                <li data-score="4">Don't create video content</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q9. What's your content production capacity?</h3>
+            <ul>
+                <li data-score="1">1-2 pieces/week</li>
+                <li data-score="2">3-5 pieces/week</li>
+                <li data-score="3">6-10 pieces/week</li>
+                <li data-score="4">10+ pieces/week</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q10. How do you measure content ROI?</h3>
+            <ul>
+                <li data-score="1">Don't track it</li>
+                <li data-score="2">Basic metrics (likes, shares)</li>
+                <li data-score="3">Conversion tracking</li>
+                <li data-score="4">Full attribution modeling</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Section 2: Marketing Automation (10 questions)</h2>
+        
+        <div class="question">
+            <h3>Q11. How do you handle email marketing?</h3>
+            <ul>
+                <li data-score="1">Manual email sends</li>
+                <li data-score="2">Basic automation (autoresponders)</li>
+                <li data-score="3">Advanced sequences</li>
+                <li data-score="4">Full AI-powered automation</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q12. How do you generate leads?</h3>
+            <ul>
+                <li data-score="1">Manual networking</li>
+                <li data-score="2">Basic lead magnets</li>
+                <li data-score="3">Automated funnels</li>
+                <li data-score="4">AI-powered lead generation</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q13. What's your lead response time?</h3>
+            <ul>
+                <li data-score="1">24+ hours</li>
+                <li data-score="2">4-24 hours</li>
+                <li data-score="3">1-4 hours</li>
+                <li data-score="4">Instant (automated)</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q14. How do you segment your audience?</h3>
+            <ul>
+                <li data-score="1">No segmentation</li>
+                <li data-score="2">Basic (demographics)</li>
+                <li data-score="3">Behavioral segmentation</li>
+                <li data-score="4">AI-powered personalization</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h3>Q15. How do you handle social media posting?</h3>
+            <ul>
+                <li data-score="1">Manual posting</li>
+                <li data-score="2">Scheduled posting</li>
+                <li data-score="3">AI-suggested posting</li>
+                <li data-score="4">Fully automated</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="scoring">
+        <h2>📊 Scoring System</h2>
+        
+        <h3>Automation Readiness Score (0-100)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Score Range</th>
+                    <th>Readiness Level</th>
+                    <th>Recommendation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0-25 (Mostly A's)</td>
+                    <td>Low Readiness</td>
+                    <td>Start with Assessment Tool ($97)</td>
+                </tr>
+                <tr>
+                    <td>25-50 (Mostly B's)</td>
+                    <td>Basic Readiness</td>
+                    <td>Start with Playbook ($497)</td>
+                </tr>
+                <tr>
+                    <td>50-75 (Mostly C's)</td>
+                    <td>Good Readiness</td>
+                    <td>Start with Platform ($2,997)</td>
+                </tr>
+                <tr>
+                    <td>75-100 (Mostly D's)</td>
+                    <td>High Readiness</td>
+                    <td>Start with Enterprise ($4,997)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 30px;">Time Savings Potential</h3>
+        <ul style="margin-top: 15px;">
+            <li><strong>Low:</strong> 5-10 hours/week ($500-1K value)</li>
+            <li><strong>Medium:</strong> 10-25 hours/week ($1-2.5K value)</li>
+            <li><strong>High:</strong> 25-40 hours/week ($2.5-4K value)</li>
+            <li><strong>Very High:</strong> 40+ hours/week ($4K+ value)</li>
+        </ul>
+
+        <h3 style="margin-top: 30px;">ROI Projection</h3>
+        <ul style="margin-top: 15px;">
+            <li>Based on current costs (staff, tools, time)</li>
+            <li>Based on revenue potential</li>
+            <li>30-day / 90-day / 180-day projections</li>
+        </ul>
+    </div>
+
+    <div class="cta">
+        <h2>🎯 Get Your Personalized Report</h2>
+        <p style="font-size: 1.1em; margin-bottom: 25px;">Your assessment includes:</p>
+        
+        <div style="text-align: left; display: inline-block;">
+            <ul style="list-style: none;">
+                <li>✅ <strong>Overall Score:</strong> X/100 automation readiness</li>
+                <li>✅ <strong>Category Scores:</strong> Content, Marketing, Sales, Operations, Strategy</li>
+                <li>✅ <strong>Biggest Opportunities:</strong> Top 3 areas for immediate automation</li>
+                <li>✅ <strong>Time Savings:</strong> Projected hours/week saved</li>
+                <li>✅ <strong>Cost Savings:</strong> Projected annual savings</li>
+                <li>✅ <strong>Revenue Impact:</strong> Projected revenue increase</li>
+                <li>✅ <strong>Implementation Roadmap:</strong> Personalized 90-day plan</li>
+                <li>✅ <strong>Quick Wins:</strong> 5 automations to start this week</li>
+                <li>✅ <strong>ROI Calculator:</strong> Custom investment vs. return</li>
+                <li>✅ <strong>Next Steps:</strong> Recommended product path</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #667eea; color: white; border-radius: 10px;">
+            <p style="font-size: 1.3em; margin-bottom: 10px;"><strong>AI Business Assessment</strong></p>
+            <p style="font-size: 2em; font-weight: bold;">$97</p>
+            <p style="opacity: 0.9;">One-time payment • Personalized report</p>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 50px; padding: 30px; background: #f8f9fa; border-radius: 10px;">
+        <p>© 2024 AI CEO Systems. All rights reserved.</p>
+        <p style="margin-top: 10px; color: #666;">
+            <strong>Support:</strong> support@aiceosystems.com | 
+            <strong>Community:</strong> discord.gg/ai-ceo
+        </p>
+    </footer>
+</body>
+</html>

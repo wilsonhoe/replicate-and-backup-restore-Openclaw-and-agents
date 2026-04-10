@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f7f6f3;
+  padding: 40px;
+}
+.notion-page {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.view-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #37352f;
+  margin-bottom: 8px;
+}
+.view-subtitle {
+  color: #6b6b6b;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.map-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  color: white;
+}
+.map-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.nel-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.line-badge {
+  background: #9f1239;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.stations {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.station {
+  background: rgba(255,255,255,0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  backdrop-filter: blur(10px);
+}
+.zone-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.zone-card {
+  border: 2px solid #e3e2e0;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+.zone-card:hover {
+  border-color: #2eaadc;
+  box-shadow: 0 4px 12px rgba(46, 170, 220, 0.15);
+}
+.zone-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.zone-icon {
+  font-size: 28px;
+}
+.zone-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #37352f;
+}
+.zone-district {
+  font-size: 12px;
+  color: #6b6b6b;
+  background: #f4f4f4;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+.zone-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.zone-stat {
+  text-align: center;
+  padding: 12px;
+  background: #f9f8f6;
+  border-radius: 8px;
+}
+.zone-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #37352f;
+}
+.zone-stat-label {
+  font-size: 11px;
+  color: #6b6b6b;
+  margin-top: 4px;
+}
+.trend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.trend-up {
+  background: #d1fae5;
+  color: #059669;
+}
+.trend-stable {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+.recent-activity {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e3e2e0;
+}
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  font-size: 13px;
+  color: #37352f;
+}
+.activity-dot {
+  width: 6px;
+  height: 6px;
+  background: #2eaadc;
+  border-radius: 50%;
+}
+.activity-time {
+  color: #6b6b6b;
+  font-size: 11px;
+}
+.summary-bar {
+  background: #37352f;
+  color: white;
+  padding: 20px 24px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.summary-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+.summary-label {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+</style>
+</head>
+<body>
+<div class="notion-page">
+  <div class="view-title">🚇 NEL Corridor Activity Tracker</div>
+  <div class="view-subtitle">North-East Line zones • Punggol, Sengkang, Hougang, Serangoon</div>
+
+  <div class="map-container">
+    <div class="map-title">Singapore North-East Line Coverage</div>
+    <div class="nel-line">
+      <span class="line-badge">NEL</span>
+      <div class="stations">
+        <span class="station">🚇 Punggol</span>
+        <span class="station">🚇 Sengkang</span>
+        <span class="station">🚇 Buangkok</span>
+        <span class="station">🚇 Hougang</span>
+        <span class="station">🚇 Kovan</span>
+        <span class="station">🚇 Serangoon</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="zone-grid">
+    <!-- Punggol -->
+    <div class="zone-card">
+      <div class="zone-header">
+        <span class="zone-icon">🚇</span>
+        <div>
+          <div class="zone-name">Punggol</div>
+          <span class="zone-district">D19 • D28</span>
+        </div>
+      </div>
+      <div class="zone-stats">
+        <div class="zone-stat">
+          <div class="zone-stat-value">4</div>
+          <div class="zone-stat-label">Leads</div>
+        </div>
+        <div class="zone-stat">
+          <div class="zone-stat-value">3</div>
+          <div class="zone-stat-label">Activities</div>
+        </div>
+        <div class="zone-stat">
+          <div class="zone-stat-value">2</div>
+          <div class="zone-stat-label">Deals</div>
+        </div>
+      </div>
+      <div class="trend trend-up">
+        📈 Trending Up
+      </div>
+      <div class="recent-activity">
+        <div class="activity-item">
+          <span class="activity-dot"></span>
+          <span>Door knocking at Waterway Terraces</span>
+          <span class="activity-time">2h ago</span>
+        </div>
+        <div class="activity-item">
+          <span class="activity-dot"></span>
+          <span>New lead: Tan Wei Ming</span>
+          <span class="activity-time">5h ago</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sengkang -->
+    <div class="zone-card">
+      <div class="zone-header">
+        <span class="zone-icon">🚇</span>
+        <div>
+          <div class="zone-name">Sengkang</div>
+          <span class="zone-district">D19</span>
+        </div>
+      </div>
+      <div class="zone-stats">
+        <div class="zone-stat">
+          <div class="zone-stat-value">3</div>
+          <div class="zone-stat-label">Leads</div>
+        </div>
+        <div class="zone-stat">
+          <div class="zone-stat-value">2</div>
+          <div class="zone-stat-label">Activities</div>
+        </div>
+        <div class="zone-stat">
+          <div class="zone-stat-value">1</div>
+          <div class="zone-stat-label">Deals</div>
+        </div>
+      </div>
+      <div class="trend trend-stable">
+        → Stable
+      </div>
+      <div class="recent-activity">
+        <div class="activity-item">
+          <span class="activity-dot"></span>
+          <span>Viewing: Compassvale property</span>
+          <span class="activity-time">1d ago</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hougang -->
+    <div class="zone-card">
+      <div class="zone-header">
+        <span class="zone-icon">🚇</span>
+        <div>
+          <div class="zone-name">Hougang</div>
+          <span class="zone-district">D19</span>
+        </div>
+      </div>
+      <div class="zone-stats">
+        <div class="zone-stat">
+          <div class="zone-stat-value">2</div>
+          <div class="zone-stat-label">Leads</div>
+        </div>
+        <div class="zone-stat">
+          <div class="zone-stat-value">2</div>
+          <div class="zone-stat-label">Activities</div>
+        </div>
+        <div class="zone-stat">
+          <div class="zone-stat-value">1</div>
+          <div class="zone-stat-label">Deals</div>
+        </div>
+      </div>
+      <div class="trend trend-up">
+        📈 Trending Up
+      </div>
+      <div class="recent-activity">
+        <div class="activity-item">
+          <span class="activity-dot"></span>
+          <span>OTP issued: Chen Jia Hao</span>
+          <span class="activity-time">3h ago</span>
+        </div>
+        <div class="activity-item">
+          <span class="activity-dot"></span>
+          <span>Cold call session</span>
+          <span class="activity-time">1d ago</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Serangoon -->
+    <div class="zone-card">
+      <div class="zone-header">
+        <span class="zone-icon">🚇</span>
+        <div>
+          <div class="zone-name">Serangoon</div>
+          <span class="zone-district">D13 • D19</span>
+        </div>
+      </div>
+      <div class="zone-stats">
+        <div class="zone-stat">
+          <div class="zone-stat-value">1</div>
+          <div class="zone-stat-label">Leads</div>
+        </div>
+        <div class="zone-stat">
+          <div class="zone-stat-value">1</div>
+          <div class="zone-stat-label">Activities</div>
+        </div>
+        <div class="zone-stat">
+          <div class="zone-stat-value">0</div>
+          <div class="zone-stat-label">Deals</div>
+        </div>
+      </div>
+      <div class="trend trend-stable">
+        → Stable
+      </div>
+      <div class="recent-activity">
+        <div class="activity-item">
+          <span class="activity-dot"></span>
+          <span>Meeting: Ng Kok Peng</span>
+          <span class="activity-time">2d ago</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-bar">
+    <div>
+      <div class="summary-value">10</div>
+      <div class="summary-label">Total Leads</div>
+    </div>
+    <div>
+      <div class="summary-value">8</div>
+      <div class="summary-label">Activities</div>
+    </div>
+    <div>
+      <div class="summary-value">4</div>
+      <div class="summary-label">Active Deals</div>
+    </div>
+    <div>
+      <div class="summary-value">$142K</div>
+      <div class="summary-label">Pipeline Value</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "email": {
+    "provider": "gmail",
+    "address": "lisamolbot@gmail.com",
+    "app_password": "umriwqmwqjvjupyi",
+    "smtp": {
+      "host": "smtp.gmail.com",
+      "port": 465,
+      "secure": true,
+      "auth": {
+        "user": "lisamolbot@gmail.com",
+        "pass": "umriwqmwqjvjupyi"
+      }
+    },
+    "imap": {
+      "host": "imap.gmail.com",
+      "port": 993,
+      "secure": true,
+      "auth": {
+        "user": "lisamolbot@gmail.com",
+        "pass": "umriwqmwqjvjupyi"
+      }
+    }
+  }
+}

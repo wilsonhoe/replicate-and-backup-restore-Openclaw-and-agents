@@ -1,0 +1,26 @@
+{
+  "name": "claw-code-integration",
+  "version": "1.0.0",
+  "description": "Integrates claw-code (Claude Code reimplementation) into OpenClaw for permission-aware tool execution and cost tracking",
+  "author": "OpenClaw",
+  "entry": "claw_integration.py",
+  "functions": [
+    "get_integration",
+    "register_lisa_nyx_kael",
+    "track_execution",
+    "check_tool_permission",
+    "elevate_permissions",
+    "get_session_costs",
+    "get_permissions_report"
+  ],
+  "claw_code": {
+    "path": "/home/wls/.openclaw/claw-code",
+    "python_modules": 67,
+    "commands": 207,
+    "tools": 184
+  },
+  "permissions": {
+    "levels": ["read-only", "workspace-write", "danger-full-access"],
+    "default": "read-only"
+  }
+}

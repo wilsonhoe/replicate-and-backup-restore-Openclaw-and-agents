@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI CEO Automation Toolkit - Technical Setup Guide</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .cover {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+        .cover h1 { font-size: 2.8em; margin-bottom: 15px; }
+        .cover .subtitle { font-size: 1.4em; opacity: 0.9; margin-bottom: 25px; }
+        .cover .price {
+            font-size: 2.2em;
+            font-weight: bold;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 35px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .toc {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        .toc h2 { margin-bottom: 20px; color: #1a1a2e; }
+        .toc ul { list-style: none; columns: 2; column-gap: 40px; }
+        .toc li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .toc a { text-decoration: none; color: #333; }
+        .toc a:hover { color: #0f3460; }
+        .section { margin-bottom: 50px; }
+        .section h2 {
+            color: #0f3460;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #0f3460;
+        }
+        .section h3 { color: #16213e; margin: 25px 0 15px 0; font-size: 1.4em; }
+        .section h4 { color: #1a1a2e; margin: 20px 0 10px 0; font-size: 1.2em; }
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .code-block .comment { color: #6a9955; }
+        .code-block .keyword { color: #569cd6; }
+        .code-block .string { color: #ce9178; }
+        .code-block .command { color: #4ec9b0; }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .info {
+            background: #e7f3ff;
+            border-left: 4px solid #0f3460;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .checklist { list-style: none; margin: 15px 0; }
+        .checklist li { padding: 10px 0; padding-left: 30px; position: relative; }
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #0f3460;
+            font-size: 1.2em;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border: 1px solid #ddd; }
+        th { background: #0f3460; color: white; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .step { 
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #0f3460;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .step h3 { display: inline; }
+        @media print {
+            body { padding: 20px; }
+            .cover { background: #1a1a2e; -webkit-print-color-adjust: exact; }
+            .step { page-break-inside: avoid; }
+            .code-block { page-break-inside: avoid; }
+        }
+        @media (max-width: 768px) {
+            .toc ul { columns: 1; }
+            .cover h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <h1>🤖 AI CEO Automation Toolkit</h1>
+        <div class="subtitle">Complete Technical Setup Guide for Autonomous Business Operations</div>
+        <div class="price">$2,997 Value</div>
+        <p style="margin-top: 20px; opacity: 0.9;">Deploy AI agents for 24/7 business automation</p>
+    </div>
+
+    <div class="toc">
+        <h2>📋 Table of Contents</h2>
+        <ul>
+            <li><a href="#prerequisites">1. Prerequisites & Requirements</a></li>
+            <li><a href="#installation">2. OpenClaw Installation</a></li>
+            <li><a href="#agents">3. AI Agent Deployment</a></li>
+            <li><a href="#workflows">4. Automation Workflows</a></li>
+            <li><a href="#integrations">5. Integration Setup</a></li>
+            <li><a href="#monitoring">6. Monitoring & Maintenance</a></li>
+            <li><a href="#security">7. Security Configuration</a></li>
+            <li><a href="#troubleshooting">8. Troubleshooting Guide</a></li>
+            <li><a href="#advanced">9. Advanced Configuration</a></li>
+            <li><a href="#maintenance">10. Ongoing Maintenance</a></li>
+        </ul>
+    </div>
+
+    <!-- SECTION 1: PREREQUISITES -->
+    <div class="section" id="prerequisites">
+        <h2>1. Prerequisites & System Requirements</h2>
+        
+        <h3>1.1 Hardware Requirements</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Minimum</th>
+                    <th>Recommended</th>
+                    <th>Enterprise</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CPU</td>
+                    <td>2 cores</td>
+                    <td>4 cores</td>
+                    <td>8+ cores</td>
+                </tr>
+                <tr>
+                    <td>RAM</td>
+                    <td>4 GB</td>
+                    <td>8 GB</td>
+                    <td>16+ GB</td>
+                </tr>
+                <tr>
+                    <td>Storage</td>
+                    <td>20 GB SSD</td>
+                    <td>50 GB SSD</td>
+                    <td>100+ GB SSD</td>
+                </tr>
+                <tr>
+                    <td>Network</td>
+                    <td>1 Mbps</td>
+                    <td>10 Mbps</td>
+                    <td>100+ Mbps</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>1.2 Software Requirements</h3>
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Operating System</h3>
+            <p>Supported operating systems:</p>
+            <ul class="checklist">
+                <li>Ubuntu 20.04+ (Recommended)</li>
+                <li>macOS 11+ (Intel or Apple Silicon)</li>
+                <li>Windows 10/11 with WSL2</li>
+                <li>Debian 11+</li>
+                <li>CentOS 8+</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Required Software</h3>
+            <div class="code-block">
+<span class="comment"># Node.js (v18 or higher)</span>
+<span class="command">node</span> --version  <span class="comment"># Should show v18.x or higher</span>
+
+<span class="comment"># npm (v9 or higher)</span>
+<span class="command">npm</span> --version   <span class="comment"># Should show v9.x or higher</span>
+
+<span class="comment"># Git (for repository management)</span>
+<span class="command">git</span> --version   <span class="comment"># Should show v2.x or higher</span>
+
+<span class="comment"># curl (for API testing)</span>
+<span class="command">curl</span> --version  <span class="comment"># Should be installed</span>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <h3>Account Requirements</h3>
+            <p>Before starting, you'll need accounts for:</p>
+            <ul class="checklist">
+                <li><strong>API Provider</strong> (choose one): OpenAI, Anthropic, Google AI, or local Ollama</li>
+                <li><strong>Payment Processor</strong> (optional): Stripe, Gumroad, or PayPal</li>
+                <li><strong>Hosting</strong> (optional): DigitalOcean, AWS, or local server</li>
+                <li><strong>Messaging</strong> (optional): Discord, Telegram, Slack</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Important:</strong> Never commit API keys or secrets to version control. Use environment variables or secure vault systems.
+        </div>
+
+        <h3>1.3 Time Investment</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Setup Phase</th>
+                    <th>Time Required</th>
+                    <th>Skill Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Prerequisites Check</td>
+                    <td>15 minutes</td>
+                    <td>Beginner</td>
+                </tr>
+                <tr>
+                    <td>OpenClaw Installation</td>
+                    <td>30-60 minutes</td>
+                    <td>Beginner</td>
+                </tr>
+                <tr>
+                    <td>Basic Agent Setup</td>
+                    <td>1-2 hours</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>Advanced Workflows</td>
+                    <td>2-4 hours</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>Full Deployment</td>
+                    <td>4-6 hours</td>
+                    <td>Advanced</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 2: INSTALLATION -->
+    <div class="section" id="installation">
+        <h2>2. OpenClaw Installation</h2>
+        
+        <h3>2.1 Quick Installation (Recommended)</h3>
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Download OpenClaw</h3>
+            <div class="code-block">
+<span class="comment"># Install OpenClaw globally via npm</span>
+<span class="command">npm</span> install -g openclaw
+
+<span class="comment"># Verify installation</span>
+<span class="command">openclaw</span> --version
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Initialize Workspace</h3>
+            <div class="code-block">
+<span class="comment"># Create workspace directory</span>
+<span class="command">mkdir</span> -p ~/.openclaw/workspace
+<span class="command">cd</span> ~/.openclaw/workspace
+
+<span class="comment"># Initialize configuration</span>
+<span class="command">openclaw</span> init
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <h3>Configure API Keys</h3>
+            <div class="code-block">
+<span class="comment"># Create secrets file (NEVER commit this)</span>
+<span class="command">cat</span> > ~/.openclaw/secrets.json <span class="string">&lt;&lt; 'EOF'
+{
+  "openai_api_key": "sk-your-key-here",
+  "anthropic_api_key": "sk-ant-your-key-here",
+  "google_ai_key": "your-key-here"
+}
+EOF</span>
+
+<span class="comment"># Set permissions (read/write only by owner)</span>
+<span class="command">chmod</span> 600 ~/.openclaw/secrets.json
+            </div>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Security Warning:</strong> The secrets.json file contains sensitive API keys. Never share this file or commit it to version control.
+        </div>
+
+        <h3>2.2 Manual Installation (Advanced)</h3>
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Clone from Source</h3>
+            <div class="code-block">
+<span class="comment"># Clone repository</span>
+<span class="command">git</span> clone https://github.com/openclaw/openclaw.git
+<span class="command">cd</span> openclaw
+
+<span class="comment"># Install dependencies</span>
+<span class="command">npm</span> install
+
+<span class="comment"># Build from source</span>
+<span class="command">npm</span> run build
+
+<span class="comment"># Link globally</span>
+<span class="command">npm</span> link
+            </div>
+        </div>
+
+        <h3>2.3 Docker Installation</h3>
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Run with Docker</h3>
+            <div class="code-block">
+<span class="comment"># Pull latest image</span>
+<span class="command">docker</span> pull openclaw/openclaw:latest
+
+<span class="comment"># Run container</span>
+<span class="command">docker</span> run -d \
+  --name openclaw \
+  -v ~/.openclaw:/root/.openclaw \
+  -p 18789:18789 \
+  openclaw/openclaw:latest
+            </div>
+        </div>
+
+        <div class="success">
+            <strong>✅ Installation Complete!</strong> You should now be able to run <code>openclaw status</code> to verify your installation.
+        </div>
+    </div>
+
+    <!-- SECTION 3: AI AGENT DEPLOYMENT -->
+    <div class="section" id="agents">
+        <h2>3. AI Agent Deployment</h2>
+        
+        <h3>3.1 Understanding Agent Types</h3>
+        <p>OpenClaw supports multiple agent types for different business functions:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Agent Type</th>
+                    <th>Primary Function</th>
+                    <th>Best For</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Content Agent</td>
+                    <td>Content creation & distribution</td>
+                    <td>Marketing, blogging, social media</td>
+                </tr>
+                <tr>
+                    <td>Revenue Agent</td>
+                    <td>Income tracking & reporting</td>
+                    <td>Financial monitoring, analytics</td>
+                </tr>
+                <tr>
+                    <td>Support Agent</td>
+                    <td>Customer service</td>
+                    <td>Help desk, FAQ, ticket handling</td>
+                </tr>
+                <tr>
+                    <td>Research Agent</td>
+                    <td>Market analysis</td>
+                    <td>Competitive intelligence, trends</td>
+                </tr>
+                <tr>
+                    <td>Operations Agent</td>
+                    <td>Workflow automation</td>
+                    <td>Task scheduling, process management</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3.2 Deploying Your First Agent</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Create Agent Configuration</h3>
+            <div class="code-block">
+<span class="comment"># Create agents directory</span>
+<span class="command">mkdir</span> -p ~/.openclaw/workspace/agents
+
+<span class="comment"># Create agent config</span>
+<span class="command">cat</span> > ~/.openclaw/workspace/agents/content-agent.yaml <span class="string">&lt;&lt; 'EOF'
+name: content-agent
+type: content
+model: openai/gpt-4
+schedule: "0 6,12,18 * * *"  # 6am, 12pm, 6pm daily
+tasks:
+  - name: "daily_content"
+    description: "Generate daily content schedule"
+    template: "content/daily-schedule"
+  - name: "social_posts"
+    description: "Create social media posts"
+    template: "content/social-posts"
+EOF</span>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Activate Agent</h3>
+            <div class="code-block">
+<span class="comment"># Deploy agent</span>
+<span class="command">openclaw</span> agent deploy content-agent.yaml
+
+<span class="comment"># Verify agent status</span>
+<span class="command">openclaw</span> agent status content-agent
+
+<span class="comment"># View agent logs</span>
+<span class="command">openclaw</span> agent logs content-agent --tail 50
+            </div>
+        </div>
+
+        <h3>3.3 Agent Configuration Options</h3>
+        
+        <div class="info">
+            <strong>📘 Configuration Reference:</strong>
+            <p>Each agent configuration file supports the following options:</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Default</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>name</td>
+                    <td>string</td>
+                    <td>Unique agent identifier</td>
+                    <td>Required</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>string</td>
+                    <td>Agent category</td>
+                    <td>Required</td>
+                </tr>
+                <tr>
+                    <td>model</td>
+                    <td>string</td>
+                    <td>AI model to use</td>
+                    <td>openai/gpt-4</td>
+                </tr>
+                <tr>
+                    <td>schedule</td>
+                    <td>cron</td>
+                    <td>Execution schedule</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>tasks</td>
+                    <td>array</td>
+                    <td>List of tasks to execute</td>
+                    <td>[]</td>
+                </tr>
+                <tr>
+                    <td>memory</td>
+                    <td>boolean</td>
+                    <td>Enable persistent memory</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>tools</td>
+                    <td>array</td>
+                    <td>Available tools</td>
+                    <td>all</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3.4 Multi-Agent Deployment</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Create Agency Configuration</h3>
+            <div class="code-block">
+<span class="comment"># Create agency (multi-agent system)</span>
+<span class="command">cat</span> > ~/.openclaw/workspace/agency.yaml <span class="string">&lt;&lt; 'EOF'
+name: ai-ceo-agency
+agents:
+  - name: lisa
+    type: coordinator
+    role: "CEO"
+    model: openai/gpt-4
+    
+  - name: dwight
+    type: research
+    role: "Research Lead"
+    model: openai/gpt-4
+    
+  - name: kelly
+    type: content
+    role: "Content Creator"
+    model: openai/gpt-3.5-turbo
+    
+  - name: pam
+    type: marketing
+    role: "Marketing Lead"
+    model: openai/gpt-4
+
+workflows:
+  - name: content-pipeline
+    steps:
+      - agent: dwight
+        task: research
+      - agent: kelly
+        task: create-content
+      - agent: pam
+        task: distribute
+EOF</span>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Deploy Agency</h3>
+            <div class="code-block">
+<span class="comment"># Deploy entire agency</span>
+<span class="command">openclaw</span> agency deploy agency.yaml
+
+<span class="comment"># Monitor all agents</span>
+<span class="command">openclaw</span> agency status
+
+<span class="comment"># Trigger workflow</span>
+<span class="command">openclaw</span> agency run content-pipeline
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4: AUTOMATION WORKFLOWS -->
+    <div class="section" id="workflows">
+        <h2>4. Automation Workflows</h2>
+        
+        <h3>4.1 Workflow Design Principles</h3>
+        <p>Before creating workflows, understand these core principles:</p>
+        
+        <div class="info">
+            <strong>📘 Key Principles:</strong>
+            <ul>
+                <li><strong>Start Simple:</strong> Begin with 2-3 steps, add complexity later</li>
+                <li><strong>Test Each Step:</strong> Verify individually before chaining</li>
+                <li><strong>Add Error Handling:</strong> Always include failure notifications</li>
+                <li><strong>Document Everything:</strong> Future you will thank present you</li>
+            </ul>
+        </div>
+
+        <h3>4.2 Workflow Template Structure</h3>
+        
+        <div class="code-block">
+<span class="comment"># Workflow Template</span>
+<span class="keyword">name:</span> <span class="string">"workflow-name"</span>
+<span class="keyword">description:</span> <span class="string">"What this workflow does"</span>
+
+<span class="keyword">trigger:</span>
+  <span class="keyword">type:</span> <span class="string">"schedule|event|webhook"</span>
+  <span class="keyword">config:</span>
+    <span class="keyword">schedule:</span> <span class="string">"0 9 * * *"</span>  <span class="comment"># Daily at 9am</span>
+
+<span class="keyword">conditions:</span>
+  <span class="keyword">all:</span>
+    - <span class="keyword">field:</span> <span class="string">"status"</span>
+      <span class="keyword">equals:</span> <span class="string">"approved"</span>
+
+<span class="keyword">actions:</span>
+  - <span class="keyword">step:</span> <span class="string">"step-1"</span>
+    <span class="keyword">action:</span> <span class="string">"http-request"</span>
+    <span class="keyword">config:</span>
+      <span class="keyword">url:</span> <span class="string">"https://api.example.com"</span>
+      <span class="keyword">method:</span> <span class="string">"POST"</span>
+      
+  - <span class="keyword">step:</span> <span class="string">"step-2"</span>
+    <span class="keyword">action:</span> <span class="string">"send-email"</span>
+    <span class="keyword">config:</span>
+      <span class="keyword">to:</span> <span class="string">"user@example.com"</span>
+      <span class="keyword">template:</span> <span class="string">"welcome"</span>
+
+<span class="keyword">error_handling:</span>
+  - <span class="keyword">on_failure:</span>
+      <span class="keyword">action:</span> <span class="string">"notify"</span>
+      <span class="keyword">config:</span>
+        <span class="keyword">channel:</span> <span class="string">"slack"</span>
+        <span class="keyword">message:</span> <span class="string">"Workflow failed: {error}"</span>
+        </div>
+
+        <h3>4.3 Common Workflow Patterns</h3>
+
+        <h4>Pattern 1: Lead Capture to CRM</h4>
+        <div class="code-block">
+<span class="comment"># Lead Capture Workflow</span>
+<span class="keyword">name:</span> <span class="string">"lead-to-crm"</span>
+
+<span class="keyword">trigger:</span>
+  <span class="keyword">type:</span> <span class="string">"webhook"</span>
+  <span class="keyword">source:</span> <span class="string">"form-submission"</span>
+
+<span class="keyword">actions:</span>
+  - <span class="keyword">action:</span> <span class="string">"validate-email"</span>
+  - <span class="keyword">action:</span> <span class="string">"add-to-crm"</span>
+    <span class="keyword">config:</span>
+      <span class="keyword">system:</span> <span class="string">"airtable|hubspot|salesforce"</span>
+  - <span class="keyword">action:</span> <span class="string">"send-welcome-email"</span>
+    <span class="keyword">config:</span>
+      <span class="keyword">template:</span> <span class="string">"welcome-sequence"</span>
+  - <span class="keyword">action:</span> <span class="string">"notify-team"</span>
+    <span class="keyword">config:</span>
+      <span class="keyword">channel:</span> <span class="string">"slack"</span>
+        </div>
+
+        <h4>Pattern 2: Content Distribution</h4>
+        <div class="code-block">
+<span class="comment"># Content Distribution Workflow</span>
+<span class="keyword">name:</span> <span class="string">"content-distribution"</span>
+
+<span class="keyword">trigger:</span>
+  <span class="keyword">type:</span> <span class="string">"schedule"</span>
+  <span class="keyword">config:</span>
+    <span class="keyword">schedule:</span> <span class="string">"0 9 * * 1-5"</span>  <span class="comment"># Weekdays 9am</span>
+
+<span class="keyword">actions:</span>
+  - <span class="keyword">action:</span> <span class="string">"fetch-content"</span>
+    <span class="keyword">config:</span>
+      <span class="keyword">source:</span> <span class="string">"content-calendar"</span>
+  - <span class="keyword">action:</span> <span class="string">"generate-social-posts"</span>
+    <span class="keyword">config:</span>
+      <span class="keyword">platforms:</span> [<span class="string">"twitter"</span>, <span class="string">"linkedin"</span>, <span class="string">"facebook"</span>]
+  - <span class="keyword">action:</span> <span class="string">"schedule-posts"</span>
+    <span class="keyword">config:</span>
+      <span class="keyword">tool:</span> <span class="string">"buffer|hootsuite|later"</span>
+  - <span class="keyword">action:</span> <span class="string">"log-distribution"</span>
+        </div>
+
+        <h4>Pattern 3: Revenue Tracking</h4>
+        <div class="code-block">
+<span class="comment"># Revenue Tracking Workflow</span>
+<span class="keyword">name:</span> <span class="string">"revenue-tracking"</span>
+
+<span class="keyword">trigger:</span>
+  <span class="keyword">type:</span> <span class="string">"webhook"</span>
+  <span class="keyword">source:</span> <span class="string">"stripe-payment"</span>
+
+<span class="keyword">actions:</span>
+  - <span class="keyword">action:</span> <span class="string">"parse-payment"</span>
+  - <span class="keyword">action:</span> <span class="string">"update-dashboard"</span>
+    <span class="keyword">config:</span>
+      <span class="keyword">system:</span> <span class="string">"google-sheets|airtable|notion"</span>
+  - <span class="keyword">action:</span> <span class="string">"check-milestone"</span>
+    <span class="keyword">config:</span>
+      <span class="keyword">threshold:</span> [<span class="string">1000</span>, <span class="string">5000</span>, <span class="string">10000</span>]
+  - <span class="keyword">action:</span> <span class="string">"notify-milestone"</span>
+    <span class="keyword">config:</span>
+      <span class="keyword">channel:</span> <span class="string">"discord|slack|telegram"</span>
+        </div>
+
+        <h3>4.4 Workflow Testing Checklist</h3>
+        
+        <ul class="checklist">
+            <li>Submit test data through trigger</li>
+            <li>Verify each action executes correctly</li>
+            <li>Check data maps to correct fields</li>
+            <li>Test edge cases (empty fields, special characters)</li>
+            <li>Verify error handling works</li>
+            <li>Test with real data before production</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 5: INTEGRATIONS -->
+    <div class="section" id="integrations">
+        <h2>5. Integration Setup</h2>
+        
+        <h3>5.1 Payment Integration (Stripe)</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Create Stripe Account</h3>
+            <ul>
+                <li>Go to <a href="https://dashboard.stripe.com" target="_blank">dashboard.stripe.com</a></li>
+                <li>Complete account verification</li>
+                <li>Get API keys from Developers → API Keys</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Configure Stripe in OpenClaw</h3>
+            <div class="code-block">
+<span class="comment"># Add Stripe credentials</span>
+<span class="command">cat</span> > ~/.openclaw/config/integrations/stripe.yaml <span class="string">&lt;&lt; 'EOF'
+provider: stripe
+api_key: ${STRIPE_SECRET_KEY}
+webhook_secret: ${STRIPE_WEBHOOK_SECRET}
+mode: live  # or 'test' for sandbox
+
+products:
+  - id: prod_xxx
+    name: "AI CEO Toolkit"
+    price: 299700  # $2,997 in cents
+    currency: usd
+    
+webhooks:
+  - event: "checkout.session.completed"
+    action: "fulfill-order"
+  - event: "payment_intent.succeeded"
+    action: "update-revenue"
+EOF</span>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <h3>Test Stripe Integration</h3>
+            <div class="code-block">
+<span class="comment"># Test with Stripe CLI</span>
+<span class="command">stripe</span> login
+<span class="command">stripe</span> listen --forward-to localhost:18789/webhooks/stripe
+
+<span class="comment"># Test webhook locally</span>
+<span class="command">stripe</span> trigger checkout.session.completed
+            </div>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Security:</strong> Always use test mode during development. Never expose secret keys in code.
+        </div>
+
+        <h3>5.2 Messaging Integration (Discord)</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Create Discord Bot</h3>
+            <ul>
+                <li>Go to <a href="https://discord.com/developers/applications" target="_blank">Discord Developer Portal</a></li>
+                <li>Create New Application</li>
+                <li>Navigate to Bot section</li>
+                <li>Click "Add Bot"</li>
+                <li>Copy the bot token</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Configure Discord in OpenClaw</h3>
+            <div class="code-block">
+<span class="comment"># Add Discord credentials</span>
+<span class="command">cat</span> > ~/.openclaw/config/integrations/discord.yaml <span class="string">&lt;&lt; 'EOF'
+provider: discord
+bot_token: ${DISCORD_BOT_TOKEN}
+client_id: ${DISCORD_CLIENT_ID}
+guild_id: ${DISCORD_GUILD_ID}
+
+channels:
+  notifications: "123456789"  # Channel ID for notifications
+  revenue: "123456790"        # Channel ID for revenue updates
+  alerts: "123456791"         # Channel ID for system alerts
+
+permissions:
+  - send_messages
+  - embed_links
+  - read_message_history
+EOF</span>
+            </div>
+        </div>
+
+        <h3>5.3 GitHub Integration</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Create GitHub Token</h3>
+            <ul>
+                <li>Go to <a href="https://github.com/settings/tokens" target="_blank">GitHub Settings → Developer settings → Personal access tokens</a></li>
+                <li>Generate new token (classic)</li>
+                <li>Select scopes: repo, workflow, write:packages</li>
+                <li>Copy and store securely</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Configure GitHub in OpenClaw</h3>
+            <div class="code-block">
+<span class="comment"># Add GitHub credentials</span>
+<span class="command">cat</span> > ~/.openclaw/config/integrations/github.yaml <span class="string">&lt;&lt; 'EOF'
+provider: github
+token: ${GITHUB_TOKEN}
+default_branch: main
+
+repositories:
+  - name: "ai-ceo-toolkit"
+    owner: "your-username"
+    actions:
+      - create_issue
+      - create_pull_request
+      - push_files
+      
+workflows:
+  - name: "deploy-on-push"
+    trigger: "push"
+    branch: "main"
+EOF</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 6: MONITORING -->
+    <div class="section" id="monitoring">
+        <h2>6. Monitoring & Maintenance</h2>
+        
+        <h3>6.1 Health Checks</h3>
+        
+        <div class="code-block">
+<span class="comment"># Check OpenClaw status</span>
+<span class="command">openclaw</span> status
+
+<span class="comment"># Check agent health</span>
+<span class="command">openclaw</span> agent status --all
+
+<span class="comment"># Check workflow status</span>
+<span class="command">openclaw</span> workflow status --all
+
+<span class="comment"># View recent logs</span>
+<span class="command">openclaw</span> logs --tail 100
+
+<span class="comment"># Check resource usage</span>
+<span class="command">openclaw</span> stats
+        </div>
+
+        <h3>6.2 Automated Health Monitoring</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Create Health Check Script</h3>
+            <div class="code-block">
+<span class="comment">#!/bin/bash</span>
+<span class="comment"># health-check.sh - Run every hour via cron</span>
+
+<span class="command">openclaw</span> status > /var/log/openclaw/health.log 2>&1
+
+<span class="keyword">if</span> [ $? -ne 0 ]; <span class="keyword">then</span>
+    <span class="command">echo</span> <span class="string">"OpenClaw health check failed at $(date)"</span> >> /var/log/openclaw/errors.log
+    <span class="command">openclaw</span> restart
+<span class="keyword">fi</span>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Add to Crontab</h3>
+            <div class="code-block">
+<span class="comment"># Edit crontab</span>
+<span class="command">crontab</span> -e
+
+<span class="comment"># Add health check (every hour)</span>
+<span class="keyword">0</span> * * * * /home/user/.openclaw/scripts/health-check.sh
+            </div>
+        </div>
+
+        <h3>6.3 Log Management</h3>
+        
+        <div class="code-block">
+<span class="comment"># View logs in real-time</span>
+<span class="command">openclaw</span> logs --follow
+
+<span class="comment"># Export logs for analysis</span>
+<span class="command">openclaw</span> logs --export logs-$(date +%Y%m%d).json
+
+<span class="comment"># Search logs for errors</span>
+<span class="command">openclaw</span> logs --filter "error" --tail 100
+
+<span class="comment"># Archive old logs (run weekly)</span>
+<span class="command">find</span> ~/.openclaw/logs -name "*.log" -mtime +7 -exec gzip {} \;
+        </div>
+
+        <h3>6.4 Backup Procedures</h3>
+        
+        <div class="code-block">
+<span class="comment">#!/bin/bash</span>
+<span class="comment"># backup.sh - Run daily</span>
+
+<span class="keyword">BACKUP_DIR=</span><span class="string">"/backup/openclaw/$(date +%Y%m%d)"</span>
+<span class="command">mkdir</span> -p $BACKUP_DIR
+
+<span class="comment"># Backup configuration</span>
+<span class="command">cp</span> -r ~/.openclaw/config $BACKUP_DIR/
+
+<span class="comment"># Backup workspace</span>
+<span class="command">cp</span> -r ~/.openclaw/workspace $BACKUP_DIR/
+
+<span class="comment"># Backup logs (last 7 days)</span>
+<span class="command">find</span> ~/.openclaw/logs -name "*.log" -mtime -7 -exec cp {} $BACKUP_DIR/ \;
+
+<span class="command">echo</span> <span class="string">"Backup completed: $BACKUP_DIR"</span>
+        </div>
+    </div>
+
+    <!-- SECTION 7: SECURITY -->
+    <div class="section" id="security">
+        <h2>7. Security Configuration</h2>
+        
+        <h3>7.1 API Key Security</h3>
+        
+        <div class="warning">
+            <strong>⚠️ Critical Security Rules:</strong>
+            <ul>
+                <li>Never commit API keys to version control</li>
+                <li>Use environment variables for secrets</li>
+                <li>Rotate keys every 90 days</li>
+                <li>Use separate keys for development/production</li>
+            </ul>
+        </div>
+
+        <div class="code-block">
+<span class="comment"># Set environment variables (add to ~/.bashrc or ~/.zshrc)</span>
+<span class="keyword">export</span> OPENAI_API_KEY=<span class="string">"sk-your-key-here"</span>
+<span class="keyword">export</span> ANTHROPIC_API_KEY=<span class="string">"sk-ant-your-key-here"</span>
+<span class="keyword">export</span> STRIPE_SECRET_KEY=<span class="string">"sk_live_your-key-here"</span>
+
+<span class="comment"># Load environment variables</span>
+<span class="command">source</span> ~/.bashrc
+        </div>
+
+        <h3>7.2 Network Security</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Configure Firewall</h3>
+            <div class="code-block">
+<span class="comment"># Allow only localhost access (default)</span>
+<span class="command">sudo</span> ufw allow from 127.0.0.1 to any port 18789
+
+<span class="comment"># Or allow specific IP ranges</span>
+<span class="command">sudo</span> ufw allow from 192.168.1.0/24 to any port 18789
+
+<span class="comment"># Enable firewall</span>
+<span class="command">sudo</span> ufw enable
+            </div>
+        </div>
+
+        <h3>7.3 SSL/TLS Configuration</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Generate SSL Certificate</h3>
+            <div class="code-block">
+<span class="comment"># Install certbot</span>
+<span class="command">sudo</span> apt install certbot
+
+<span class="comment"># Generate certificate</span>
+<span class="command">sudo</span> certbot certonly --standalone -d yourdomain.com
+
+<span class="comment"># Certificate location</span>
+<span class="comment"># /etc/letsencrypt/live/yourdomain.com/fullchain.pem</span>
+<span class="comment"># /etc/letsencrypt/live/yourdomain.com/privkey.pem</span>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Configure HTTPS in OpenClaw</h3>
+            <div class="code-block">
+<span class="comment"># Update OpenClaw config</span>
+<span class="command">cat</span> > ~/.openclaw/config/server.yaml <span class="string">&lt;&lt; 'EOF'
+server:
+  host: 0.0.0.0
+  port: 18789
+  ssl:
+    enabled: true
+    cert: /etc/letsencrypt/live/yourdomain.com/fullchain.pem
+    key: /etc/letsencrypt/live/yourdomain.com/privkey.pem
+EOF</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 8: TROUBLESHOOTING -->
+    <div class="section" id="troubleshooting">
+        <h2>8. Troubleshooting Guide</h2>
+        
+        <h3>8.1 Common Issues & Solutions</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Issue</th>
+                    <th>Cause</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Agent won't start</td>
+                    <td>Missing API key</td>
+                    <td>Check environment variables</td>
+                </tr>
+                <tr>
+                    <td>Workflow fails silently</td>
+                    <td>No error handling</td>
+                    <td>Add error notifications</td>
+                </tr>
+                <tr>
+                    <td>API rate limited</td>
+                    <td>Too many requests</td>
+                    <td>Add delays, use batching</td>
+                </tr>
+                <tr>
+                    <td>Webhook not receiving</td>
+                    <td>Wrong endpoint URL</td>
+                    <td>Verify webhook configuration</td>
+                </tr>
+                <tr>
+                    <td>Memory errors</td>
+                    <td>Context too large</td>
+                    <td>Clear memory, optimize prompts</td>
+                </tr>
+                <tr>
+                    <td>Slow response</td>
+                    <td>Network/model latency</td>
+                    <td>Use faster model or cache</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>8.2 Diagnostic Commands</h3>
+        
+        <div class="code-block">
+<span class="comment"># Check system resources</span>
+<span class="command">openclaw</span> diagnostics --system
+
+<span class="comment"># Check API connectivity</span>
+<span class="command">openclaw</span> diagnostics --api
+
+<span class="comment"># Check agent status</span>
+<span class="command">openclaw</span> diagnostics --agents
+
+<span class="comment"># Check workflow execution</span>
+<span class="command">openclaw</span> diagnostics --workflows
+
+<span class="comment"># Full diagnostic report</span>
+<span class="command">openclaw</span> diagnostics --full
+        </div>
+
+        <h3>8.3 Error Code Reference</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Error</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>E001</td>
+                    <td>Authentication Failed</td>
+                    <td>Invalid or missing API key</td>
+                </tr>
+                <tr>
+                    <td>E002</td>
+                    <td>Rate Limited</td>
+                    <td>Exceeded API rate limits</td>
+                </tr>
+                <tr>
+                    <td>E003</td>
+                    <td>Agent Not Found</td>
+                    <td>Agent ID doesn't exist</td>
+                </tr>
+                <tr>
+                    <td>E004</td>
+                    <td>Workflow Failed</td>
+                    <td>Workflow execution error</td>
+                </tr>
+                <tr>
+                    <td>E005</td>
+                    <td>Memory Overflow</td>
+                    <td>Context window exceeded</td>
+                </tr>
+                <tr>
+                    <td>E006</td>
+                    <td>Network Error</td>
+                    <td>Connection timeout or failure</td>
+                </tr>
+                <tr>
+                    <td>E007</td>
+                    <td>Configuration Error</td>
+                    <td>Invalid config file</td>
+                </tr>
+                <tr>
+                    <td>E008</td>
+                    <td>Permission Denied</td>
+                    <td>Insufficient permissions</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 9: ADVANCED -->
+    <div class="section" id="advanced">
+        <h2>9. Advanced Configuration</h2>
+        
+        <h3>9.1 Multi-Node Deployment</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Configure Node Network</h3>
+            <div class="code-block">
+<span class="comment"># Primary node (master)</span>
+<span class="command">cat</span> > ~/.openclaw/config/nodes/master.yaml <span class="string">&lt;&lt; 'EOF'
+role: master
+bind: 0.0.0.0:18789
+nodes:
+  - id: node-1
+    host: 192.168.1.101
+    role: worker
+  - id: node-2
+    host: 192.168.1.102
+    role: worker
+EOF</span>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Configure Worker Nodes</h3>
+            <div class="code-block">
+<span class="comment"># Worker node configuration</span>
+<span class="command">cat</span> > ~/.openclaw/config/nodes/worker.yaml <span class="string">&lt;&lt; 'EOF'
+role: worker
+master: 192.168.1.100:18789
+capabilities:
+  - content-generation
+  - web-research
+  - data-processing
+EOF</span>
+            </div>
+        </div>
+
+        <h3>9.2 Custom Agent Tools</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Create Custom Tool</h3>
+            <div class="code-block">
+<span class="comment"># Define custom tool</span>
+<span class="command">cat</span> > ~/.openclaw/tools/custom-tool.js <span class="string">&lt;&lt; 'EOF'
+module.exports = {
+  name: 'custom-analytics',
+  description: 'Custom analytics tool for business metrics',
+  
+  async execute(params) {
+    // Your custom logic here
+    const metrics = await fetchMetrics(params);
+    
+    return {
+      success: true,
+      data: metrics,
+      timestamp: new Date().toISOString()
+    };
+  },
+  
+  schema: {
+    params: {
+      type: 'object',
+      properties: {
+        metric: { type: 'string' },
+        timeframe: { type: 'string' }
+      },
+      required: ['metric']
+    }
+  }
+};
+EOF</span>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Register Tool</h3>
+            <div class="code-block">
+<span class="comment"># Register custom tool</span>
+<span class="command">openclaw</span> tool register custom-tool.js
+
+<span class="comment"># Verify registration</span>
+<span class="command">openclaw</span> tool list
+            </div>
+        </div>
+
+        <h3>9.3 Performance Tuning</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Default</th>
+                    <th>Optimized</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>max_concurrent_agents</td>
+                    <td>5</td>
+                    <td>10-20</td>
+                    <td>Based on CPU cores</td>
+                </tr>
+                <tr>
+                    <td>memory_limit_mb</td>
+                    <td>1024</td>
+                    <td>2048-4096</td>
+                    <td>Based on RAM</td>
+                </tr>
+                <tr>
+                    <td>request_timeout_ms</td>
+                    <td>30000</td>
+                    <td>60000-120000</td>
+                    <td>Based on model speed</td>
+                </tr>
+                <tr>
+                    <td>cache_ttl_seconds</td>
+                    <td>3600</td>
+                    <td>7200-86400</td>
+                    <td>Based on data freshness</td>
+                </tr>
+                <tr>
+                    <td>batch_size</td>
+                    <td>10</td>
+                    <td>20-50</td>
+                    <td>Based on API limits</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 10: MAINTENANCE -->
+    <div class="section" id="maintenance">
+        <h2>10. Ongoing Maintenance</h2>
+        
+        <h3>10.1 Daily Tasks</h3>
+        <ul class="checklist">
+            <li>Check system status (1 minute)</li>
+            <li>Review error logs (2 minutes)</li>
+            <li>Verify agent health (1 minute)</li>
+            <li>Monitor revenue tracking (1 minute)</li>
+        </ul>
+
+        <h3>10.2 Weekly Tasks</h3>
+        <ul class="checklist">
+            <li>Review workflow performance (15 minutes)</li>
+            <li>Check API usage and costs (5 minutes)</li>
+            <li>Update outdated dependencies (10 minutes)</li>
+            <li>Backup configuration and data (5 minutes)</li>
+            <li>Test all integrations (10 minutes)</li>
+        </ul>
+
+        <h3>10.3 Monthly Tasks</h3>
+        <ul class="checklist">
+            <li>Rotate API keys (30 minutes)</li>
+            <li>Security audit (1 hour)</li>
+            <li>Performance optimization (1 hour)</li>
+            <li>Update documentation (30 minutes)</li>
+            <li>Review and clean up logs (15 minutes)</li>
+            <li>Test disaster recovery (30 minutes)</li>
+        </ul>
+
+        <h3>10.4 Maintenance Schedule Template</h3>
+        
+        <div class="code-block">
+<span class="comment"># /etc/cron.d/openclaw-maintenance</span>
+
+<span class="comment"># Daily health check (6 AM)</span>
+<span class="keyword">0</span> 6 * * * openclaw /home/user/.openclaw/scripts/health-check.sh
+
+<span class="comment"># Weekly backup (Sunday 2 AM)</span>
+<span class="keyword">0</span> 2 * * 0 openclaw /home/user/.openclaw/scripts/backup.sh
+
+<span class="comment"># Monthly log rotation (1st of month, 3 AM)</span>
+<span class="keyword">0</span> 3 1 * * openclaw /home/user/.openclaw/scripts/log-rotation.sh
+
+<span class="comment"># Monthly security check (15th of month, 4 AM)</span>
+<span class="keyword">0</span> 4 15 * * openclaw /home/user/.openclaw/scripts/security-check.sh
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="text-align: center; margin-top: 50px; padding: 40px; background: #1a1a2e; color: white; border-radius: 10px;">
+        <h2 style="margin-bottom: 20px;">🤖 AI CEO Automation Toolkit</h2>
+        <p style="font-size: 1.2em; margin-bottom: 25px;">Complete Technical Setup Guide - 47 AI Tools Documented</p>
+        
+        <div style="display: inline-block; text-align: left;">
+            <h3 style="margin-bottom: 15px;">What You Get:</h3>
+            <ul style="list-style: none; margin-bottom: 25px;">
+                <li>✅ Complete installation scripts</li>
+                <li>✅ 50+ automation templates</li>
+                <li>✅ Integration guides (Stripe, Discord, GitHub)</li>
+                <li>✅ Security hardening configurations</li>
+                <li>✅ Monitoring and maintenance tools</li>
+                <li>✅ Troubleshooting reference</li>
+                <li>✅ Advanced configuration options</li>
+                <li>✅ Lifetime updates</li>
+            </ul>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; display: inline-block;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;"><strong>AI CEO Platform</strong></p>
+            <p style="font-size: 2.5em; font-weight: bold;">$2,997</p>
+            <p style="opacity: 0.9;">One-time payment • Complete system</p>
+        </div>
+
+        <p style="margin-top: 30px; opacity: 0.9;">
+            <strong>Support:</strong> support@aiceosystems.com | 
+            <strong>Community:</strong> discord.gg/ai-ceo
+        </p>
+    </div>
+
+    <footer style="text-align: center; margin-top: 30px; padding: 20px; color: #666;">
+        <p>© 2024 AI CEO Systems. All rights reserved.</p>
+        <p style="margin-top: 10px;">
+            Technical Support: support@aiceosystems.com<br>
+            Documentation: docs.aiceosystems.com
+        </p>
+    </footer>
+
+    <script>
+        // Print functionality
+        function printToPDF() {
+            window.print();
+        }
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                printToPDF();
+            }
+        });
+    </script>
+</body>
+</html>

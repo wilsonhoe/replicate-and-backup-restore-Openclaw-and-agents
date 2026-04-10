@@ -1,0 +1,83 @@
+# ============================================
+# REPLICATE & BACKUP RESTORE - OPENCLAW SYSTEM
+# Security-focused gitignore - NEVER commit secrets
+# ============================================
+
+# --- SECRETS (CRITICAL - NEVER COMMIT) ---
+.env
+.env.*
+*.secret
+*.key
+*.pem
+*.token
+credentials/
+secrets/
+openclaw/credentials/
+openclaw/secrets/
+openclaw/agents/*/auth-profiles.json
+
+# --- BROWSER / RUNTIME DATA ---
+**/chrome-profile/
+**/chrome-data/
+**/chrome-debug/
+**/browser/
+**/browser-data/
+**/browser-data-linkedin/
+**/browser-profiles/
+**/profiles/
+
+# --- VENV / DEPENDENCIES (reinstallable) ---
+**/venv*/
+**/node_modules/
+package-lock.json
+
+# --- SESSION DATA (ephemeral) ---
+**/sessions/
+*.lock
+*.deleted.*
+
+# --- LOGS & TEMP ---
+*.log
+bash-commands.log
+cost-tracker.log
+**/telemetry/
+**/cache/
+**/shell-snapshots/
+**/session-data/
+**/session-env/
+
+# --- LARGE RUNTIME FILES ---
+openclaw/update-check.json
+openclaw/EOF
+openclaw/exec-approvals.json
+openclaw/openclaw.json.bak.*
+openclaw/openclaw.json.clobbered.*
+
+# --- DAILY / GENERATED DATA (too large, regenerable) ---
+**/daily_stock_analysis/
+
+# --- OS FILES ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# --- COMPILED / CACHE ---
+**/__pycache__/
+*.pyc
+*.pyo
+
+# --- CLAUDE HISTORY (ephemeral, large) ---
+claude/history.jsonl
+claude/bash-commands.log
+claude/cost-tracker.log
+claude/projects/
+
+# --- BACKUP ARTIFACTS (not needed in repo) -
+claude/backups/
+claude/file-history/
+# Additional secret patterns
+**/.env
+**/.env.*
+**/tool-results/

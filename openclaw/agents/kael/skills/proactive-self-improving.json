@@ -1,0 +1,38 @@
+{
+  "name": "proactive-self-improving",
+  "version": "1.0.0",
+  "description": "Proactive behavior and continuous self-improvement for Kael (Execution Layer)",
+  "enabled": true,
+  "capabilities": [
+    "proactive-execution",
+    "self-healing",
+    "error-learning",
+    "relentless-resourcefulness",
+    "performance-optimization"
+  ],
+  "sources": [
+    "/home/wls/.openclaw/workspace/skills/proactive-agent/SKILL.md",
+    "/home/wls/.openclaw/workspace/skills/self-improving-agent/SKILL.md"
+  ],
+  "learning": {
+    "directory": "/home/wls/.openclaw/workspace-kael/.learnings",
+    "files": [
+      "LEARNINGS.md",
+      "ERRORS.md",
+      "FEATURE_REQUESTS.md"
+    ]
+  },
+  "behaviors": {
+    "self_healing": true,
+    "ten_approaches_before_escalation": true,
+    "log_all_errors": true,
+    "optimize_workflows": true,
+    "proactive_status_updates": true
+  },
+  "execution_rules": {
+    "on_error": "Try 10 approaches before reporting [FAIL]",
+    "on_blocker": "Self-heal or escalate with detailed context",
+    "on_success": "Log best practices to LEARNINGS.md",
+    "continuous_improvement": "Review past executions before new tasks"
+  }
+}

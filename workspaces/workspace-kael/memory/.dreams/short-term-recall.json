@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-10T05:00:18.982Z",
+  "entries": {
+    "memory:memory/2026-04-07.md:1:36": {
+      "key": "memory:memory/2026-04-07.md:1:36",
+      "path": "memory/2026-04-07.md",
+      "startLine": 1,
+      "endLine": 36,
+      "source": "memory",
+      "snippet": "# 2026-04-07 - Daily Log ## Completed Tasks ### [17:21 GMT+8] STATUS REPORT - **Mission**: Daily status report to Discord #logs - **Action**: Checked INBOX.md and active_missions.md - **Result**: Reported \"ONLINE - Awaiting Assignment\" status - **Posted to**: #logs channel ## Active Mission Status **Singapore Real Estate Notion Template System** - **Started**: 2026-04-05 - **Status**: ONGOING - **Last Action**: Awaiting Lisa's [APPROVED] directive - **Next Step**: Continue monitoring #command-center for assignments ## Technical Notes - No errors encountered today - No blockers reported - All systems operational - INBOX.md: No new assignments from Lisa ## Tomorrow's Queue 1. Continue",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.3764225661754605,
+      "maxScore": 0.514168831706047,
+      "firstRecalledAt": "2026-04-10T00:31:17.229Z",
+      "lastRecalledAt": "2026-04-10T05:00:18.982Z",
+      "queryHashes": [
+        "f83783f95eb1",
+        "b17f3593f626",
+        "b8aca8806f9a"
+      ],
+      "recallDays": [
+        "2026-04-10"
+      ],
+      "conceptTags": [
+        "inbox.md",
+        "active-missions.md",
+        "command-center",
+        "log",
+        "completed",
+        "tasks",
+        "gmt",
+        "status"
+      ]
+    },
+    "memory:memory/2026-04-09.md:1:30": {
+      "key": "memory:memory/2026-04-09.md:1:30",
+      "path": "memory/2026-04-09.md",
+      "startLine": 1,
+      "endLine": 30,
+      "source": "memory",
+      "snippet": "# Memory Log - 2026-04-09 ## 08:30 GMT+8 - Morning Execution Check (Cron) ### INBOX Status - **AI Workflow Demo** (from 2026-04-07): Still ACTIVE in INBOX, never executed. Stale task — no recent Lisa directive to prioritize it. ### #command-center Analysis (Lisa's Latest - 2026-04-09 08:00 SGT) Lisa posted today's priorities: 1. **Add product thumbnails to Gumroad** — 3 products LIVE but no cover images. High ROI, low effort. 2. **Build actual Notion templates** — Finance Dashboard ($39) and Content Calendar ($29) need real builds. Currently placeholder duplicate link. **BIGGEST BLOCKER**. 3. **Marketing/distribution strategy** — Zero traffic on Gumroad products. Zoho Social workflow oper",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4629411906003952,
+      "maxScore": 0.4629411906003952,
+      "firstRecalledAt": "2026-04-10T00:31:29.727Z",
+      "lastRecalledAt": "2026-04-10T00:31:29.727Z",
+      "queryHashes": [
+        "b17f3593f626"
+      ],
+      "recallDays": [
+        "2026-04-10"
+      ],
+      "conceptTags": [
+        "command-center",
+        "marketing/distribution",
+        "log",
+        "gmt",
+        "morning",
+        "execution",
+        "check",
+        "cron"
+      ]
+    },
+    "memory:memory/2026-04-09.md:50:66": {
+      "key": "memory:memory/2026-04-09.md:50:66",
+      "path": "memory/2026-04-09.md",
+      "startLine": 50,
+      "endLine": 66,
+      "source": "memory",
+      "snippet": "1. **Morning execution check** (08:30 cron) — analyzed #command-center priorities, identified blockers 2. **New scripts added** — `fts5_search.py`, `memory_nudge.py`, `skill_factory.py` (appeared in scripts/ today) 3. **New skill drafts** — `professional-photo.md`, `professional-presentation.md`, `professional-video.md` added to skills/ ### Technical Errors: NONE - No command failures, API timeouts, or auth issues detected today - Health Score: 100% ### Blockers (Unresolved) 1. **No [APPROVED] assignment from Lisa** — 3rd consecutive day without explicit execution directive 2. **Notion templates still unbuilt** — critical path item from April 7, now 2 days overdue 3. **Telegram cron broken",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.830387184023857,
+      "maxScore": 0.4477246582508087,
+      "firstRecalledAt": "2026-04-10T00:31:29.727Z",
+      "lastRecalledAt": "2026-04-10T05:00:18.982Z",
+      "queryHashes": [
+        "b17f3593f626",
+        "b8aca8806f9a"
+      ],
+      "recallDays": [
+        "2026-04-10"
+      ],
+      "conceptTags": [
+        "command-center",
+        "fts5-search.py",
+        "memory-nudge.py",
+        "skill-factory.py",
+        "professional-photo.md",
+        "professional-presentation.md",
+        "professional-video.md",
+        "morning"
+      ]
+    },
+    "memory:memory/2026-04-09.md:21:54": {
+      "key": "memory:memory/2026-04-09.md:21:54",
+      "path": "memory/2026-04-09.md",
+      "startLine": 21,
+      "endLine": 54,
+      "source": "memory",
+      "snippet": "2. Crypto Trading Journal Notion Template (MEDIUM confidence, $500-2K/mo) 3. Singapore Property Buyer Lead Magnet (MEDIUM confidence, lead gen) **None have been [APPROVED] by Lisa yet.** Kael cannot execute until approval. ### #execution Channel - Last Kael post: 2026-04-07 (Discord workflow fix) - No new execution tasks assigned since then ### #logs Channel - Last Kael post: 2026-04-08 (Evening Execution Wrap) - Nyx has been active validating opportunities ### Blockers 1. **No explicit [APPROVED] assignment for Kael** — Lisa's priorities reference \"Kael\" for execution steps but no direct [APPROVED] tag with assignment ID 2. **Notion template build** — Listed as critical path item but no",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4423392504453659,
+      "maxScore": 0.4423392504453659,
+      "firstRecalledAt": "2026-04-10T00:31:29.727Z",
+      "lastRecalledAt": "2026-04-10T00:31:29.727Z",
+      "queryHashes": [
+        "b17f3593f626"
+      ],
+      "recallDays": [
+        "2026-04-10"
+      ],
+      "conceptTags": [
+        "500-2k/mo",
+        "crypto",
+        "trading",
+        "journal",
+        "notion",
+        "template",
+        "medium",
+        "confidence"
+      ]
+    }
+  }
+}

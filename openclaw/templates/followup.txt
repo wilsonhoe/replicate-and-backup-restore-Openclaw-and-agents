@@ -1,0 +1,12 @@
+Subject: Following up
+
+Hi {{first_name}},
+
+Just following up on my previous email about {{topic}}.
+
+{{value_proposition}}
+
+Let me know if you're interested.
+
+Best,
+Lisa

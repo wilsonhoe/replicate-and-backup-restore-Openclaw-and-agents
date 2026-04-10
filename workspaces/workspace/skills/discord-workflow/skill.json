@@ -1,0 +1,90 @@
+{
+  "name": "discord-workflow",
+  "version": "1.0.0",
+  "description": "Discord message routing for multi-agent OpenClaw system",
+  "entry": "webhook_handler.py",
+  "commands": {
+    "router-test": {
+      "description": "Test the Discord workflow routing",
+      "exec": "python3 /home/wls/.openclaw/workspace/skills/discord-workflow/message_router.py --test"
+    },
+    "router-process": {
+      "description": "Process queued Discord messages",
+      "exec": "python3 /home/wls/.openclaw/workspace/skills/discord-workflow/message_router.py --once"
+    },
+    "router-daemon": {
+      "description": "Start message router daemon",
+      "exec": "python3 /home/wls/.openclaw/workspace/skills/discord-workflow/message_router.py --daemon"
+    },
+    "coordinator": {
+      "description": "Run Discord coordinator to fetch and route messages",
+      "exec": "python3 /home/wls/.openclaw/workspace/skills/discord-workflow/discord_coordinator.py"
+    }
+  },
+  "hooks": {
+    "onMessage": {
+      "discord": {
+        "channels": ["research", "command_center", "execution", "logs"],
+        "handler": "webhook_handler.py"
+      }
+    }
+  },
+  "workflow": {
+    "flow": [
+      {
+        "from": "nyx",
+        "channel": "research",
+        "tag": "[OPPORTUNITY]",
+        "to": "lisa"
+      },
+      {
+        "from": "lisa",
+        "channel": "command_center",
+        "tag": "[APPROVED]",
+        "to": "kael"
+      },
+      {
+        "from": "lisa",
+        "channel": "command_center",
+        "tag": "[REJECTED]",
+        "to": "nyx"
+      },
+      {
+        "from": "kael",
+        "channel": "execution",
+        "tag": "[EXECUTING]",
+        "to": "lisa"
+      },
+      {
+        "from": "kael",
+        "channel": "logs",
+        "tag": "[SUCCESS]",
+        "to": "lisa"
+      },
+      {
+        "from": "kael",
+        "channel": "logs",
+        "tag": "[FAIL]",
+        "to": "lisa"
+      },
+      {
+        "from": "lisa",
+        "channel": "command_center",
+        "tag": "[SCALE]",
+        "to": ["kael", "nyx"]
+      },
+      {
+        "from": "lisa",
+        "channel": "command_center",
+        "tag": "[OPTIMIZE]",
+        "to": ["kael", "nyx"]
+      },
+      {
+        "from": "lisa",
+        "channel": "command_center",
+        "tag": "[TERMINATE]",
+        "to": ["kael", "nyx"]
+      }
+    ]
+  }
+}

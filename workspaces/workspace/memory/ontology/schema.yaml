@@ -1,0 +1,205 @@
+# Ontology Schema Definition
+# Defines types, constraints, and validation rules for the knowledge graph
+
+types:
+  # Agents & People
+  Person:
+    required: [name]
+    properties:
+      name: string
+      email: string?
+      phone: string?
+      notes: string?
+  
+  Organization:
+    required: [name]
+    properties:
+      name: string
+      type: string?
+      members: array?
+
+  # Work
+  Project:
+    required: [name, status]
+    properties:
+      name: string
+      status: string
+      goals: array?
+      owner: string?
+    status_enum: [active, paused, completed, cancelled]
+  
+  Task:
+    required: [title, status]
+    properties:
+      title: string
+      status: string
+      due: string?
+      priority: string?
+      assignee: string?
+      blockers: array?
+    status_enum: [open, in_progress, blocked, done]
+  
+  Goal:
+    required: [description]
+    properties:
+      description: string
+      target_date: string?
+      metrics: array?
+
+  # Time & Place
+  Event:
+    required: [title, start]
+    properties:
+      title: string
+      start: string
+      end: string?
+      location: string?
+      attendees: array?
+      recurrence: string?
+  
+  Location:
+    required: [name]
+    properties:
+      name: string
+      address: string?
+      coordinates: object?
+
+  # Information
+  Document:
+    required: [title]
+    properties:
+      title: string
+      path: string?
+      url: string?
+      summary: string?
+  
+  Message:
+    required: [content, sender]
+    properties:
+      content: string
+      sender: string
+      recipients: array?
+      thread: string?
+  
+  Thread:
+    required: [subject]
+    properties:
+      subject: string
+      participants: array?
+      messages: array?
+  
+  Note:
+    required: [content]
+    properties:
+      content: string
+      tags: array?
+      refs: array?
+
+  # Resources
+  Account:
+    required: [service, username]
+    properties:
+      service: string
+      username: string
+      credential_ref: string?
+  
+  Device:
+    required: [name, type]
+    properties:
+      name: string
+      type: string
+      identifiers: array?
+  
+  Credential:
+    required: [service, secret_ref]
+    properties:
+      service: string
+      secret_ref: string
+    forbidden_properties: [password, secret, token]  # Force indirection
+
+  # Meta
+  Action:
+    required: [type, target, timestamp]
+    properties:
+      type: string
+      target: string
+      timestamp: string
+      outcome: string?
+  
+  Policy:
+    required: [scope, rule]
+    properties:
+      scope: string
+      rule: string
+      enforcement: string?
+
+relations:
+  has_owner:
+    from_types: [Project, Task, Organization]
+    to_types: [Person]
+    cardinality: many_to_one
+  
+  has_task:
+    from_types: [Project]
+    to_types: [Task]
+    cardinality: one_to_many
+  
+  has_goal:
+    from_types: [Project, Person]
+    to_types: [Goal]
+    cardinality: one_to_many
+  
+  attends:
+    from_types: [Person]
+    to_types: [Event]
+    cardinality: many_to_many
+  
+  located_at:
+    from_types: [Event, Organization]
+    to_types: [Location]
+    cardinality: many_to_one
+  
+  has_document:
+    from_types: [Project, Task, Person]
+    to_types: [Document]
+    cardinality: one_to_many
+  
+  member_of:
+    from_types: [Person]
+    to_types: [Organization]
+    cardinality: many_to_many
+  
+  sent_message:
+    from_types: [Person]
+    to_types: [Message]
+    cardinality: one_to_many
+  
+  part_of_thread:
+    from_types: [Message]
+    to_types: [Thread]
+    cardinality: many_to_one
+  
+  has_note:
+    from_types: [Project, Task, Person, Event]
+    to_types: [Note]
+    cardinality: one_to_many
+  
+  uses_account:
+    from_types: [Person, Organization]
+    to_types: [Account]
+    cardinality: one_to_many
+  
+  has_credential:
+    from_types: [Account]
+    to_types: [Credential]
+    cardinality: one_to_one
+  
+  performed_action:
+    from_types: [Person]
+    to_types: [Action]
+    cardinality: one_to_many
+  
+  subject_to:
+    from_types: [Person, Organization, Project]
+    to_types: [Policy]
+    cardinality: many_to_many

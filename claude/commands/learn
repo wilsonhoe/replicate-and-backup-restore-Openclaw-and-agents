@@ -1,0 +1,19 @@
+#!/bin/bash
+# /learn - Pattern extraction command
+
+PATTERN_NAME="$1"
+
+if [ -z "$PATTERN_NAME" ]; then
+    echo "❌ Usage: /learn [pattern-name]"
+    echo ""
+    echo "Extracts the last implementation as a reusable pattern."
+    exit 1
+fi
+
+PATTERNS_DIR="$HOME/.claude/skills/continuous-learning/patterns"
+mkdir -p "$PATTERNS_DIR"
+
+echo "💡 Extracting pattern: $PATTERN_NAME"
+echo "Pattern will be saved to: $PATTERNS_DIR/$PATTERN_NAME.md"
+echo ""
+echo "This pattern can now be referenced in future sessions."

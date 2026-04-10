@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw Agent Activity Monitor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .activity-card {
+            transition: all 0.2s ease;
+        }
+        .activity-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .risk-low { border-left-color: #10b981; }
+        .risk-medium { border-left-color: #f59e0b; }
+        .risk-high { border-left-color: #ef4444; }
+        .risk-critical { border-left-color: #dc2626; }
+        .status-online { color: #10b981; }
+        .status-offline { color: #ef4444; }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">OpenClaw Agent Activity Monitor</h1>
+            <p class="text-gray-600 mt-2">Real-time monitoring of agent activities with hallucination detection</p>
+            <div id="system-status" class="mt-4 px-4 py-2 bg-white rounded-lg shadow-sm flex items-center justify-between">
+                <span id="status-text" class="font-medium">Connecting...</span>
+                <span id="last-update" class="text-sm text-gray-500">--</span>
+            </div>
+        </header>
+
+        <!-- System Overview Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="text-sm text-gray-500">Total Activities</div>
+                <div id="total-activities" class="text-2xl font-bold text-gray-800">0</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="text-sm text-gray-500">Active Agents</div>
+                <div id="active-agents" class="text-2xl font-bold text-green-600">0</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="text-sm text-gray-500">Total Agents</div>
+                <div id="total-agents" class="text-2xl font-bold text-gray-600">0</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="text-sm text-gray-500">Risk Alerts</div>
+                <div id="risk-alerts" class="text-2xl font-bold text-red-600">0</div>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Activity Feed -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-sm">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h2 class="text-lg font-semibold text-gray-800">Real-time Activity Feed</h2>
+                    </div>
+                    <div id="activity-feed" class="divide-y divide-gray-200">
+                        <div class="p-6 text-center text-gray-500">
+                            Loading activities...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Side Panel -->
+            <div class="space-y-6">
+                <!-- Hallucination Alerts -->
+                <div class="bg-white rounded-lg shadow-sm">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h2 class="text-lg font-semibold text-gray-800">Hallucination Alerts</h2>
+                    </div>
+                    <div id="hallucination-alerts" class="p-6">
+                        <div class="text-center text-gray-500">No alerts</div>
+                    </div>
+                </div>
+
+                <!-- Verification Network -->
+                <div class="bg-white rounded-lg shadow-sm">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h2 class="text-lg font-semibold text-gray-800">Verification Requests</h2>
+                    </div>
+                    <div id="verification-requests" class="p-6">
+                        <div class="text-center text-gray-500">No requests</div>
+                    </div>
+                </div>
+
+                <!-- Agent Overview -->
+                <div class="bg-white rounded-lg shadow-sm">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h2 class="text-lg font-semibold text-gray-800">Agent Overview</h2>
+                    </div>
+                    <div id="agent-overview" class="p-6">
+                        <div class="text-center text-gray-500">No agents</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let activities = [];
+        let agents = [];
+        let systemMetrics = {};
+        let hallucinationAlerts = [];
+        let verificationRequests = [];
+
+        // Fetch data from API
+        async function fetchData() {
+            try {
+                const response = await fetch('/api/monitor/status');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                
+                const data = await response.json();
+                
+                activities = data.recentActivities || [];
+                agents = data.agentMetrics || [];
+                systemMetrics = data.systemStatus || {};
+                hallucinationAlerts = data.hallucinationAlerts || [];
+                verificationRequests = data.verificationRequests || [];
+                
+                updateDashboard();
+            } catch (error) {
+                console.error('Failed to fetch monitoring data:', error);
+                document.getElementById('status-text').textContent = 'System Status: Error';
+                document.getElementById('status-text').className = 'font-medium text-red-600';
+            }
+        }
+
+        function updateDashboard() {
+            updateSystemStatus();
+            updateMetrics();
+            updateActivityFeed();
+            updateHallucinationAlerts();
+            updateVerificationRequests();
+            updateAgentOverview();
+        }
+
+        function updateSystemStatus() {
+            const statusText = document.getElementById('status-text');
+            const lastUpdate = document.getElementById('last-update');
+            
+            const isRunning = systemMetrics.isRunning || false;
+            const lastUpdateTime = systemMetrics.lastUpdate || new Date().toISOString();
+            
+            statusText.textContent = `System Status: ${isRunning ? 'Online' : 'Offline'}`;
+            statusText.className = `font-medium ${isRunning ? 'text-green-600' : 'text-red-600'}`;
+            
+            const updateTime = new Date(lastUpdateTime).toLocaleTimeString();
+            lastUpdate.textContent = `Last update: ${updateTime}`;
+        }
+
+        function updateMetrics() {
+            document.getElementById('total-activities').textContent = systemMetrics.totalActivities || 0;
+            document.getElementById('active-agents').textContent = systemMetrics.activeAgents || 0;
+            document.getElementById('total-agents').textContent = systemMetrics.totalAgents || 0;
+            document.getElementById('risk-alerts').textContent = hallucinationAlerts.length || 0;
+        }
+
+        function updateActivityFeed() {
+            const container = document.getElementById('activity-feed');
+            
+            if (activities.length === 0) {
+                container.innerHTML = '<div class="p-6 text-center text-gray-500">No recent activity</div>';
+                return;
+            }
+            
+            container.innerHTML = activities.map(activity => {
+                const riskClass = getRiskClass(activity.hallucinationCheck?.riskLevel || 'Low');
+                const timestamp = new Date(activity.timestamp).toLocaleTimeString();
+                
+                return `
+                    <div class="activity-card p-4 border-l-4 ${riskClass} hover:bg-gray-50">
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1">
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-medium text-gray-800">${activity.agentId}</span>
+                                    <span class="text-gray-500">•</span>
+                                    <span class="text-sm text-gray-600">${activity.action}</span>
+                                </div>
+                                <div class="mt-1 text-sm text-gray-600">
+                                    ${getOutputPreview(activity.outputData)}
+                                </div>
+                                <div class="mt-2 flex items-center space-x-4">
+                                    <span class="text-xs text-gray-500">${timestamp}</span>
+                                    <span class="text-xs px-2 py-1 rounded ${getRiskBadgeClass(activity.hallucinationCheck?.riskLevel || 'Low')}">
+                                        ${activity.hallucinationCheck?.riskLevel || 'Low'} Risk
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateHallucinationAlerts() {
+            const container = document.getElementById('hallucination-alerts');
+            
+            if (hallucinationAlerts.length === 0) {
+                container.innerHTML = '<div class="text-center text-gray-500">No alerts</div>';
+                return;
+            }
+            
+            container.innerHTML = hallucinationAlerts.map(alert => `
+                <div class="mb-3 p-3 bg-red-50 border border-red-200 rounded">
+                    <div class="font-medium text-red-800">${alert.agentId}</div>
+                    <div class="text-sm text-red-600">${alert.action}</div>
+                    <div class="text-xs text-red-500 mt-1">Score: ${(alert.compositeScore * 100).toFixed(0)}%</div>
+                </div>
+            `).join('');
+        }
+
+        function updateVerificationRequests() {
+            const container = document.getElementById('verification-requests');
+            
+            if (verificationRequests.length === 0) {
+                container.innerHTML = '<div class="text-center text-gray-500">No requests</div>';
+                return;
+            }
+            
+            container.innerHTML = verificationRequests.map(request => `
+                <div class="mb-3 p-3 bg-yellow-50 border border-yellow-200 rounded">
+                    <div class="font-medium text-yellow-800">${request.targetAgent}</div>
+                    <div class="text-sm text-yellow-600">${request.activity.action}</div>
+                    <div class="text-xs text-yellow-500 mt-1">Status: ${request.status}</div>
+                </div>
+            `).join('');
+        }
+
+        function updateAgentOverview() {
+            const container = document.getElementById('agent-overview');
+            
+            if (agents.length === 0) {
+                container.innerHTML = '<div class="text-center text-gray-500">No agents</div>';
+                return;
+            }
+            
+            container.innerHTML = agents.map(agent => `
+                <div class="mb-3 p-3 bg-gray-50 rounded">
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium text-gray-800">${agent.id}</span>
+                        <span class="text-xs px-2 py-1 rounded ${agent.lastSeen ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-600'}">
+                            ${agent.lastSeen ? 'Active' : 'Inactive'}
+                        </span>
+                    </div>
+                    <div class="text-sm text-gray-600 mt-1">Activities: ${agent.activityCount || 0}</div>
+                </div>
+            `).join('');
+        }
+
+        function getRiskClass(riskLevel) {
+            switch (riskLevel) {
+                case 'Low': return 'border-green-500';
+                case 'Medium': return 'border-yellow-500';
+                case 'High': return 'border-red-500';
+                case 'Critical': return 'border-red-700';
+                default: return 'border-gray-300';
+            }
+        }
+
+        function getRiskBadgeClass(riskLevel) {
+            switch (riskLevel) {
+                case 'Low': return 'bg-green-100 text-green-800';
+                case 'Medium': return 'bg-yellow-100 text-yellow-800';
+                case 'High': return 'bg-red-100 text-red-800';
+                case 'Critical': return 'bg-red-200 text-red-900';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+
+        function getOutputPreview(outputData) {
+            if (!outputData) return 'No output data';
+            try {
+                // Try to parse JSON
+                const data = JSON.parse(outputData);
+                if (data.message) return data.message;
+                if (data.success !== undefined) return data.success ? 'Success' : 'Failed';
+                return JSON.stringify(data).substring(0, 100) + '...';
+            } catch {
+                return String(outputData).substring(0, 100) + '...';
+            }
+        }
+
+        // Initialize
+        fetchData();
+        setInterval(fetchData, 3000); // Update every 3 seconds
+        
+        console.log('Dashboard initialized - fetching real data...');
+    </script>
+</body>
+</html>

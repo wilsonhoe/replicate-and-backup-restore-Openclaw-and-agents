@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "clawsec": {
+      "version": "1.0.0",
+      "installedAt": 1774706701365
+    },
+    "multi-search-engine": {
+      "version": "2.0.1",
+      "installedAt": 1774706882497
+    },
+    "self-improving-agent": {
+      "version": "3.0.10",
+      "installedAt": 1774715102004
+    }
+  }
+}

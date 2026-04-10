@@ -1,0 +1,14 @@
+#!/bin/bash
+# /plan - Implementation planning command
+
+echo "🎯 Planning Mode Activated"
+echo ""
+echo "Usage: Describe the feature you want to implement"
+echo ""
+echo "I'll create:"
+echo "  ✓ Step-by-step implementation plan"
+echo "  ✓ Dependency analysis"
+echo "  ✓ Risk assessment"
+echo "  ✓ Time estimates"
+echo ""
+echo "Start by describing what you want to build."

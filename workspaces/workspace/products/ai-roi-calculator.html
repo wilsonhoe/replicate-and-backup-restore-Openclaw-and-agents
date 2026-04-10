@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Automation ROI Calculator - Track Your Investment Returns</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .cover {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+        .cover h1 { font-size: 2.5em; margin-bottom: 15px; }
+        .cover .subtitle { font-size: 1.3em; opacity: 0.9; margin-bottom: 25px; }
+        .cover .price {
+            font-size: 2em;
+            font-weight: bold;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .section { margin-bottom: 50px; }
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        .input-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        .input-table th, .input-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .input-table th {
+            background: #667eea;
+            color: white;
+        }
+        .input-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .input-field {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .summary-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .summary-box h3 { margin-bottom: 20px; }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+        .summary-row:last-child { border-bottom: none; }
+        .cta {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .cta h2 { color: #667eea; margin-bottom: 20px; }
+        .highlight { color: #764ba2; font-weight: bold; }
+        @media print {
+            body { padding: 20px; }
+            .cover { background: #667eea; -webkit-print-color-adjust: exact; }
+            .input-table { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <h1>💰 AI Automation ROI Calculator</h1>
+        <div class="subtitle">Track Your Investment Returns</div>
+        <div class="price">FREE with Product Purchase</div>
+        <p style="margin-top: 20px; opacity: 0.9;">Calculate your exact savings and ROI</p>
+    </div>
+
+    <div class="section">
+        <h2>📊 Input Section - Your Current Costs</h2>
+        
+        <h3>1. Staff Costs (Monthly)</h3>
+        <table class="input-table">
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Hours/Week</th>
+                    <th>Hourly Rate</th>
+                    <th>Monthly Cost</th>
+                    <th>AI Automation %</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Content Creator</td>
+                    <td><input type="number" class="input-field" placeholder="0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>70-85%</td>
+                </tr>
+                <tr>
+                    <td>Marketing Assistant</td>
+                    <td><input type="number" class="input-field" placeholder="0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>75-90%</td>
+                </tr>
+                <tr>
+                    <td>Customer Service Rep</td>
+                    <td><input type="number" class="input-field" placeholder="0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>80-95%</td>
+                </tr>
+                <tr>
+                    <td>Virtual Assistant</td>
+                    <td><input type="number" class="input-field" placeholder="0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>85-95%</td>
+                </tr>
+                <tr>
+                    <td>Social Media Manager</td>
+                    <td><input type="number" class="input-field" placeholder="0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>75-85%</td>
+                </tr>
+                <tr style="font-weight: bold; background: #667eea; color: white;">
+                    <td>TOTAL STAFF COSTS</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>$_____</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>2. Tool/Service Costs (Monthly)</h3>
+        <table class="input-table">
+            <thead>
+                <tr>
+                    <th>Tool/Service</th>
+                    <th>Current Cost</th>
+                    <th>AI Alternative</th>
+                    <th>Potential Savings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Email Marketing Tool</td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$29-297</td>
+                    <td>$______</td>
+                </tr>
+                <tr>
+                    <td>Social Media Scheduling</td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$0-99</td>
+                    <td>$______</td>
+                </tr>
+                <tr>
+                    <td>SEO Tools</td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$0-89</td>
+                    <td>$______</td>
+                </tr>
+                <tr>
+                    <td>Design Tools</td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$0-60</td>
+                    <td>$______</td>
+                </tr>
+                <tr>
+                    <td>CRM</td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$0-300</td>
+                    <td>$______</td>
+                </tr>
+                <tr style="font-weight: bold; background: #667eea; color: white;">
+                    <td>TOTAL TOOL COSTS</td>
+                    <td>$_____</td>
+                    <td>-</td>
+                    <td>$_____</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3. Outsourcing Costs (Monthly)</h3>
+        <table class="input-table">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Current Cost</th>
+                    <th>AI Alternative</th>
+                    <th>Potential Savings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Content Writing</td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$20-100</td>
+                    <td>$______</td>
+                </tr>
+                <tr>
+                    <td>Graphic Design</td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$10-60</td>
+                    <td>$______</td>
+                </tr>
+                <tr>
+                    <td>Video Editing</td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$12-100</td>
+                    <td>$______</td>
+                </tr>
+                <tr>
+                    <td>Bookkeeping</td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$15-200</td>
+                    <td>$______</td>
+                </tr>
+                <tr style="font-weight: bold; background: #667eea; color: white;">
+                    <td>TOTAL OUTSOURCING</td>
+                    <td>$_____</td>
+                    <td>-</td>
+                    <td>$_____</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>4. Time Costs (Your Time)</h3>
+        <table class="input-table">
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Hours/Week</th>
+                    <th>Your Hourly Value</th>
+                    <th>Monthly Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Content Creation</td>
+                    <td><input type="number" class="input-field" placeholder="0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$______</td>
+                </tr>
+                <tr>
+                    <td>Email Management</td>
+                    <td><input type="number" class="input-field" placeholder="0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$______</td>
+                </tr>
+                <tr>
+                    <td>Social Media</td>
+                    <td><input type="number" class="input-field" placeholder="0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$______</td>
+                </tr>
+                <tr>
+                    <td>Customer Service</td>
+                    <td><input type="number" class="input-field" placeholder="0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$______</td>
+                </tr>
+                <tr>
+                    <td>Admin Tasks</td>
+                    <td><input type="number" class="input-field" placeholder="0"></td>
+                    <td><input type="number" class="input-field" placeholder="$0"></td>
+                    <td>$______</td>
+                </tr>
+                <tr style="font-weight: bold; background: #667eea; color: white;">
+                    <td>TOTAL TIME COSTS</td>
+                    <td>_____ hrs</td>
+                    <td>-</td>
+                    <td>$_____</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <h3>💰 Total Current Monthly Costs</h3>
+            <div class="summary-row">
+                <span>Staff Costs:</span>
+                <span>$_____</span>
+            </div>
+            <div class="summary-row">
+                <span>Tool Costs:</span>
+                <span>$_____</span>
+            </div>
+            <div class="summary-row">
+                <span>Outsourcing Costs:</span>
+                <span>$_____</span>
+            </div>
+            <div class="summary-row">
+                <span>Time Costs (Your Time):</span>
+                <span>$_____</span>
+            </div>
+            <div class="summary-row" style="font-size: 1.3em; font-weight: bold; margin-top: 15px; padding-top: 15px;">
+                <span>GRAND TOTAL:</span>
+                <span>$_____ per month</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📈 ROI Calculation</h2>
+        
+        <h3>Scenario A: Basic Automation (AI Playbook - $497)</h3>
+        <table class="input-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Before</th>
+                    <th>After</th>
+                    <th>Savings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Staff Hours</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs</td>
+                </tr>
+                <tr>
+                    <td>Tool Costs</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                </tr>
+                <tr>
+                    <td>Outsourcing</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                </tr>
+                <tr>
+                    <td>Your Time</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <h3>📊 Scenario A Results</h3>
+            <div class="summary-row">
+                <span>Monthly Savings:</span>
+                <span>$_____</span>
+            </div>
+            <div class="summary-row">
+                <span>Annual Savings:</span>
+                <span>$_____</span>
+            </div>
+            <div class="summary-row">
+                <span>Payback Period:</span>
+                <span>_____ months</span>
+            </div>
+            <div class="summary-row" style="font-weight: bold;">
+                <span>ROI First Year:</span>
+                <span>_____ %</span>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 30px;">Scenario B: Full System (AI CEO Platform - $2,997)</h3>
+        <table class="input-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Before</th>
+                    <th>After</th>
+                    <th>Savings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Staff Hours</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs</td>
+                </tr>
+                <tr>
+                    <td>Tool Costs</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                </tr>
+                <tr>
+                    <td>Outsourcing</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                </tr>
+                <tr>
+                    <td>Your Time</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <h3>📊 Scenario B Results</h3>
+            <div class="summary-row">
+                <span>Monthly Savings:</span>
+                <span>$_____</span>
+            </div>
+            <div class="summary-row">
+                <span>Annual Savings:</span>
+                <span>$_____</span>
+            </div>
+            <div class="summary-row">
+                <span>Payback Period:</span>
+                <span>_____ months</span>
+            </div>
+            <div class="summary-row" style="font-weight: bold;">
+                <span>ROI First Year:</span>
+                <span>_____ %</span>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 30px;">Scenario C: Enterprise Transformation ($4,997)</h3>
+        <table class="input-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Before</th>
+                    <th>After</th>
+                    <th>Savings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Staff Costs</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                </tr>
+                <tr>
+                    <td>Tool Costs</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                </tr>
+                <tr>
+                    <td>Outsourcing</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                    <td>$_____</td>
+                </tr>
+                <tr>
+                    <td>Your Time</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <h3>📊 Scenario C Results</h3>
+            <div class="summary-row">
+                <span>Monthly Savings:</span>
+                <span>$_____</span>
+            </div>
+            <div class="summary-row">
+                <span>Annual Savings:</span>
+                <span>$_____</span>
+            </div>
+            <div class="summary-row">
+                <span>Payback Period:</span>
+                <span>_____ months</span>
+            </div>
+            <div class="summary-row" style="font-weight: bold;">
+                <span>ROI First Year:</span>
+                <span>_____ %</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>⏱️ Time Savings Calculator</h2>
+        
+        <table class="input-table">
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Current Hours</th>
+                    <th>Automated Hours</th>
+                    <th>Hours Saved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Content Creation</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td>_____ hrs</td>
+                </tr>
+                <tr>
+                    <td>Email Management</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td>_____ hrs</td>
+                </tr>
+                <tr>
+                    <td>Social Media</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td>_____ hrs</td>
+                </tr>
+                <tr>
+                    <td>Customer Service</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td>_____ hrs</td>
+                </tr>
+                <tr>
+                    <td>Admin Tasks</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td>_____ hrs</td>
+                </tr>
+                <tr>
+                    <td>Reporting</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td><input type="number" class="input-field" placeholder="0"> hrs</td>
+                    <td>_____ hrs</td>
+                </tr>
+                <tr style="font-weight: bold; background: #667eea; color: white;">
+                    <td>TOTAL</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs</td>
+                    <td>_____ hrs/week</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <h3>⏱️ Time Savings Summary</h3>
+            <div class="summary-row">
+                <span>Weekly Time Saved:</span>
+                <span>_____ hours</span>
+            </div>
+            <div class="summary-row">
+                <span>Monthly Time Saved:</span>
+                <span>_____ hours</span>
+            </div>
+            <div class="summary-row">
+                <span>Annual Time Saved:</span>
+                <span>_____ hours</span>
+            </div>
+            <div class="summary-row" style="font-weight: bold;">
+                <span>Value of Time Saved:</span>
+                <span>$_____ (Your Hourly Rate × Hours Saved)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h2>🎯 Your Personalized ROI Report</h2>
+        <p style="font-size: 1.1em; margin-bottom: 25px;">This calculator is included with all product purchases</p>
+        
+        <div style="text-align: left; display: inline-block;">
+            <h3>What Your Report Includes:</h3>
+            <ul style="list-style: none; margin-top: 15px;">
+                <li>✅ <strong>Overall Score:</strong> X/100 automation readiness</li>
+                <li>✅ <strong>Time Savings:</strong> Projected hours/week saved</li>
+                <li>✅ <strong>Cost Savings:</strong> Projected annual savings</li>
+                <li>✅ <strong>Revenue Impact:</strong> Projected revenue increase</li>
+                <li>✅ <strong>Break-Even:</strong> When investment pays for itself</li>
+                <li>✅ <strong>Risk-Adjusted ROI:</strong> Conservative to optimistic projections</li>
+                <li>✅ <strong>Product Recommendation:</strong> Based on your costs and goals</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #667eea; color: white; border-radius: 10px;">
+            <p style="font-size: 1.3em; margin-bottom: 10px;"><strong>FREE with Any Product Purchase</strong></p>
+            <p style="opacity: 0.9;">Complete ROI analysis personalized to your business</p>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 50px; padding: 30px; background: #f8f9fa; border-radius: 10px;">
+        <p>© 2024 AI CEO Systems. All rights reserved.</p>
+        <p style="margin-top: 10px; color: #666;">
+            <strong>Support:</strong> support@aiceosystems.com | 
+            <strong>Community:</strong> discord.gg/ai-ceo
+        </p>
+    </footer>
+
+    <script>
+        // This would be a fully interactive Google Sheets-style calculator
+        // For PDF version, this serves as a template
+        console.log('ROI Calculator loaded');
+    </script>
+</body>
+</html>

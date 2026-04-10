@@ -1,0 +1,15 @@
+Title,Type,Content,Tags,Success Rate,Last Used,Source,Date,Impact,Context,Action Item
+Door Knocking Opener,🚪 Door Knocking Script,"Hi! I'm a property consultant helping homeowners in this area. I noticed some recent transactions and wanted to check if you might be considering a move?","HDB, First-time buyer",High,2025-03-28,,,,,
+Cold Call Script,☎️ Cold Call Script,"Hello, this is [name] from [agency]. I'm calling because I saw your property listing expired. Are you still looking to sell?","HDB, Condo",Medium,2025-03-25,,,,,
+Handling Price Objection,❌ Objection Handling,"I understand your concern about the price. Let me show you some recent comparable sales in this area to help set realistic expectations.","HDB, Condo, Landed",High,2025-04-02,,,,,
+Follow-up Email Template,📧 Follow-up Template,"Thank you for viewing the property today. As discussed, I've attached additional information about the unit and the neighborhood amenities.","HDB, Condo, EC",High,2025-04-04,,,,,
+Closing Script - OTP,🤝 Closing Script,"Based on our discussions, shall we proceed with the OTP? I'll prepare the documents and we can meet tomorrow to sign.","HDB, Condo",High,2025-03-30,,,,,
+Punggol Prices Rising,📈 Market Insight,Punggol resale prices increased 5% in Q1 2025 due to limited supply and strong demand from upgraders.,Punggol,High,,URA Data,2025-04-01,High,,
+New EC Launch - Anchorvale,📈 Market Insight,New EC launching at Anchorvale in Q3 2025. Expected to attract strong interest from HDB upgraders.,Sengkang,High,,Developer Announcement,2025-03-15,High,,
+HDB Resale Volume Up 12%,📈 Market Insight,HDB resale volume increased 12% in March compared to February. Market showing signs of recovery.,HDB,Medium,,HDB Report,2025-03-28,Medium,,
+Cooling Measure Impact,📈 Market Insight,Recent cooling measures have stabilized prices but transaction volumes remain healthy. Foreign buyer ABSD increased.,Market,High,,Gov.sg,2025-01-15,High,,
+Hougang MRT Extension,📈 Market Insight,Cross Island Line extension to Hougang announced. Completion expected 2030. Will boost property values.,Hougang,Medium,,LTA News,2025-02-20,Medium,,
+Follow up within 24 hours,💡 Lesson Learned,Quick follow-up within 24 hours increases conversion by 40% compared to 48+ hour delays.,Follow-up,High,,,2025-04-01,High,✅ What Worked,Implement 24h SLA for all lead follow-ups
+Door knocking evening better,💡 Lesson Learned,Evening door knocking (after 6pm) gets 3x more responses than afternoon sessions. People are home and relaxed.,Door Knocking,High,,,2025-03-28,High,💡 Insight,Schedule evening sessions 6-8pm
+Script too aggressive,💡 Lesson Learned,Soft opener works better than direct sales pitch. People are put off by aggressive approaches.,Sales,High,,,2025-03-25,High,❌ What Didn't,Use consultative approach not salesy
+Use CMA in first meeting,💡 Lesson Learned,Showing CMA data builds credibility immediately. Clients trust agents who show market knowledge.,Meetings,High,,,2025-03-20,High,✅ What Worked,Always prepare CMA before first meeting

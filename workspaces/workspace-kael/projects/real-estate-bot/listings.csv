@@ -1,0 +1,4 @@
+listing_id,city,title,price,currency,bedrooms,bathrooms,area_sqft,address,property_type,listing_date,source_url,contact_name,contact_phone,contact_email
+SIN20260405120626001,Singapore,2 Bedroom Condo in Singapore,850000,SGD,2,2,850,"Sample Address, Singapore",Condo,2026-04-05,https://www.propertyguru.com.sg/listing/12345,Sample Agent,+65 9123 4567,agent@example.com
+KUA20260405120626001,Kuala Lumpur,2 Bedroom Condo in Kuala Lumpur,850000,MYR,2,2,850,"Sample Address, Kuala Lumpur",Condo,2026-04-05,https://www.propertyguru.com.my/listing/12345,Sample Agent,+65 9123 4567,agent@example.com
+BAN20260405120626001,Bangkok,2 Bedroom Condo in Bangkok,850000,THB,2,2,850,"Sample Address, Bangkok",Condo,2026-04-05,https://www.ddproperty.com/listing/12345,Sample Agent,+65 9123 4567,agent@example.com

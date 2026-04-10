@@ -1,0 +1,138 @@
+{
+  "totalRevenue": 0,
+  "monthlyTarget": 1000,
+  "immediateTarget": 100,
+  "platforms": {
+    "gumroad": {
+      "status": "operational",
+      "products": 0,
+      "revenue": 0
+    },
+    "affiliate": {
+      "status": "operational",
+      "programs": 0,
+      "commissions": 0
+    },
+    "services": {
+      "status": "operational",
+      "services": 0,
+      "bookings": 0
+    }
+  },
+  "products": [
+    {
+      "name": "AI Automation Toolkit",
+      "description": "Complete guide to automating your business with AI",
+      "price": 47,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Passive Income Blueprint",
+      "description": "Step-by-step system for building passive income streams",
+      "price": 97,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Productivity Templates Pack",
+      "description": "Ready-to-use templates for maximum productivity",
+      "price": 27,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Online Business Starter Kit",
+      "description": "Everything you need to start an online business",
+      "price": 147,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "AI Automation Toolkit",
+      "description": "Complete guide to automating your business with AI",
+      "price": 47,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Passive Income Blueprint",
+      "description": "Step-by-step system for building passive income streams",
+      "price": 97,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Productivity Templates Pack",
+      "description": "Ready-to-use templates for maximum productivity",
+      "price": 27,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Online Business Starter Kit",
+      "description": "Everything you need to start an online business",
+      "price": 147,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "AI Automation Toolkit",
+      "description": "Complete guide to automating your business with AI",
+      "price": 47,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Passive Income Blueprint",
+      "description": "Step-by-step system for building passive income streams",
+      "price": 97,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Productivity Templates Pack",
+      "description": "Ready-to-use templates for maximum productivity",
+      "price": 27,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Online Business Starter Kit",
+      "description": "Everything you need to start an online business",
+      "price": 147,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "AI Automation Toolkit",
+      "description": "Complete guide to automating your business with AI",
+      "price": 47,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Passive Income Blueprint",
+      "description": "Step-by-step system for building passive income streams",
+      "price": 97,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Productivity Templates Pack",
+      "description": "Ready-to-use templates for maximum productivity",
+      "price": 27,
+      "platform": "gumroad",
+      "category": "digital-product"
+    },
+    {
+      "name": "Online Business Starter Kit",
+      "description": "Everything you need to start an online business",
+      "price": 147,
+      "platform": "gumroad",
+      "category": "digital-product"
+    }
+  ],
+  "createdAt": "2026-03-29T16:34:38.641Z",
+  "lastUpdated": "2026-03-30T01:00:00.022Z"
+}

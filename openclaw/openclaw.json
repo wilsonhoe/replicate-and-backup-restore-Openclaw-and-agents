@@ -1,0 +1,444 @@
+{
+  "agents": {
+    "defaults": {
+      "compaction": {
+        "memoryFlush": {
+          "enabled": true
+        },
+        "mode": "safeguard"
+      },
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "4h"
+      },
+      "contextTokens": 80000,
+      "elevatedDefault": "ask",
+      "imageMaxDimensionPx": 800,
+      "maxConcurrent": 4,
+      "memorySearch": {
+        "enabled": true,
+        "experimental": {
+          "sessionMemory": true
+        },
+        "fallback": "none",
+        "model": "nomic-embed-text:latest",
+        "provider": "ollama",
+        "sources": [
+          "memory",
+          "sessions"
+        ]
+      },
+      "model": {
+        "fallbacks": [
+          "ollama/kimi-k2.5:cloud",
+          "ollama/qwen3.5:cloud",
+          "ollama/glm-5:cloud"
+        ],
+        "primary": "ollama/glm-5.1:cloud"
+      },
+      "models": {
+        "ollama/glm-5.1:cloud": {
+          "alias": "glm51"
+        },
+        "ollama/kimi-k2.5:cloud": {
+          "alias": "kimi"
+        },
+        "ollama/qwen3.5:cloud": {
+          "alias": "qwen"
+        },
+        "ollama/glm-5:cloud": {
+          "alias": "glm"
+        },
+        "ollama/minimax-m2.7:cloud": {
+          "alias": "minimax"
+        }
+      },
+      "sandbox": {
+        "mode": "off",
+        "scope": "shared",
+        "workspaceAccess": "ro"
+      },
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "agentDir": "REDACTED_SET_FROM_ENV",
+        "id": "lisa",
+        "model": "ollama/glm-5.1:cloud",
+        "workspace": "REDACTED_SET_FROM_ENV"
+      },
+      {
+        "agentDir": "REDACTED_SET_FROM_ENV",
+        "id": "kael",
+        "model": "ollama/glm-5.1:cloud",
+        "workspace": "REDACTED_SET_FROM_ENV"
+      },
+      {
+        "agentDir": "REDACTED_SET_FROM_ENV",
+        "id": "nyx",
+        "model": "ollama/glm-5.1:cloud",
+        "workspace": "REDACTED_SET_FROM_ENV"
+      }
+    ]
+  },
+  "auth": {
+    "profiles": {
+      "ollama:default": {
+        "mode": "api_key",
+        "provider": "ollama"
+      },
+      "xai:default": {
+        "mode": "api_key",
+        "provider": "xai"
+      }
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "lisa",
+      "match": {
+        "accountId": "lisa",
+        "channel": "discord"
+      }
+    },
+    {
+      "agentId": "kael",
+      "match": {
+        "accountId": "kael",
+        "channel": "discord"
+      }
+    },
+    {
+      "agentId": "nyx",
+      "match": {
+        "accountId": "nyx",
+        "channel": "discord"
+      }
+    },
+    {
+      "agentId": "lisa",
+      "match": {
+        "accountId": "default",
+        "channel": "telegram"
+      }
+    }
+  ],
+  "channels": {
+    "discord": {
+      "accounts": {
+        "kael": {
+          "token": "REDACTED_SET_FROM_ENV"
+        },
+        "lisa": {
+          "token": "REDACTED_SET_FROM_ENV"
+        },
+        "nyx": {
+          "token": "REDACTED_SET_FROM_ENV"
+        },
+        "default": {
+          "groupPolicy": "allowlist"
+        }
+      },
+      "enabled": true,
+      "guilds": {
+        "*": {}
+      }
+    },
+    "telegram": {
+      "allowFrom": [
+        507276036
+      ],
+      "tokenFile": "REDACTED_SET_FROM_ENV",
+      "dmPolicy": "allowlist",
+      "enabled": true,
+      "groupPolicy": "allowlist",
+      "streaming": {
+        "mode": "partial"
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "ownerDisplay": "raw",
+    "restart": true
+  },
+  "gateway": {
+    "auth": {
+      "mode": "token",
+      "token": "REDACTED_SET_FROM_ENV"
+    },
+    "bind": "lan",
+    "mode": "local",
+    "port": 18789,
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowedOrigins": [
+        "http://localhost:18789",
+        "http://127.0.0.1:18789"
+      ]
+    }
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "bootstrap-extra-files": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "proactive-agent": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "meta": {
+    "lastTouchedAt": "2026-04-10T17:18:34.894Z",
+    "lastTouchedVersion": "2026.4.9"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "ollama": {
+        "api": "ollama",
+        "apiKey": "ollama-local",
+        "baseUrl": "http://127.0.0.1:11434",
+        "models": [
+          {
+            "contextWindow": 262144,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "glm-5.1:cloud",
+            "input": [
+              "text",
+              "image"
+            ],
+            "maxTokens": 8192,
+            "name": "glm-5.1:cloud",
+            "reasoning": true
+          },
+          {
+            "contextWindow": 262144,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "kimi-k2.5:cloud",
+            "input": [
+              "text",
+              "image"
+            ],
+            "maxTokens": 8192,
+            "name": "kimi-k2.5:cloud",
+            "reasoning": true
+          },
+          {
+            "contextWindow": 262144,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "qwen3.5:cloud",
+            "input": [
+              "text",
+              "image"
+            ],
+            "maxTokens": 8192,
+            "name": "qwen3.5:cloud",
+            "reasoning": true
+          },
+          {
+            "contextWindow": 202752,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "glm-5:cloud",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "glm-5:cloud",
+            "reasoning": true
+          },
+          {
+            "contextWindow": 204800,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "minimax-m2.7:cloud",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "minimax-m2.7:cloud",
+            "reasoning": true
+          }
+        ]
+      }
+    }
+  },
+  "plugins": {
+    "allow": [
+      "telegram",
+      "openclaw-web-search",
+      "browser",
+      "discord",
+      "ollama",
+      "memory-wiki"
+    ],
+    "entries": {
+      "browser": {
+        "enabled": true
+      },
+      "discord": {
+        "enabled": true
+      },
+      "openclaw-web-search": {
+        "enabled": true
+      },
+      "telegram": {
+        "enabled": true
+      },
+      "ollama": {
+        "enabled": true
+      },
+      "memory-wiki": {
+        "enabled": true,
+        "config": {
+          "vaultMode": "bridge",
+          "vault": {
+            "path": "REDACTED_SET_FROM_ENV",
+            "renderMode": "obsidian"
+          },
+          "obsidian": {
+            "enabled": false,
+            "useOfficialCli": false
+          },
+          "bridge": {
+            "enabled": true,
+            "readMemoryArtifacts": true,
+            "indexDreamReports": true,
+            "indexDailyNotes": true,
+            "indexMemoryRoot": true,
+            "followMemoryEvents": true
+          },
+          "ingest": {
+            "autoCompile": true,
+            "maxConcurrentJobs": 1,
+            "allowUrlIngest": true
+          },
+          "search": {
+            "backend": "shared",
+            "corpus": "all"
+          },
+          "context": {
+            "includeCompiledDigestPrompt": true
+          },
+          "render": {
+            "preserveHumanBlocks": true,
+            "createBacklinks": true,
+            "createDashboards": true
+          }
+        }
+      }
+    },
+    "installs": {
+      "openclaw-web-search": {
+        "installPath": "REDACTED_SET_FROM_ENV",
+        "source": "npm",
+        "spec": "REDACTED_SET_FROM_ENV",
+        "version": "0.2.2",
+        "resolvedName": "REDACTED_SET_FROM_ENV",
+        "resolvedVersion": "0.2.2",
+        "resolvedSpec": "REDACTED_SET_FROM_ENV",
+        "integrity": "REDACTED_SET_FROM_ENV",
+        "shasum": "REDACTED_SET_FROM_ENV",
+        "resolvedAt": "2026-04-10T17:18:32.832Z",
+        "installedAt": "2026-04-10T17:18:33.766Z"
+      }
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "skills": {
+    "entries": {
+      "gh-issues": {
+        "apiKey": "REDACTED_SET_FROM_ENV"
+      },
+      "goplaces": {
+        "apiKey": "REDACTED_SET_FROM_ENV"
+      },
+      "notion": {
+        "apiKey": "REDACTED_SET_FROM_ENV"
+      },
+      "openai-whisper-api": {
+        "apiKey": "REDACTED_SET_FROM_ENV"
+      }
+    },
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "tools": {
+    "agentToAgent": {
+      "enabled": true
+    },
+    "allow": [
+      "*"
+    ],
+    "elevated": {
+      "enabled": true
+    },
+    "exec": {},
+    "profile": "full",
+    "sessions": {
+      "visibility": "all"
+    },
+    "web": {
+      "fetch": {
+        "enabled": false
+      },
+      "search": {
+        "enabled": false
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-09T12:03:49.779Z",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local",
+    "lastRunVersion": "2026.4.8"
+  }
+}

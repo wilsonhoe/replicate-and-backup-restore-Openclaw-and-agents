@@ -1,0 +1,47 @@
+{
+  "totalRevenue": 0,
+  "monthlyTarget": 1000,
+  "currentMonth": "2026-03",
+  "dailyRevenue": {},
+  "revenueSources": {},
+  "automationMetrics": {
+    "tasksCompleted": 0,
+    "leadsGenerated": 22,
+    "contentCreated": 5,
+    "conversions": 0
+  },
+  "gumroadStatus": {
+    "accountActive": true,
+    "productsUploaded": 0,
+    "paymentConfigured": false,
+    "readyForSales": false
+  },
+  "productsReady": [
+    {
+      "name": "AI Business Assessment Quiz",
+      "price": 97,
+      "file": "ai-business-assessment-quiz.pdf",
+      "status": "file_ready"
+    },
+    {
+      "name": "AI Automation Playbook", 
+      "price": 497,
+      "file": "ai-automation-playbook.pdf",
+      "status": "file_ready"
+    },
+    {
+      "name": "AI CEO Technical Setup Guide",
+      "price": 2997,
+      "file": "ai-ceo-technical-setup-guide.pdf", 
+      "status": "file_ready"
+    },
+    {
+      "name": "AI CEO Complete Bundle",
+      "price": 2997,
+      "file": "ai-ceo-complete-bundle.zip",
+      "status": "file_ready"
+    }
+  ],
+  "createdAt": "2026-03-29T15:45:22.800Z",
+  "lastUpdated": "2026-04-04T02:04:00.000Z"
+}

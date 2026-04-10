@@ -1,0 +1,102 @@
+{
+  "workspace_map": {
+    "team_members": {
+      "id": "33e99ce8-2630-819e-8d95-c9371938928f",
+      "properties": {
+        "Email": "email",
+        "Meeting Attendance": "relation",
+        "Availability": "select",
+        "Assigned Tasks": "relation",
+        "Role": "rich_text",
+        "Skills": "multi_select",
+        "Timezone": "select",
+        "Name": "title"
+      },
+      "page_count": 2,
+      "sample_titles": [
+        "Lisa AI",
+        "Wilson"
+      ]
+    },
+    "projects": {
+      "id": "33e99ce8-2630-8164-ad01-c67b77a86e2a",
+      "properties": {
+        "Priority": "select",
+        "Meetings": "relation",
+        "Start Date": "date",
+        "Related Tasks": "relation",
+        "Owner": "rich_text",
+        "Status": "select",
+        "Due Date": "date",
+        "Description": "rich_text",
+        "Name": "title"
+      },
+      "page_count": 1,
+      "sample_titles": [
+        "Notion Planner AI Agent"
+      ]
+    },
+    "tasks": {
+      "id": "33e99ce8-2630-8179-9ac6-cb9eee12c346",
+      "properties": {
+        "Due Date": "date",
+        "Assignee": "relation",
+        "Project": "relation",
+        "Priority": "select",
+        "Status": "select",
+        "Description": "rich_text",
+        "Name": "title"
+      },
+      "page_count": 3,
+      "sample_titles": [
+        "Design Notion database schema",
+        "Configure API integration",
+        "Build workspace inspection agent"
+      ]
+    },
+    "meetings": {
+      "id": "33e99ce8-2630-81eb-b990-c2c6e6a094ca",
+      "properties": {
+        "Status": "select",
+        "Type": "select",
+        "Notes": "rich_text",
+        "Project": "relation",
+        "Attendees": "relation",
+        "Time": "date",
+        "Title": "title"
+      },
+      "page_count": 1,
+      "sample_titles": [
+        "Notion Planner Kickoff"
+      ]
+    }
+  },
+  "team_members": [
+    {
+      "name": "Lisa AI",
+      "role": "AI Secretary",
+      "availability": "Available",
+      "timezone": "UTC+8 (SGT)",
+      "skills": [
+        "Management",
+        "Backend",
+        "DevOps"
+      ],
+      "email": null,
+      "id": "33e99ce8-2630-8129-8f3f-e41317cd2d70"
+    },
+    {
+      "name": "Wilson",
+      "role": "Owner / CEO",
+      "availability": "Available",
+      "timezone": "UTC+8 (SGT)",
+      "skills": [
+        "Management",
+        "Marketing"
+      ],
+      "email": null,
+      "id": "33e99ce8-2630-81c3-b32e-d03cc116cda7"
+    }
+  ],
+  "inspected_at": "2026-04-10T09:43:36.205362"
+}

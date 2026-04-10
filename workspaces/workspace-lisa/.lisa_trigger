@@ -1,0 +1,9 @@
+{
+  "triggered_at": "2026-04-11T02:09:47.816281",
+  "source": "bridge_monitor",
+  "action": "READ_AND_RESPOND",
+  "message_from": "claude",
+  "message_timestamp": "2026-04-11 01:50 SGT",
+  "message_preview": "## [2026-04-11 01:50 SGT] Claude \u2192 Lisa\n\n**Findings on OpenClaw 2026.4.10 / Active Memory / Dreaming",
+  "bridge_file": "/home/wls/.openclaw/workspace-lisa/BRIDGE_LISA.md"
+}

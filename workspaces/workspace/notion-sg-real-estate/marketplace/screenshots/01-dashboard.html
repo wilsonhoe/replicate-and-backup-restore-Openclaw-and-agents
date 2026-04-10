@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f7f6f3;
+  padding: 40px;
+}
+.notion-page {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.icon { font-size: 64px; margin-bottom: 16px; }
+h1 { font-size: 32px; font-weight: 600; color: #37352f; margin-bottom: 8px; }
+.subtitle { color: #6b6b6b; font-size: 14px; margin-bottom: 32px; }
+.kpi-section {
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 32px;
+  border-left: 4px solid #2eaadc;
+}
+.kpi-title { font-size: 14px; font-weight: 600; color: #37352f; margin-bottom: 12px; text-transform: uppercase; }
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.kpi-item { text-align: center; }
+.kpi-value { font-size: 24px; font-weight: 700; color: #37352f; }
+.kpi-label { font-size: 12px; color: #6b6b6b; margin-top: 4px; }
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #37352f;
+  margin: 32px 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.database-view {
+  border: 1px solid #e3e2e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.view-header {
+  background: #f9f8f6;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e3e2e0;
+  font-weight: 600;
+  color: #37352f;
+}
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+}
+.table-row:hover { background: #f9f8f6; }
+.table-header {
+  background: #f9f8f6;
+  font-weight: 600;
+  font-size: 12px;
+  color: #6b6b6b;
+  text-transform: uppercase;
+}
+.hot-badge {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-block;
+}
+.status-badge {
+  background: #dbeafe;
+  color: #2563eb;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-block;
+}
+.pipeline-bar {
+  height: 8px;
+  background: #e3e2e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.pipeline-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2eaadc, #10b981);
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<div class="notion-page">
+  <div class="icon">🏠</div>
+  <h1>SG Property Pro Dashboard</h1>
+  <p class="subtitle">Singapore Real Estate CRM — Last updated: Today at 9:30 AM</p>
+
+  <div class="kpi-section">
+    <div class="kpi-title">📊 Key Performance Indicators</div>
+    <div class="kpi-grid">
+      <div class="kpi-item">
+        <div class="kpi-value">10</div>
+        <div class="kpi-label">Active Leads</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value">$189K</div>
+        <div class="kpi-label">Pipeline Value</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value">$142K</div>
+        <div class="kpi-label">Weighted Pipeline</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value">4</div>
+        <div class="kpi-label">Follow-ups Due</div>
+      </div>
+    </div>
+    <div class="pipeline-bar">
+      <div class="pipeline-fill" style="width: 75%;"></div>
+    </div>
+    <p style="font-size: 12px; color: #6b6b6b; margin-top: 8px;">75% to monthly target ($250K)</p>
+  </div>
+
+  <div class="section-title">🔥 Hot Leads (Follow-up Today)</div>
+  <div class="database-view">
+    <div class="table-row table-header">
+      <div>Name</div>
+      <div>Status</div>
+      <div>Priority</div>
+      <div>Next Follow-up</div>
+      <div>Interest</div>
+    </div>
+    <div class="table-row">
+      <div style="font-weight: 500;">Tan Wei Ming</div>
+      <div><span class="status-badge">💰 Offer Made</span></div>
+      <div><span class="hot-badge">🔥 Hot</span></div>
+      <div style="color: #dc2626; font-weight: 500;">Today</div>
+      <div>🏢 HDB</div>
+    </div>
+    <div class="table-row">
+      <div style="font-weight: 500;">Lim Shu Qi</div>
+      <div><span class="status-badge">👀 Viewing</span></div>
+      <div><span class="hot-badge">🔥 Hot</span></div>
+      <div style="color: #dc2626; font-weight: 500;">Tomorrow</div>
+      <div>🏠 Condo</div>
+    </div>
+    <div class="table-row">
+      <div style="font-weight: 500;">Chen Jia Hao</div>
+      <div><span class="status-badge">📝 OTP Issued</span></div>
+      <div><span class="hot-badge">🔥 Hot</span></div>
+      <div>Apr 10</div>
+      <div>🏢 HDB</div>
+    </div>
+  </div>
+
+  <div class="section-title">💼 Active Deals Pipeline</div>
+  <div class="database-view">
+    <div class="table-row table-header">
+      <div>Deal</div>
+      <div>Stage</div>
+      <div>Est. Commission</div>
+      <div>Probability</div>
+      <div>Expected Close</div>
+    </div>
+    <div class="table-row">
+      <div style="font-weight: 500;">Tan Wei Ming — Punggol</div>
+      <div><span class="status-badge">💰 Offer Made</span></div>
+      <div style="font-weight: 600; color: #059669;">$13,000</div>
+      <div>75%</div>
+      <div>Jun 15, 2025</div>
+    </div>
+    <div class="table-row">
+      <div style="font-weight: 500;">Chen Jia Hao — Hougang</div>
+      <div><span class="status-badge">📝 OTP Issued</span></div>
+      <div style="font-weight: 600; color: #059669;">$11,600</div>
+      <div>90%</div>
+      <div>May 15, 2025</div>
+    </div>
+    <div class="table-row">
+      <div style="font-weight: 500;">Ng Kok Peng — Serangoon</div>
+      <div><span class="status-badge">📋 Resale Application</span></div>
+      <div style="font-weight: 600; color: #059669;">$28,000</div>
+      <div>75%</div>
+      <div>Aug 1, 2025</div>
+    </div>
+  </div>
+
+  <div class="section-title">🚇 NEL Zone Activity Summary</div>
+  <div class="database-view">
+    <div class="table-row table-header">
+      <div>Area</div>
+      <div>Leads</div>
+      <div>Activities</div>
+      <div>Deals</div>
+      <div>Trend</div>
+    </div>
+    <div class="table-row">
+      <div style="font-weight: 500;">🚇 Punggol</div>
+      <div>4</div>
+      <div>3</div>
+      <div>2</div>
+      <div style="color: #059669;">📈 Up</div>
+    </div>
+    <div class="table-row">
+      <div style="font-weight: 500;">🚇 Sengkang</div>
+      <div>3</div>
+      <div>2</div>
+      <div>1</div>
+      <div>→ Stable</div>
+    </div>
+    <div class="table-row">
+      <div style="font-weight: 500;">🚇 Hougang</div>
+      <div>2</div>
+      <div>2</div>
+      <div>1</div>
+      <div style="color: #059669;">📈 Up</div>
+    </div>
+    <div class="table-row">
+      <div style="font-weight: 500;">🚇 Serangoon</div>
+      <div>1</div>
+      <div>1</div>
+      <div>—</div>
+      <div>→ Stable</div>
+    </div>
+  </div>
+
+  <div class="section-title">⚡ Quick Actions</div>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+    <div style="background: #f4f4f4; padding: 16px; border-radius: 8px; border-left: 3px solid #2eaadc;">
+      <div style="font-weight: 600; color: #37352f;">➕ Add New Lead</div>
+      <div style="font-size: 13px; color: #6b6b6b; margin-top: 4px;">Create a new lead entry</div>
+    </div>
+    <div style="background: #f4f4f4; padding: 16px; border-radius: 8px; border-left: 3px solid #10b981;">
+      <div style="font-weight: 600; color: #37352f;">📝 Log Activity</div>
+      <div style="font-size: 13px; color: #6b6b6b; margin-top: 4px;">Track door knocking, calls, viewings</div>
+    </div>
+    <div style="background: #f4f4f4; padding: 16px; border-radius: 8px; border-left: 3px solid #f59e0b;">
+      <div style="font-weight: 600; color: #37352f;">🏠 Add Property</div>
+      <div style="font-size: 13px; color: #6b6b6b; margin-top: 4px;">New listing to track</div>
+    </div>
+    <div style="background: #f4f4f4; padding: 16px; border-radius: 8px; border-left: 3px solid #8b5cf6;">
+      <div style="font-weight: 600; color: #37352f;">💼 Create Deal</div>
+      <div style="font-size: 13px; color: #6b6b6b; margin-top: 4px;">Link lead to property</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "updated": "2026-04-09",
+  "model": {
+    "name": "Wilson",
+    "communication_style": "direct",
+    "detail_preference": "high",
+    "decision_making": "fast",
+    "risk_tolerance": "moderate",
+    "work_hours": {
+      "active_start": "08:00",
+      "active_end": "23:00",
+      "timezone": "Asia/Singapore",
+      "do_not_disturb": ["23:00-08:00"]
+    },
+    "preferences": {
+      "formatting": "structured_bullets",
+      "channel": "telegram",
+      "language": "english",
+      "avoid": ["fluff", "generic_advice", "theory_without_action"]
+    },
+    "domain_expertise": {
+      "real_estate": 0.95,
+      "stocks": 0.85,
+      "crypto": 0.80,
+      "automation": 0.70,
+      "digital_products": 0.50
+    },
+    "priority_weights": {
+      "revenue_generation": 0.90,
+      "automation": 0.85,
+      "scalability": 0.80,
+      "speed": 0.75,
+      "cost_efficiency": 0.70
+    },
+    "observed_patterns": [],
+    "decision_history": []
+  }
+}

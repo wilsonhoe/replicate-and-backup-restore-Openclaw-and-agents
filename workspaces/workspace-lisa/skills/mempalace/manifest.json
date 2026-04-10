@@ -1,0 +1,42 @@
+{
+  "name": "mempalace",
+  "version": "1.0.0",
+  "description": "Structured, queryable knowledge base with relationships for all agents (32,812+ drawers)",
+  "author": "Lisa (AI CEO)",
+  "license": "MIT",
+  "commands": [
+    "status",
+    "search",
+    "kg-query",
+    "kg-add",
+    "kg-invalidate",
+    "kg-timeline",
+    "kg-stats",
+    "add-drawer",
+    "delete-drawer",
+    "list-wings",
+    "list-rooms",
+    "traverse",
+    "find-tunnels",
+    "graph-stats",
+    "diary-write",
+    "diary-read",
+    "check-duplicate",
+    "get-taxonomy",
+    "get-aaak-spec"
+  ],
+  "cli_path": "/home/wls/.openclaw/scripts/mempalace_cli.py",
+  "use_cases": [
+    "Store validated opportunities with confidence scores",
+    "Track agent relationships (Lisa ↔ Nyx ↔ Kael)",
+    "Diary entries for revenue milestones and decisions",
+    "Knowledge graph of income generation patterns",
+    "Revenue tracking with timestamps and outcomes"
+  ],
+  "recommended_wings": ["revenue", "agents", "marketing", "research"],
+  "success_count": 0,
+  "failure_count": 0,
+  "use_count": 0,
+  "needs_revision": false,
+  "created": "2026-04-10T00:25:00+08:00"
+}

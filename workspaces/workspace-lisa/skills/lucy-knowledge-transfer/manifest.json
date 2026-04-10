@@ -1,0 +1,16 @@
+{
+  "name": "lucy-knowledge-transfer",
+  "version": "1.0",
+  "category": "agent-replication",
+  "created": "2026-04-09T13:15:00Z",
+  "last_used": "2026-04-09T13:15:00Z",
+  "use_count": 1,
+  "success_count": 0,
+  "failure_count": 0,
+  "success_rate": null,
+  "needs_revision": false,
+  "tags": ["agent-replication", "backup", "macos", "multi-agent"],
+  "tools": ["python3", "zip", "openclaw", "npm", "brew"],
+  "source": "manual-creation",
+  "description": "Replicate Lisa's OpenClaw agent infrastructure to a new Lucy agent on Mac Studio. Creates a complete replication package including scripts, configs, templates, and setup instructions."
+}

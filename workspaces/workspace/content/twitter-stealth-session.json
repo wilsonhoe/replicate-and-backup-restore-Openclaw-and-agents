@@ -1,0 +1,155 @@
+{
+  "cookies": [
+    {
+      "name": "guest_id_marketing",
+      "value": "v1%3A177498009537304757",
+      "domain": ".x.com",
+      "path": "/",
+      "expires": 1809540098.90484,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "guest_id_ads",
+      "value": "v1%3A177498009537304757",
+      "domain": ".x.com",
+      "path": "/",
+      "expires": 1809540098.905295,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "guest_id",
+      "value": "v1%3A177498009537304757",
+      "domain": ".x.com",
+      "path": "/",
+      "expires": 1809540095.524625,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "NjdNTBI_Iwt4Ba66boL_.8TNjV6DQdaDXLg74MQ3fHw-1774980095.2704995-1.0.1.1-Jv4a6yn9wk1eW6aU0tHc.sAYNup0y8m30F6hFJlDAW9jUiISd7oiciRLuJI51sVpZER3Q3XaEKD_pojcTEUdzWLhUzTD.BHCHSyRdJGbG9xcyPJ7FJ3azJxy55uL8WuV",
+      "domain": ".x.com",
+      "path": "/",
+      "expires": 1774981895.524774,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "personalization_id",
+      "value": "\"v1_Se3CT/syIxrB7F2ZU6edqg==\"",
+      "domain": ".x.com",
+      "path": "/",
+      "expires": 1809540098.905593,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "gt",
+      "value": "2039040437621535042",
+      "domain": ".x.com",
+      "path": "/",
+      "expires": 1774989098.905886,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cuid",
+      "value": "160680b97d6a4294ad7d628a6e73a2ad",
+      "domain": ".x.com",
+      "path": "/",
+      "expires": 1809540104,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "att",
+      "value": "1-OwMaHk6bOw9L9MRAFasPnH9uQtXF4WR3p8p4DqnR",
+      "domain": ".x.com",
+      "path": "/",
+      "expires": 1775066510.076508,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "guest_id_marketing",
+      "value": "v1%3A177498011027185335",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1809540110.332687,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "guest_id_ads",
+      "value": "v1%3A177498011027185335",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1809540110.332844,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "personalization_id",
+      "value": "\"v1_iiGlSzP2J2WwWQy1KcV9LQ==\"",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1809540110.333074,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "guest_id",
+      "value": "v1%3A177498011027185335",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1809540110.333167,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "g_state",
+      "value": "{\"i_l\":0,\"i_ll\":1774980114014,\"i_b\":\"JsXmFbEsT2F2xlNHfKfuOYitLC/unnQrsow3YIE2WZ4\",\"i_e\":{\"enable_itp_optimization\":0}}",
+      "domain": "x.com",
+      "path": "/",
+      "expires": 1790532114,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "NID",
+      "value": "530=skNLpSi3T5_W-GH5_b2AJvwXf8KMXCMt_IY-0Ksj8VFKai4IFL2SbYsRvCugHdnn2iY3aGX4DLZG-8Ybl8QLL7gjgpNI98dWHZ_Bqx9FRUT6erGV3U64yln_dJ_UgF7552XQmew5N2GqMvgACXF6cdJXyj_7F-P90wO08K_q-ttUOUf86ooa7TuPeWYJZ8pgFakz-WI75LfYLQtxZQ",
+      "domain": ".google.com",
+      "path": "/",
+      "expires": 1790791313.109305,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://x.com",
+      "localStorage": [
+        {
+          "name": "__cuid",
+          "value": "160680b97d6a4294ad7d628a6e73a2ad"
+        }
+      ]
+    }
+  ]
+}

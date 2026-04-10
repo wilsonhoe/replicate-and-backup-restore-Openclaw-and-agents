@@ -1,0 +1,15 @@
+#!/bin/bash
+# /code-review - Code quality review command
+
+echo "🔍 Code Review Mode"
+echo ""
+echo "Usage: /code-review [file-or-directory]"
+echo ""
+echo "I'll check:"
+echo "  ✓ Logic correctness"
+echo "  ✓ Security vulnerabilities"
+echo "  ✓ Performance issues"
+echo "  ✓ Test coverage"
+echo "  ✓ Code style"
+echo ""
+echo "Provide files to review or I'll review recent changes."

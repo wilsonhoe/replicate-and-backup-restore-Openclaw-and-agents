@@ -1,0 +1,64 @@
+CRON JOB FIX RECOMMENDATIONS
+Date: Thursday, April 2nd, 2026 — 3:21 PM (Asia/Singapore)
+
+ISSUE IDENTIFIED:
+Multiple cron jobs failing with "Telegram recipient @heartbeat could not be resolved to a numeric chat ID"
+This indicates the Telegram target "@heartbeat" cannot be resolved to a numeric chat ID.
+
+AFFECTED JOBS:
+1. ID: 45f23315-9530-4c43-aaa3-98477d7a5449 (Analytics Agent - Lisa Performance Monitor)
+2. ID: b505d47f-2b0f-4057-bf64-ff6475ab2793 (gateway-cpu-guard)  
+3. ID: 138f75da-7893-4a0f-8464-3b64155a441e (Lisa Agent - Bridge Communication Optimization)
+4. ID: 119b7592-ef26-4e80-a993-35a78923fa03 (Lisa Agent - Daily Performance Review)
+
+ROOT CAUSE:
+The "@heartbeat" target appears to be a username or tag that needs to be resolved to a numeric Telegram chat ID, but the resolution is failing.
+
+RECOMMENDED FIXES:
+
+Option 1: Replace @heartbeat with actual numeric chat ID
+- Find the correct numeric chat ID for the intended recipient
+- Update the payload.text or delivery.target fields with the numeric ID
+- Example: Change "@heartbeat" to "123456789" (actual chat ID)
+
+Option 2: Use proper session targeting instead of external Telegram
+- For internal monitoring, change delivery.mode to "none" instead of "announce"
+- Or change sessionTarget to "current" or "main" for internal processing
+- Only use external messaging when actually needed for notifications
+
+Option 3: Fix the target resolution mechanism
+- Ensure the Telegram bot has proper access to resolve the @handle
+- Check if the bot is in the correct group/channel
+- Verify the target exists and is accessible to the bot
+
+SPECIFIC ACTIONS:
+
+For job 45f23315-9530-4c43-aaa3-98477d7a5449:
+- Current payload: "Run analytics optimization agent monitoring for Lisa agent performance improvement..."
+- Since this is internal monitoring, consider changing delivery.mode from "announce" to "none"
+- Or find the correct chat ID for internal notifications
+
+For job b505d47f-2b0f-4057-bf64-ff6475ab2793:
+- CPU guard script - likely should run internally without Telegram notification
+- Consider changing to sessionTarget: "current" and delivery.mode: "none"
+
+For job 138f75da-7893-4a0f-8464-3b64155a441e:
+- Bridge communication optimization - may need actual Telegram notification
+- Find correct chat ID for bridge communications
+
+For job 119b7592-ef26-4e80-a993-35a78923fa03:
+- Daily performance review - internal monitoring
+- Change to internal delivery mode
+
+IMPLEMENTATION STEPS:
+1. Identify the correct numeric chat IDs for any needed external notifications
+2. Update each affected job using cron update action
+3. Test one job at a time to verify the fix works
+4. Monitor for recurrence of the error
+
+VERIFICATION:
+After fixing, check:
+- Job runs complete successfully
+- No more "Telegram recipient" errors in job history
+- Internal monitoring still functions correctly
+- External notifications (if needed) work properly

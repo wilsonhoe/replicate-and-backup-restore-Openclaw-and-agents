@@ -1,0 +1,6 @@
+name,phone,email,budget,property_interest,source,scraped_date,status
+John Smith,555-0123,john@example.com,450000,3BR House in Austin,scraper,2026-04-06T07:00:00,New
+Sarah Johnson,555-0456,sarah@example.com,320000,2BR Condo in Dallas,scraper,2026-04-06T07:00:00,New
+Mike Davis,555-0789,mike@example.com,280000,Apartment in Houston,scraper,2026-04-06T07:00:00,New
+Emily Wilson,555-0321,emily@example.com,550000,4BR House in Austin,scraper,2026-04-06T07:00:00,New
+David Brown,555-0654,david@example.com,410000,3BR House in San Antonio,scraper,2026-04-06T07:00:00,New

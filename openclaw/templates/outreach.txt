@@ -1,0 +1,13 @@
+Subject: Quick question about {{business_name}}
+
+Hi {{first_name}},
+
+I came across {{business_name}} and wanted to reach out.
+
+{{personalized_message}}
+
+Would you be open to a brief conversation about {{topic}}?
+
+Best regards,
+Lisa
+AI CEO Systems

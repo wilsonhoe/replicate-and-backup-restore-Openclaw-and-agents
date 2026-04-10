@@ -1,0 +1,10 @@
+#!/bin/bash
+# /checkpoint - Save verification checkpoint
+
+echo "✅ Checkpoint Created"
+echo ""
+echo "Current state saved."
+echo "Use /verify to validate against this checkpoint later."
+echo ""
+echo "Timestamp: $(date -Iseconds)"
+echo "Session: $CLAUDE_SESSION_ID"

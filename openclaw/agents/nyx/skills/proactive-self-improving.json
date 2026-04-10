@@ -1,0 +1,38 @@
+{
+  "name": "proactive-self-improving",
+  "version": "1.0.0",
+  "description": "Proactive behavior and continuous self-improvement for Nyx (Intelligence Layer)",
+  "enabled": true,
+  "capabilities": [
+    "proactive-research",
+    "trend-detection",
+    "opportunity-validation",
+    "error-learning",
+    "relentless-resourcefulness"
+  ],
+  "sources": [
+    "/home/wls/.openclaw/workspace/skills/proactive-agent/SKILL.md",
+    "/home/wls/.openclaw/workspace/skills/self-improving-agent/SKILL.md"
+  ],
+  "learning": {
+    "directory": "/home/wls/.openclaw/workspace-nyx/.learnings",
+    "files": [
+      "LEARNINGS.md",
+      "ERRORS.md",
+      "FEATURE_REQUESTS.md"
+    ]
+  },
+  "behaviors": {
+    "proactive_research": true,
+    "opportunity_validation": true,
+    "log_research_errors": true,
+    "ten_sources_before_reporting": true,
+    "continuous_trend_monitoring": true
+  },
+  "research_rules": {
+    "on_opportunity": "Validate with 3+ sources before reporting",
+    "on_trend": "Quantify: search volume, revenue data, forum activity",
+    "on_error": "Log to ERRORS.md, try alternative sources",
+    "on_success": "Log validated opportunities to LEARNINGS.md"
+  }
+}

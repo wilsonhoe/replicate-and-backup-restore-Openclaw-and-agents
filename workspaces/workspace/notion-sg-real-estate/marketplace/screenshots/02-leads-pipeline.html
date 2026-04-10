@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f7f6f3;
+  padding: 40px;
+}
+.notion-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.view-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #37352f;
+  margin-bottom: 8px;
+}
+.view-subtitle {
+  color: #6b6b6b;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.board-view {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.board-column {
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 400px;
+}
+.column-header {
+  font-weight: 600;
+  font-size: 13px;
+  color: #37352f;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.column-count {
+  background: rgba(0,0,0,0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+}
+.card {
+  background: white;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+.card-title {
+  font-weight: 500;
+  font-size: 14px;
+  color: #37352f;
+  margin-bottom: 8px;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.badge {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.badge-hot { background: #fee2e2; color: #dc2626; }
+.badge-warm { background: #fef3c7; color: #d97706; }
+.badge-cold { background: #f3f4f6; color: #6b7280; }
+.badge-hdb { background: #dbeafe; color: #2563eb; }
+.badge-condo { background: #d1fae5; color: #059669; }
+.card-contact {
+  font-size: 12px;
+  color: #6b6b6b;
+  margin-top: 8px;
+}
+.add-card {
+  border: 2px dashed #d1d5db;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+  color: #6b6b6b;
+  font-size: 13px;
+  cursor: pointer;
+}
+.add-card:hover {
+  border-color: #2eaadc;
+  color: #2eaadc;
+}
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: #f9f8f6;
+  border-radius: 6px;
+}
+.filter-btn {
+  padding: 6px 12px;
+  border: 1px solid #e3e2e0;
+  border-radius: 4px;
+  background: white;
+  font-size: 13px;
+  color: #37352f;
+  cursor: pointer;
+}
+.filter-btn.active {
+  background: #2eaadc;
+  color: white;
+  border-color: #2eaadc;
+}
+</style>
+</head>
+<body>
+<div class="notion-page">
+  <div class="view-title">Leads Pipeline</div>
+  <div class="view-subtitle">Board view • Drag cards to update status • 10 leads total</div>
+
+  <div class="filters">
+    <button class="filter-btn active">All Leads</button>
+    <button class="filter-btn">🔥 Hot</button>
+    <button class="filter-btn">⚡ Warm</button>
+    <button class="filter-btn">❄️ Cold</button>
+    <button class="filter-btn">🏢 HDB Only</button>
+  </div>
+
+  <div class="board-view">
+    <div class="board-column">
+      <div class="column-header" style="background: #fef3c7;">
+        🆕 New <span class="column-count">2</span>
+      </div>
+      <div class="card">
+        <div class="card-title">Ahmad Razak</div>
+        <div class="card-meta">
+          <span class="badge badge-hot">🔥 Hot</span>
+          <span class="badge badge-hdb">🏢 HDB</span>
+        </div>
+        <div class="card-contact">📱 +6598765432</div>
+        <div class="card-contact">💰 Budget: $600K-$800K</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Sarah Lim</div>
+        <div class="card-meta">
+          <span class="badge badge-warm">⚡ Warm</span>
+          <span class="badge badge-condo">🏠 Condo</span>
+        </div>
+        <div class="card-contact">📱 +6589012345</div>
+        <div class="card-contact">💰 Budget: $1.2M-$2M</div>
+      </div>
+      <div class="add-card">+ New Card</div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-header" style="background: #dbeafe;">
+        📞 Contacted <span class="column-count">2</span>
+      </div>
+      <div class="card">
+        <div class="card-title">Ng Kok Peng</div>
+        <div class="card-meta">
+          <span class="badge badge-hot">🔥 Hot</span>
+          <span class="badge badge-condo">🏡 Landed</span>
+        </div>
+        <div class="card-contact">📱 +6587654321</div>
+        <div class="card-contact">💰 Budget: >$2M</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Chong Mei Ling</div>
+        <div class="card-meta">
+          <span class="badge badge-cold">❄️ Cold</span>
+          <span class="badge badge-hdb">🏢 HDB</span>
+        </div>
+        <div class="card-contact">📱 +6590123456</div>
+        <div class="card-contact">💰 Budget: $500K-$800K</div>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-header" style="background: #d1fae5;">
+        👀 Viewing <span class="column-count">2</span>
+      </div>
+      <div class="card">
+        <div class="card-title">Lim Shu Qi</div>
+        <div class="card-meta">
+          <span class="badge badge-hot">🔥 Hot</span>
+          <span class="badge badge-condo">🏠 Condo</span>
+        </div>
+        <div class="card-contact">📱 +6592345678</div>
+        <div class="card-contact">📅 Tomorrow 2PM</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Lee Xiu Ying</div>
+        <div class="card-meta">
+          <span class="badge badge-warm">⚡ Warm</span>
+          <span class="badge badge-condo">🏘️ EC</span>
+        </div>
+        <div class="card-contact">📱 +6595678901</div>
+        <div class="card-contact">📅 Apr 15</div>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-header" style="background: #fce7f3;">
+        💰 Offer Made <span class="column-count">2</span>
+      </div>
+      <div class="card">
+        <div class="card-title">Tan Wei Ming</div>
+        <div class="card-meta">
+          <span class="badge badge-hot">🔥 Hot</span>
+          <span class="badge badge-hdb">🏢 HDB</span>
+        </div>
+        <div class="card-contact">📱 +6591234567</div>
+        <div class="card-contact">💵 Offer: $650K</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Wong Mei Ling</div>
+        <div class="card-meta">
+          <span class="badge badge-warm">⚡ Warm</span>
+          <span class="badge badge-hdb">🏢 HDB</span>
+        </div>
+        <div class="card-contact">📱 +6596789012</div>
+        <div class="card-contact">💵 Offer: $520K</div>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-header" style="background: #bbf7d0;">
+        ✅ Closed <span class="column-count">2</span>
+      </div>
+      <div class="card">
+        <div class="card-title">Koh Boon Hwee</div>
+        <div class="card-meta">
+          <span class="badge badge-warm">⚡ Warm</span>
+          <span class="badge badge-condo">🏡 Landed</span>
+        </div>
+        <div class="card-contact">📱 +6593456789</div>
+        <div class="card-contact">✅ Closed: $1.85M</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Yeo Su Ching</div>
+        <div class="card-meta">
+          <span class="badge badge-cold">❄️ Cold</span>
+          <span class="badge badge-condo">🏠 Condo</span>
+        </div>
+        <div class="card-contact">📱 +6597890123</div>
+        <div class="card-contact">✅ Closed: $980K</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

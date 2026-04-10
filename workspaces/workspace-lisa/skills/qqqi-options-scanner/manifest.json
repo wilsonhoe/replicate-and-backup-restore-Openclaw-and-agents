@@ -1,0 +1,23 @@
+{
+  "name": "qqqi-options-scanner",
+  "version": "1.0",
+  "category": "trading",
+  "created": "2026-04-09T13:30:14.622817",
+  "last_used": "2026-04-09T13:30:14.622862",
+  "use_count": 1,
+  "success_count": 0,
+  "failure_count": 0,
+  "success_rate": null,
+  "needs_revision": false,
+  "tags": [
+    "trading",
+    "auto-generated"
+  ],
+  "tools": [
+    "yfinance",
+    "sqlite3",
+    "cron",
+    "telegram"
+  ],
+  "source": "auto-generated"
+}

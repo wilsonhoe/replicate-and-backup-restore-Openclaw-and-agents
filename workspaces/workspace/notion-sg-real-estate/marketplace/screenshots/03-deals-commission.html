@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f7f6f3;
+  padding: 40px;
+}
+.notion-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.view-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #37352f;
+  margin-bottom: 8px;
+}
+.view-subtitle {
+  color: #6b6b6b;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.deal-card {
+  background: #f9f8f6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #e3e2e0;
+}
+.deal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.deal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #37352f;
+}
+.deal-location {
+  color: #6b6b6b;
+  font-size: 14px;
+  margin-top: 4px;
+}
+.stage-badge {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.stage-otp { background: #dbeafe; color: #2563eb; }
+.stage-offer { background: #fce7f3; color: #db2777; }
+.stage-viewing { background: #d1fae5; color: #059669; }
+.stage-closed { background: #bbf7d0; color: #15803d; }
+.stage-resale { background: #fef3c7; color: #d97706; }
+.deal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.deal-stat {
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e3e2e0;
+}
+.deal-stat-label {
+  font-size: 11px;
+  color: #6b6b6b;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.deal-stat-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #37352f;
+}
+.deal-stat-value.green { color: #059669; }
+.deal-stat-value.blue { color: #2563eb; }
+.deal-formula {
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e3e2e0;
+  margin-bottom: 12px;
+}
+.formula-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e3e2e0;
+}
+.formula-row:last-child {
+  border-bottom: none;
+  font-weight: 600;
+}
+.formula-label {
+  color: #6b6b6b;
+  font-size: 14px;
+}
+.formula-value {
+  font-family: monospace;
+  font-size: 14px;
+  color: #37352f;
+}
+.formula-value.highlight {
+  color: #059669;
+  font-size: 16px;
+  font-weight: 600;
+}
+.probability-bar {
+  height: 8px;
+  background: #e3e2e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.probability-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+.timeline {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e3e2e0;
+}
+.timeline-item {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.timeline-item.completed {
+  background: #d1fae5;
+  color: #059669;
+}
+.timeline-item.current {
+  background: #dbeafe;
+  color: #2563eb;
+  font-weight: 600;
+}
+.timeline-item.pending {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+.summary-bar {
+  background: #37352f;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.summary-item {
+  text-align: center;
+}
+.summary-label {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+.summary-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+</style>
+</head>
+<body>
+<div class="notion-page">
+  <div class="view-title">Deals with Commission Calculations</div>
+  <div class="view-subtitle">6 active deals • $189,400 total pipeline • $142,050 weighted</div>
+
+  <div class="summary-bar">
+    <div class="summary-item">
+      <div class="summary-label">Active Deals</div>
+      <div class="summary-value">6</div>
+    </div>
+    <div class="summary-item">
+      <div class="summary-label">Total Pipeline</div>
+      <div class="summary-value">$189K</div>
+    </div>
+    <div class="summary-item">
+      <div class="summary-label">Weighted Pipeline</div>
+      <div class="summary-value">$142K</div>
+    </div>
+    <div class="summary-item">
+      <div class="summary-label">Est. Commission</div>
+      <div class="summary-value">$3.8K</div>
+    </div>
+  </div>
+
+  <!-- Deal 1 -->
+  <div class="deal-card">
+    <div class="deal-header">
+      <div>
+        <div class="deal-title">Tan Wei Ming — Punggol Waterway Terrace</div>
+        <div class="deal-location">🏢 HDB → HDB • Punggol (D19)</div>
+      </div>
+      <span class="stage-badge stage-offer">💰 Offer Made</span>
+    </div>
+
+    <div class="deal-grid">
+      <div class="deal-stat">
+        <div class="deal-stat-label">Deal Price</div>
+        <div class="deal-stat-value">$650,000</div>
+      </div>
+      <div class="deal-stat">
+        <div class="deal-stat-label">Commission %</div>
+        <div class="deal-stat-value">2.0%</div>
+      </div>
+      <div class="deal-stat">
+        <div class="deal-stat-label">Probability</div>
+        <div class="deal-stat-value blue">75%</div>
+      </div>
+      <div class="deal-stat">
+        <div class="deal-stat-label">Expected Close</div>
+        <div class="deal-stat-value">Jun 15, 2025</div>
+      </div>
+    </div>
+
+    <div class="deal-formula">
+      <div class="formula-row">
+        <span class="formula-label">Price × Commission %</span>
+        <span class="formula-value">$650,000 × 2.0% = $13,000</span>
+      </div>
+      <div class="formula-row">
+        <span class="formula-label">Weighted Commission (× 75%)</span>
+        <span class="formula-value highlight">$9,750</span>
+      </div>
+    </div>
+
+    <div class="probability-bar">
+      <div class="probability-fill" style="width: 75%; background: linear-gradient(90deg, #2563eb, #10b981);"></div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item completed">👀 Viewing</div>
+      <div class="timeline-item current">💰 Offer</div>
+      <div class="timeline-item pending">📝 OTP</div>
+      <div class="timeline-item pending">✅ Exercise</div>
+      <div class="timeline-item pending">🏛️ HDB</div>
+      <div class="timeline-item pending">🔨 Legal</div>
+    </div>
+  </div>
+
+  <!-- Deal 2 -->
+  <div class="deal-card">
+    <div class="deal-header">
+      <div>
+        <div class="deal-title">Chen Jia Hao — Hougang Avenue 5</div>
+        <div class="deal-location">🏢 HDB → HDB • Hougang (D19)</div>
+      </div>
+      <span class="stage-badge stage-otp">📝 OTP Issued</span>
+    </div>
+
+    <div class="deal-grid">
+      <div class="deal-stat">
+        <div class="deal-stat-label">Deal Price</div>
+        <div class="deal-stat-value">$580,000</div>
+      </div>
+      <div class="deal-stat">
+        <div class="deal-stat-label">Commission %</div>
+        <div class="deal-stat-value">2.0%</div>
+      </div>
+      <div class="deal-stat">
+        <div class="deal-stat-label">Probability</div>
+        <div class="deal-stat-value green">90%</div>
+      </div>
+      <div class="deal-stat">
+        <div class="deal-stat-label">Expected Close</div>
+        <div class="deal-stat-value">May 15, 2025</div>
+      </div>
+    </div>
+
+    <div class="deal-formula">
+      <div class="formula-row">
+        <span class="formula-label">Price × Commission %</span>
+        <span class="formula-value">$580,000 × 2.0% = $11,600</span>
+      </div>
+      <div class="formula-row">
+        <span class="formula-label">Weighted Commission (× 90%)</span>
+        <span class="formula-value highlight">$10,440</span>
+      </div>
+    </div>
+
+    <div class="probability-bar">
+      <div class="probability-fill" style="width: 90%; background: linear-gradient(90deg, #059669, #10b981);"></div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item completed">👀 Viewing</div>
+      <div class="timeline-item completed">💰 Offer</div>
+      <div class="timeline-item current">📝 OTP</div>
+      <div class="timeline-item pending">✅ Exercise</div>
+      <div class="timeline-item pending">🏛️ HDB</div>
+      <div class="timeline-item pending">🔨 Legal</div>
+    </div>
+  </div>
+
+  <!-- Deal 3 -->
+  <div class="deal-card">
+    <div class="deal-header">
+      <div>
+        <div class="deal-title">Ng Kok Peng — Serangoon Garden Estate</div>
+        <div class="deal-location">🏡 Landed • Serangoon (D19)</div>
+      </div>
+      <span class="stage-badge stage-resale">📋 Resale Application</span>
+    </div>
+
+    <div class="deal-grid">
+      <div class="deal-stat">
+        <div class="deal-stat-label">Deal Price</div>
+        <div class="deal-stat-value">$2,800,000</div>
+      </div>
+      <div class="deal-stat">
+        <div class="deal-stat-label">Commission %</div>
+        <div class="deal-stat-value">1.0%</div>
+      </div>
+      <div class="deal-stat">
+        <div class="deal-stat-label">Probability</div>
+        <div class="deal-stat-value blue">75%</div>
+      </div>
+      <div class="deal-stat">
+        <div class="deal-stat-label">Expected Close</div>
+        <div class="deal-stat-value">Aug 1, 2025</div>
+      </div>
+    </div>
+
+    <div class="deal-formula">
+      <div class="formula-row">
+        <span class="formula-label">Price × Commission %</span>
+        <span class="formula-value">$2,800,000 × 1.0% = $28,000</span>
+      </div>
+      <div class="formula-row">
+        <span class="formula-label">Weighted Commission (× 75%)</span>
+        <span class="formula-value highlight">$21,000</span>
+      </div>
+    </div>
+
+    <div class="probability-bar">
+      <div class="probability-fill" style="width: 75%; background: linear-gradient(90deg, #f59e0b, #d97706);"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

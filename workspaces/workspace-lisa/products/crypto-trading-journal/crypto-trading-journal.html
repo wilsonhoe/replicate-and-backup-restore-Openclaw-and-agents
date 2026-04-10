@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Trading Journal - Notion Template</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --border: #30363d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-green: #2ea043;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --accent-orange: #db6d28;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--accent-purple);
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 40px 0 20px;
+            color: var(--accent-blue);
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin: 25px 0 15px;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section-icon {
+            font-size: 1.5em;
+        }
+
+        /* Database Table Styles */
+        .database-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .database-table th {
+            background: var(--bg-tertiary);
+            padding: 12px;
+            text-align: left;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .database-table td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .database-table tr:hover {
+            background: var(--bg-tertiary);
+        }
+
+        /* Property Tags */
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .tag-long { background: var(--accent-green); color: white; }
+        .tag-short { background: var(--accent-red); color: white; }
+        .tag-neutral { background: var(--text-secondary); color: var(--bg-primary); }
+        .tag-bullish { background: var(--accent-green); color: white; }
+        .tag-bearish { background: var(--accent-red); color: white; }
+        .tag-strategy { background: var(--accent-purple); color: white; }
+        .tag-exchange { background: var(--accent-blue); color: white; }
+
+        /* Formula Box */
+        .formula-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-purple);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .formula-box code {
+            background: var(--bg-primary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: var(--accent-blue);
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: var(--bg-tertiary);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--accent-blue);
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .metric-positive { color: var(--accent-green); }
+        .metric-negative { color: var(--accent-red); }
+
+        /* Callout Box */
+        .callout {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .callout-icon {
+            font-size: 1.5em;
+        }
+
+        .callout-content {
+            flex: 1;
+        }
+
+        .callout-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: var(--bg-tertiary);
+            border-radius: 10px;
+            height: 20px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-green { background: var(--accent-green); }
+        .progress-red { background: var(--accent-red); }
+        .progress-blue { background: var(--accent-blue); }
+
+        /* Template Instructions */
+        .instructions {
+            background: var(--bg-secondary);
+            border: 1px dashed var(--accent-blue);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+        }
+
+        /* Status Indicators */
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        .status-active { background: rgba(46, 160, 67, 0.2); color: var(--accent-green); }
+        .status-closed { background: rgba(139, 148, 158, 0.2); color: var(--text-secondary); }
+        .status-pending { background: rgba(219, 109, 40, 0.2); color: var(--accent-orange); }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 30px 0;
+        }
+
+        /* Toggle/Dropdown Simulation */
+        .toggle {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .toggle-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggle-content {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Checkbox Simulation */
+        .checkbox {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 8px 0;
+        }
+
+        .checkbox-box {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .checkbox-checked .checkbox-box {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        /* Rating Stars */
+        .rating {
+            display: flex;
+            gap: 5px;
+        }
+
+        .star {
+            color: var(--text-secondary);
+            font-size: 1.2em;
+        }
+
+        .star.filled {
+            color: #f1c40f;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Crypto Trading Journal</h1>
+        <p>Professional trading journal template for cryptocurrency traders. Track every trade, analyze your performance, and improve your strategy with data-driven insights.</p>
+
+        <div class="instructions">
+            <h3>📋 How to Import This Template into Notion</h3>
+            <ol>
+                <li>Copy this entire HTML file content</li>
+                <li>In Notion, create a new page</li>
+                <li>Use "Import" → "HTML" or paste directly</li>
+                <li>Duplicate the database templates for ongoing use</li>
+                <li>Customize properties to match your trading style</li>
+            </ol>
+        </div>
+
+        <!-- SECTION 1: DAILY TRADE LOG -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">📝</span>
+                <h2>Daily Trade Log</h2>
+            </div>
+            <p>Record every trade with complete details for accurate performance tracking.</p>
+
+            <table class="database-table">
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Trade ID</strong></td>
+                        <td>Text</td>
+                        <td>Unique identifier</td>
+                        <td>TRD-001</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Date & Time</strong></td>
+                        <td>Date</td>
+                        <td>Entry timestamp</td>
+                        <td>2026-04-10 14:30</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coin/Pair</strong></td>
+                        <td>Select</td>
+                        <td>Trading pair</td>
+                        <td>BTC/USDT</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Direction</strong></td>
+                        <td>Select</td>
+                        <td>Long or Short</td>
+                        <td><span class="tag tag-long">LONG</span> / <span class="tag tag-short">SHORT</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entry Price</strong></td>
+                        <td>Number</td>
+                        <td>Entry price per coin</td>
+                        <td>$67,500</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exit Price</strong></td>
+                        <td>Number</td>
+                        <td>Exit price per coin</td>
+                        <td>$68,200</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Position Size</strong></td>
+                        <td>Number</td>
+                        <td>Amount invested (USDT)</td>
+                        <td>$1,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Leverage</strong></td>
+                        <td>Select</td>
+                        <td>Leverage used</td>
+                        <td>1x, 5x, 10x, 20x</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quantity</strong></td>
+                        <td>Number</td>
+                        <td>Coins purchased</td>
+                        <td>0.0148 BTC</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entry Fees</strong></td>
+                        <td>Number</td>
+                        <td>Trading fees (entry)</td>
+                        <td>$1.50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exit Fees</strong></td>
+                        <td>Number</td>
+                        <td>Trading fees (exit)</td>
+                        <td>$1.52</td>
+                    </tr>
+                    <tr>
+                        <td><strong>P&L ($)</strong></td>
+                        <td>Number</td>
+                        <td>Profit/Loss in USD</td>
+                        <td>$9.98</td>
+                    </tr>
+                    <tr>
+                        <td><strong>P&L (%)</strong></td>
+                        <td>Number</td>
+                        <td>Profit/Loss percentage</td>
+                        <td>+0.998%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exchange</strong></td>
+                        <td>Select</td>
+                        <td>Trading platform</td>
+                        <td><span class="tag tag-exchange">Binance</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Strategy</strong></td>
+                        <td>Multi-select</td>
+                        <td>Strategy used</td>
+                        <td>Breakout, Trend Following</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Status</strong></td>
+                        <td>Select</td>
+                        <td>Trade status</td>
+                        <td><span class="status status-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Setup Quality</strong></td>
+                        <td>Select</td>
+                        <td>1-5 rating</td>
+                        <td>⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Emotional State</strong></td>
+                        <td>Select</td>
+                        <td>Mental state during trade</td>
+                        <td>Calm, FOMO, Confident</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Notes</strong></td>
+                        <td>Text</td>
+                        <td>Trade rationale & learnings</td>
+                        <td>Bounced off support...</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Screenshot</strong></td>
+                        <td>Files</td>
+                        <td>Chart screenshot</td>
+                        <td>📎 chart.png</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="formula-box">
+                <h4>🧮 P&L Calculations</h4>
+                <p><strong>Long Position:</strong> <code>P&L = (Exit Price - Entry Price) × Quantity - Entry Fees - Exit Fees</code></p>
+                <p><strong>Short Position:</strong> <code>P&L = (Entry Price - Exit Price) × Quantity - Entry Fees - Exit Fees</code></p>
+                <p><strong>P&L %:</strong> <code>(P&L / Position Size) × 100</code></p>
+                <p><strong>Position Size:</strong> <code>Entry Price × Quantity × Leverage</code></p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: TRADE ANALYSIS DASHBOARD -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">📈</span>
+                <h2>Trade Analysis Dashboard</h2>
+            </div>
+            <p>Visual overview of your trading performance with key metrics.</p>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value metric-positive">68%</div>
+                    <div class="metric-label">Win Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value metric-positive">+2.3%</div>
+                    <div class="metric-label">Avg Gain (Winners)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value metric-negative">-1.1%</div>
+                    <div class="metric-label">Avg Loss (Losers)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value metric-positive">2.09</div>
+                    <div class="metric-label">Profit Factor</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">47</div>
+                    <div class="metric-label">Total Trades</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value metric-positive">+$1,247</div>
+                    <div class="metric-label">Net P&L</div>
+                </div>
+            </div>
+
+            <h3>🏆 Best Trades</h3>
+            <table class="database-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Date</th>
+                        <th>Pair</th>
+                        <th>Direction</th>
+                        <th>P&L ($)</th>
+                        <th>P&L (%)</th>
+                        <th>Strategy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🥇</td>
+                        <td>2026-03-15</td>
+                        <td>ETH/USDT</td>
+                        <td><span class="tag tag-long">LONG</span></td>
+                        <td class="metric-positive">+$847</td>
+                        <td class="metric-positive">+12.4%</td>
+                        <td><span class="tag tag-strategy">Breakout</span></td>
+                    </tr>
+                    <tr>
+                        <td>🥈</td>
+                        <td>2026-03-22</td>
+                        <td>SOL/USDT</td>
+                        <td><span class="tag tag-long">LONG</span></td>
+                        <td class="metric-positive">+$523</td>
+                        <td class="metric-positive">+8.7%</td>
+                        <td><span class="tag tag-strategy">Trend</span></td>
+                    </tr>
+                    <tr>
+                        <td>🥉</td>
+                        <td>2026-04-01</td>
+                        <td>BTC/USDT</td>
+                        <td><span class="tag tag-short">SHORT</span></td>
+                        <td class="metric-positive">+$412</td>
+                        <td class="metric-positive">+6.2%</td>
+                        <td><span class="tag tag-strategy">Reversal</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>📉 Worst Trades</h3>
+            <table class="database-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Date</th>
+                        <th>Pair</th>
+                        <th>Direction</th>
+                        <th>P&L ($)</th>
+                        <th>P&L (%)</th>
+                        <th>Mistake</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2026-03-18</td>
+                        <td>DOGE/USDT</td>
+                        <td><span class="tag tag-long">LONG</span></td>
+                        <td class="metric-negative">-$234</td>
+                        <td class="metric-negative">-4.2%</td>
+                        <td>FOMO Entry</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2026-03-25</td>
+                        <td>AVAX/USDT</td>
+                        <td><span class="tag tag-short">SHORT</span></td>
+                        <td class="metric-negative">-$187</td>
+                        <td class="metric-negative">-3.1%</td>
+                        <td>No Stop Loss</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="formula-box">
+                <h4>🧮 Dashboard Formulas</h4>
+                <p><strong>Win Rate:</strong> <code>(Winning Trades / Total Trades) × 100</code></p>
+                <p><strong>Profit Factor:</strong> <code>Gross Profit / Gross Loss</code></p>
+                <p><strong>Expectancy:</strong> <code>(Win Rate × Avg Win) - (Loss Rate × Avg Loss)</code></p>
+                <p><strong>Risk/Reward Ratio:</strong> <code>Avg Win / Avg Loss</code></p>
+            </div>
+        </div>
+
+        <!-- SECTION 3: STRATEGY TRACKER -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">🎯</span>
+                <h2>Strategy Tracker</h2>
+            </div>
+            <p>Track which strategies work best for your trading style.</p>
+
+            <table class="database-table">
+                <thead>
+                    <tr>
+                        <th>Strategy Name</th>
+                        <th>Type</th>
+                        <th>Trades</th>
+                        <th>Win Rate</th>
+                        <th>Avg P&L %</th>
+                        <th>Profit Factor</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Breakout Trading</strong></td>
+                        <td><span class="tag tag-strategy">Momentum</span></td>
+                        <td>15</td>
+                        <td class="metric-positive">73%</td>
+                        <td class="metric-positive">+3.2%</td>
+                        <td class="metric-positive">2.8</td>
+                        <td><span class="status status-active">Active</span></td>
+                        <td>Best on 4H timeframe</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trend Following</strong></td>
+                        <td><span class="tag tag-strategy">Trend</span></td>
+                        <td>22</td>
+                        <td class="metric-positive">64%</td>
+                        <td class="metric-positive">+2.1%</td>
+                        <td class="metric-positive">2.1</td>
+                        <td><span class="status status-active">Active</span></td>
+                        <td>Use EMA 20/50 crossover</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reversal Plays</strong></td>
+                        <td><span class="tag tag-strategy">Counter-trend</span></td>
+                        <td>8</td>
+                        <td class="metric-negative">38%</td>
+                        <td class="metric-negative">-0.8%</td>
+                        <td class="metric-negative">0.7</td>
+                        <td><span class="status status-pending">Review</span></td>
+                        <td>Too risky, needs refinement</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scalping</strong></td>
+                        <td><span class="tag tag-strategy">Short-term</span></td>
+                        <td>31</td>
+                        <td class="metric-positive">58%</td>
+                        <td class="metric-positive">+0.4%</td>
+                        <td class="metric-positive">1.4</td>
+                        <td><span class="status status-active">Active</span></td>
+                        <td>High frequency, low margin</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Strategy Performance Comparison</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">Breakout</div>
+                    <div class="progress-container">
+                        <div class="progress-bar progress-green" style="width: 73%"></div>
+                    </div>
+                    <div class="metric-label">73% Win Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">Trend</div>
+                    <div class="progress-container">
+                        <div class="progress-bar progress-blue" style="width: 64%"></div>
+                    </div>
+                    <div class="metric-label">64% Win Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">Scalping</div>
+                    <div class="progress-container">
+                        <div class="progress-bar progress-green" style="width: 58%"></div>
+                    </div>
+                    <div class="metric-label">58% Win Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">Reversal</div>
+                    <div class="progress-container">
+                        <div class="progress-bar progress-red" style="width: 38%"></div>
+                    </div>
+                    <div class="metric-label">38% Win Rate</div>
+                </div>
+            </div>
+
+            <div class="callout">
+                <span class="callout-icon">💡</span>
+                <div class="callout-content">
+                    <div class="callout-title">Strategy Optimization Tips</div>
+                    <p>Focus on your highest win-rate strategies. Consider pausing or refining strategies with win rates below 45% or profit factors below 1.5.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: MARKET SENTIMENT LOG -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">🌊</span>
+                <h2>Market Sentiment Log</h2>
+            </div>
+            <p>Daily market sentiment tracking to correlate with trade performance.</p>
+
+            <table class="database-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>BTC Trend</th>
+                        <th>Market Sentiment</th>
+                        <th>Fear & Greed</th>
+                        <th>Volume (24h)</th>
+                        <th>Key Events</th>
+                        <th>Trading Bias</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2026-04-10</td>
+                        <td><span class="tag tag-bullish">Bullish</span></td>
+                        <td><span class="tag tag-bullish">Greed</span></td>
+                        <td>72/100</td>
+                        <td>$45.2B</td>
+                        <td>ETF approval rumors</td>
+                        <td>Long biased</td>
+                    </tr>
+                    <tr>
+                        <td>2026-04-09</td>
+                        <td><span class="tag tag-neutral">Neutral</span></td>
+                        <td><span class="tag tag-neutral">Neutral</span></td>
+                        <td>50/100</td>
+                        <td>$32.1B</td>
+                        <td>Sideways consolidation</td>
+                        <td>Wait for breakout</td>
+                    </tr>
+                    <tr>
+                        <td>2026-04-08</td>
+                        <td><span class="tag tag-bearish">Bearish</span></td>
+                        <td><span class="tag tag-bearish">Fear</span></td>
+                        <td>28/100</td>
+                        <td>$58.7B</td>
+                        <td>Regulatory concerns</td>
+                        <td>Short biased</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Sentiment Indicators</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="checkbox checkbox-checked">
+                        <span class="checkbox-box"></span>
+                        <span>BTC above 200 EMA</span>
+                    </div>
+                    <div class="checkbox">
+                        <span class="checkbox-box"></span>
+                        <span>Altcoin season active</span>
+                    </div>
+                    <div class="checkbox checkbox-checked">
+                        <span class="checkbox-box"></span>
+                        <span>Volume increasing</span>
+                    </div>
+                    <div class="checkbox">
+                        <span class="checkbox-box"></span>
+                        <span>News sentiment positive</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout">
+                <span class="callout-icon">📊</span>
+                <div class="callout-content">
+                    <div class="callout-title">Sentiment Sources</div>
+                    <p>Track: Fear & Greed Index, Funding Rates, Open Interest, Social Media Sentiment, News Flow, On-chain Metrics</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: WEEKLY REVIEW TEMPLATE -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">📅</span>
+                <h2>Weekly Review Template</h2>
+            </div>
+            <p>End-of-week reflection to identify patterns and improve.</p>
+
+            <h3>Week of: _______________</h3>
+
+            <h3>📊 Performance Summary</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value" id="week-trades">0</div>
+                    <div class="metric-label">Total Trades</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="week-winrate">0%</div>
+                    <div class="metric-label">Win Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="week-pnl">$0</div>
+                    <div class="metric-label">Net P&L</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="week-best">0%</div>
+                    <div class="metric-label">Best Trade</div>
+                </div>
+            </div>
+
+            <h3>✅ What Went Well</h3>
+            <div class="toggle">
+                <div class="toggle-header">
+                    <span>Wins & Good Decisions</span>
+                    <span>▼</span>
+                </div>
+                <div class="toggle-content">
+                    <p>• Followed trading plan consistently</p>
+                    <p>• Cut losses quickly on losing trades</p>
+                    <p>• Let winners run to target</p>
+                    <p>• Avoided FOMO entries</p>
+                </div>
+            </div>
+
+            <h3>❌ What Needs Improvement</h3>
+            <div class="toggle">
+                <div class="toggle-header">
+                    <span>Mistakes & Lessons</span>
+                    <span>▼</span>
+                </div>
+                <div class="toggle-content">
+                    <p>• Entered 2 trades out of boredom</p>
+                    <p>• Moved stop loss on losing position</p>
+                    <p>• Overtraded during low volatility</p>
+                </div>
+            </div>
+
+            <h3>🎯 Goals for Next Week</h3>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Stick to max 3 trades per day</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Review charts before market open</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>No trading during news events</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Journal every trade within 1 hour</span>
+            </div>
+
+            <h3>📈 Key Insights</h3>
+            <div class="callout">
+                <span class="callout-icon">💡</span>
+                <div class="callout-content">
+                    <div class="callout-title">Weekly Insight</div>
+                    <p>Write your biggest lesson learned this week...</p>
+                </div>
+            </div>
+
+            <h3>Emotional State Rating</h3>
+            <div class="rating">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star">☆</span>
+                <span class="star">☆</span>
+                <span style="margin-left: 10px; color: var(--text-secondary);">3/5 - Generally calm, some FOMO</span>
+            </div>
+        </div>
+
+        <!-- SECTION 6: MONTHLY PERFORMANCE SUMMARY -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">📆</span>
+                <h2>Monthly Performance Summary</h2>
+            </div>
+            <p>Comprehensive monthly review for long-term tracking.</p>
+
+            <h3>Month: _______________ 2026</h3>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value" id="month-trades">0</div>
+                    <div class="metric-label">Total Trades</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value metric-positive" id="month-winrate">0%</div>
+                    <div class="metric-label">Win Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="month-pnl">$0</div>
+                    <div class="metric-label">Net P&L</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="month-factor">0.0</div>
+                    <div class="metric-label">Profit Factor</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="month-avgwin">0%</div>
+                    <div class="metric-label">Avg Win</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value metric-negative" id="month-avgloss">0%</div>
+                    <div class="metric-label">Avg Loss</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="month-best">$0</div>
+                    <div class="metric-label">Best Trade</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value metric-negative" id="month-worst">$0</div>
+                    <div class="metric-label">Worst Trade</div>
+                </div>
+            </div>
+
+            <h3>📊 Strategy Performance This Month</h3>
+            <table class="database-table">
+                <thead>
+                    <tr>
+                        <th>Strategy</th>
+                        <th>Trades</th>
+                        <th>Win Rate</th>
+                        <th>P&L</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Breakout</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td>$0</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Trend Following</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td>$0</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Scalping</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td>$0</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🎯 Monthly Goals Review</h3>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Maintain win rate above 60%</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Keep max drawdown under 5%</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Complete weekly reviews</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>No revenge trading</span>
+            </div>
+
+            <h3>📝 Monthly Reflection</h3>
+            <div class="callout">
+                <span class="callout-icon">📝</span>
+                <div class="callout-content">
+                    <div class="callout-title">What worked well this month?</div>
+                    <p>Write your reflections here...</p>
+                </div>
+            </div>
+
+            <div class="callout">
+                <span class="callout-icon">⚠️</span>
+                <div class="callout-content">
+                    <div class="callout-title">What needs improvement?</div>
+                    <p>Write your reflections here...</p>
+                </div>
+            </div>
+
+            <h3>🎯 Next Month's Goals</h3>
+            <ol style="margin-left: 20px; color: var(--text-secondary);">
+                <li>_________________________________</li>
+                <li>_________________________________</li>
+                <li>_________________________________</li>
+            </ol>
+        </div>
+
+        <!-- ADDITIONAL RESOURCES -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">📚</span>
+                <h2>Trading Rules & Checklist</h2>
+            </div>
+
+            <h3>✅ Pre-Trade Checklist</h3>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Market trend aligns with trade direction</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Clear entry trigger identified</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Stop loss level defined</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Take profit target set (min 2:1 R:R)</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Position size calculated (max 2% risk)</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>No major news events pending</span>
+            </div>
+            <div class="checkbox">
+                <span class="checkbox-box"></span>
+                <span>Emotional state is calm and focused</span>
+            </div>
+
+            <h3>🚫 Trading Rules (Never Break)</h3>
+            <div class="callout">
+                <span class="callout-icon">⚠️</span>
+                <div class="callout-content">
+                    <div class="callout-title">Rule #1: Risk Management</div>
+                    <p>Never risk more than 2% of capital on a single trade</p>
+                </div>
+            </div>
+            <div class="callout">
+                <span class="callout-icon">⚠️</span>
+                <div class="callout-content">
+                    <div class="callout-title">Rule #2: Stop Loss</div>
+                    <p>Always use a stop loss. Never move it further away.</p>
+                </div>
+            </div>
+            <div class="callout">
+                <span class="callout-icon">⚠️</span>
+                <div class="callout-content">
+                    <div class="callout-title">Rule #3: No Revenge Trading</div>
+                    <p>After a loss, step away. Don't chase losses.</p>
+                </div>
+            </div>
+            <div class="callout">
+                <span class="callout-icon">⚠️</span>
+                <div class="callout-content">
+                    <div class="callout-title">Rule #4: Follow the Plan</div>
+                    <p>If it's not in your trading plan, don't do it.</p>
+                </div>
+            </div>
+
+            <h3>📈 Risk Management Calculator</h3>
+            <div class="formula-box">
+                <p><strong>Position Size:</strong> <code>(Account Size × Risk %) / (Entry Price - Stop Loss)</code></p>
+                <p><strong>Risk Amount:</strong> <code>Account Size × Risk %</code></p>
+                <p><strong>R:R Ratio:</strong> <code>(Take Profit - Entry) / (Entry - Stop Loss)</code></p>
+                <p><strong>Example:</strong> $10,000 account, 2% risk, entry $100, stop $95</p>
+                <p><code>Position Size = ($10,000 × 0.02) / ($100 - $95) = $200 / $5 = 40 shares</code></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Crypto Trading Journal Template</strong></p>
+            <p>Designed for serious traders who want to improve through data-driven analysis.</p>
+            <p>Track • Analyze • Optimize • Profit</p>
+        </div>
+    </div>
+</body>
+</html>

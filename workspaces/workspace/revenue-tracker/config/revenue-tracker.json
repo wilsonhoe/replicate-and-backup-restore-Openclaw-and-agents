@@ -1,0 +1,44 @@
+{
+  "goals": {
+    "monthly_target": 1000,
+    "quarterly_target": 3000,
+    "annual_target": 12000,
+    "currency": "USD"
+  },
+  "categories": [
+    "digital-products",
+    "services", 
+    "affiliate",
+    "investments",
+    "physical-products",
+    "other"
+  ],
+  "alerting": {
+    "daily_summary": true,
+    "goal_milestone": true,
+    "unusual_activity": true,
+    "threshold_percentage": 0.75
+  },
+  "reporting": {
+    "format": "markdown",
+    "frequency": "daily",
+    "include_charts": true,
+    "auto_generate": true
+  },
+  "analytics": {
+    "trend_analysis": true,
+    "forecasting": true,
+    "risk_assessment": true,
+    "performance_comparison": true
+  },
+  "integration": {
+    "openclaw": true,
+    "external_apis": false,
+    "webhook_notifications": false
+  },
+  "data_management": {
+    "retention_days": 1095,
+    "backup_frequency": "weekly",
+    "encryption": false
+  }
+}

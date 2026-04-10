@@ -1,0 +1,39 @@
+{
+  "name": "proactive-self-improving",
+  "version": "1.0.0",
+  "description": "Proactive behavior and continuous self-improvement for Lisa (Authority Layer)",
+  "enabled": true,
+  "capabilities": [
+    "proactive-anticipation",
+    "self-improvement-logging",
+    "error-learning",
+    "reverse-prompting",
+    "relentless-resourcefulness"
+  ],
+  "sources": [
+    "/home/wls/.openclaw/workspace/skills/proactive-agent/SKILL.md",
+    "/home/wls/.openclaw/workspace/skills/self-improving-agent/SKILL.md"
+  ],
+  "learning": {
+    "directory": "/home/wls/.openclaw/workspace-lisa/.learnings",
+    "files": [
+      "LEARNINGS.md",
+      "ERRORS.md",
+      "FEATURE_REQUESTS.md"
+    ]
+  },
+  "behaviors": {
+    "proactive_check_ins": true,
+    "anticipate_needs": true,
+    "log_corrections": true,
+    "review_before_major_tasks": true,
+    "ten_approaches_before_escalation": true
+  },
+  "triggers": {
+    "on_error": "log to ERRORS.md",
+    "on_correction": "log to LEARNINGS.md with category 'correction'",
+    "on_insight": "log to LEARNINGS.md with category 'insight'",
+    "on_knowledge_gap": "log to LEARNINGS.md with category 'knowledge_gap'",
+    "on_feature_request": "log to FEATURE_REQUESTS.md"
+  }
+}

@@ -1,0 +1,895 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            margin: 2.5cm 2cm;
+            @bottom-center {
+                content: counter(page);
+                font-size: 10pt;
+                color: #666;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #333;
+            max-width: 100%;
+        }
+
+        h1 {
+            font-size: 24pt;
+            color: #1a5490;
+            border-bottom: 3px solid #1a5490;
+            padding-bottom: 10px;
+            margin-top: 0;
+            page-break-before: always;
+        }
+
+        h1:first-of-type {
+            page-break-before: avoid;
+            text-align: center;
+            border-bottom: none;
+            font-size: 28pt;
+            margin-top: 3cm;
+            color: #1a5490;
+        }
+
+        h2 {
+            font-size: 16pt;
+            color: #2d6da3;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            border-left: 4px solid #2d6da3;
+            padding-left: 10px;
+        }
+
+        h3 {
+            font-size: 13pt;
+            color: #3a7ab5;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 10px 0;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        code {
+            font-family: "Courier New", monospace;
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 10pt;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #1a5490;
+            font-size: 10pt;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        th {
+            background-color: #1a5490;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        blockquote {
+            border-left: 4px solid #2d6da3;
+            margin: 15px 0;
+            padding: 10px 20px;
+            background-color: #f0f7ff;
+            font-style: italic;
+        }
+
+        .cover {
+            text-align: center;
+            margin-top: 4cm;
+        }
+
+        .cover h1 {
+            font-size: 32pt;
+            color: #1a5490;
+            margin-bottom: 1cm;
+        }
+
+        .cover p {
+            font-size: 14pt;
+            color: #555;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ddd;
+            margin: 20px 0;
+        }
+
+        strong {
+            color: #1a5490;
+        }
+
+        em {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<h1>Door Knocking Notion System — User Guide</h1>
+<h2>Simple Guide for Real Estate Agents</h2>
+<p><em>A complete system for tracking your door knocking activities, managing leads, and closing more deals</em></p>
+<hr />
+<h2>Table of Contents</h2>
+<ol>
+<li>Introduction</li>
+<li>Getting Started with Notion</li>
+<li>System Overview</li>
+<li>How to Use During Door Knocking</li>
+<li>Managing Leads</li>
+<li>Follow-Up System</li>
+<li>Understanding Your Performance</li>
+<li>Daily Routine</li>
+<li>Weekly Review</li>
+<li>Tips for Success</li>
+</ol>
+<hr />
+<h2>1. Introduction</h2>
+<h3>What This System Is</h3>
+<p>The Door Knocking Notion System is a simple digital tool that helps you:</p>
+<ul>
+<li><strong>Track every door knocking session</strong> you complete</li>
+<li><strong>Record details about people you meet</strong> (leads)</li>
+<li><strong>Remember who to follow up with</strong> and when</li>
+<li><strong>See how well you're performing</strong> over time</li>
+<li><strong>Improve your results</strong> by learning from your data</li>
+</ul>
+<p>Think of it as your digital notebook that does the math for you.</p>
+<h3>Why This System Is Useful</h3>
+<p>Without a system, most agents:
+- Forget who they spoke to
+- Lose track of promising leads
+- Don't know which areas work best
+- Can't remember what they said to each person
+- Miss follow-up opportunities</p>
+<p>With this system, you will:
+- Never lose a lead's contact information
+- Always know who to call back and when
+- See which neighborhoods give the best results
+- Track your improvement over time
+- Close more deals through better organization</p>
+<h3>What You Will Achieve</h3>
+<p>By using this system consistently, you can expect to:</p>
+<ul>
+<li><strong>Increase your lead conversion rate</strong> by 20-40%</li>
+<li><strong>Reduce forgotten follow-ups</strong> to nearly zero</li>
+<li><strong>Identify your best-performing areas</strong> (Punggol vs. Serangoon)</li>
+<li><strong>Improve your scripts</strong> based on actual data</li>
+<li><strong>Feel more confident</strong> with a clear daily plan</li>
+</ul>
+<hr />
+<h2>2. Getting Started with Notion</h2>
+<h3>What Is Notion?</h3>
+<p>Notion is a free app that works like a digital notebook combined with a smart spreadsheet. Think of it as:</p>
+<ul>
+<li>A notebook that syncs across your phone and computer</li>
+<li>A filing system that finds anything instantly</li>
+<li>A calculator that tracks your numbers automatically</li>
+<li>A planner that reminds you what to do next</li>
+</ul>
+<p><strong>Good news:</strong> The free version has everything you need.</p>
+<h3>How to Open the System</h3>
+<ol>
+<li><strong>Download the Notion app</strong> on your phone (App Store or Google Play)</li>
+<li><strong>Create a free account</strong> using your email</li>
+<li><strong>Open the link</strong> shared with you to access the Door Knocking System</li>
+<li><strong>Bookmark the page</strong> so you can find it quickly</li>
+</ol>
+<h3>Basic Navigation</h3>
+<h4>Pages</h4>
+<ul>
+<li>The system is organized into <strong>pages</strong> (like folders in a filing cabinet)</li>
+<li>The main page is your <strong>Dashboard</strong> — start here every day</li>
+<li>Click any page title to open it</li>
+</ul>
+<h4>Databases (The Spreadsheets)</h4>
+<ul>
+<li>A database looks like a table with rows and columns</li>
+<li>Each row is one <strong>record</strong> (one person, one session, one follow-up)</li>
+<li>You can click any row to see more details</li>
+</ul>
+<h4>Clicking Into Items</h4>
+<ul>
+<li><strong>Tap once</strong> on any row to open the full details</li>
+<li><strong>Tap outside</strong> the box to close it</li>
+<li><strong>Scroll down</strong> to see all the information</li>
+</ul>
+<h4>Editing Fields</h4>
+<ul>
+<li><strong>Tap any field</strong> to edit it</li>
+<li><strong>Type your information</strong></li>
+<li><strong>Tap elsewhere</strong> to save automatically</li>
+<li>Notion saves everything instantly — no need to press "Save"</li>
+</ul>
+<h4>Mobile Tips</h4>
+<ul>
+<li>Use <strong>voice-to-text</strong> to enter notes quickly</li>
+<li><strong>Take photos</strong> of unit numbers and save them in lead records</li>
+<li>The app works <strong>offline</strong> and syncs when you reconnect</li>
+</ul>
+<hr />
+<h2>3. System Overview</h2>
+<p>Your system has four main parts. Here's what each one does in simple terms:</p>
+<h3>🎯 Door Knocking Sessions</h3>
+<p><strong>What it is:</strong> Your daily activity log</p>
+<p><strong>Think of it as:</strong> A workout tracker, but for door knocking</p>
+<p><strong>What you record:</strong>
+- Which block you visited
+- How many doors you knocked
+- How many people opened the door
+- How many conversations you had
+- How many leads you collected</p>
+<p><strong>Why it helps:</strong> Shows you your "open rate" and which times work best</p>
+<hr />
+<h3>👤 Leads</h3>
+<p><strong>What it is:</strong> The people you meet who might buy or sell</p>
+<p><strong>Think of it as:</strong> Your contact list, but smarter</p>
+<p><strong>What you record:</strong>
+- Name and contact number
+- Unit and block
+- Are they owner or tenant?
+- Are they looking to sell, buy, or just exploring?
+- When do they want to move?
+- How interested are they? (High/Medium/Low priority)</p>
+<p><strong>Why it helps:</strong> You never forget who you met or what they said</p>
+<hr />
+<h3>📞 Follow-Ups</h3>
+<p><strong>What it is:</strong> Your reminder system for next actions</p>
+<p><strong>Think of it as:</strong> A to-do list that knows your leads</p>
+<p><strong>What you record:</strong>
+- Who to contact
+- When to contact them
+- How to contact them (call, WhatsApp, visit)
+- What happened when you contacted them
+- What to do next</p>
+<p><strong>Why it helps:</strong> Ensures no lead falls through the cracks</p>
+<hr />
+<h3>🏠 Dashboard</h3>
+<p><strong>What it is:</strong> Your control center</p>
+<p><strong>Think of it as:</strong> The cockpit of an airplane — everything important in one view</p>
+<p><strong>What you see:</strong>
+- Today's follow-ups
+- Hot leads (high priority)
+- This week's sessions
+- Quick links to scripts and resources</p>
+<p><strong>Why it helps:</strong> Start your day knowing exactly what to focus on</p>
+<hr />
+<h2>4. How to Use During Door Knocking</h2>
+<p>This section covers the complete workflow from start to finish.</p>
+<h3>Before Your Session</h3>
+<p><strong>Step 1: Open the Dashboard</strong>
+- Open Notion on your phone
+- Navigate to the Door Knocking System
+- Look at the "Today's Execution" section</p>
+<p><strong>Step 2: Create a New Session</strong>
+- Go to the "Door Knocking Sessions" database
+- Tap the "+ New" button (usually at the bottom)
+- Fill in:
+  - <strong>Date:</strong> Today
+  - <strong>Area:</strong> Punggol, Serangoon, or Sengkang
+  - <strong>Block:</strong> The block number you're visiting (e.g., "123A")
+  - <strong>Time Slot:</strong> Morning, Afternoon, or Evening
+- Leave the numbers blank for now</p>
+<p><strong>Step 3: Review Your Scripts</strong>
+- Go to the "Scripts" database
+- Filter by your target area (Punggol or Serangoon)
+- Read through the opening lines
+- Practice your key phrases</p>
+<p><strong>Step 4: Check Your Supplies</strong>
+- Flyers/market reports
+- Business cards
+- Phone charged
+- Notion app ready</p>
+<hr />
+<h3>During Your Session</h3>
+<p><strong>Quick Entry Method (Between Doors)</strong></p>
+<p>You don't need to enter data while walking. Just:
+1. <strong>Take quick voice notes</strong> on your phone
+2. <strong>Note unit numbers</strong> on paper or phone
+3. <strong>Photo anything important</strong></p>
+<p><strong>If You Get a Lead</strong></p>
+<p>Immediately create a lead record:</p>
+<ol>
+<li>Open the "Leads" database</li>
+<li>Tap "+ New"</li>
+<li>Enter quickly:</li>
+<li><strong>Name:</strong> What they told you (or "Block 123A Unit 12-34" if they didn't give a name)</li>
+<li><strong>Unit:</strong> Their unit number</li>
+<li><strong>Block:</strong> Current block</li>
+<li><strong>Contact:</strong> Phone number (or "Need to get")</li>
+<li><strong>Intent:</strong> Sell / Buy / Exploring</li>
+<li><strong>Priority:</strong> High (if very interested), Medium, or Low</li>
+<li><strong>Linked Session:</strong> Select the session you created earlier</li>
+<li>Save and continue</li>
+</ol>
+<p><strong>Tip:</strong> Speed matters. Just capture the basics. You can add details after.</p>
+<hr />
+<h3>After Your Session</h3>
+<p><strong>Step 1: Complete Your Session Numbers (Within 1 Hour)</strong></p>
+<p>Go back to the session you created:
+- <strong>Doors Knocked:</strong> Count from your notes
+- <strong>Doors Opened:</strong> How many people answered
+- <strong>Conversations:</strong> How many actual chats you had
+- <strong>Leads Captured:</strong> How many contact details you got
+- <strong>Appointments Set:</strong> How many agreed to meet later</p>
+<p>The system will automatically calculate:
+- <strong>Open Rate:</strong> % of doors that opened
+- <strong>Conversation Rate:</strong> % of opens that turned into conversations
+- <strong>Lead Rate:</strong> % of conversations that became leads</p>
+<p><strong>Step 2: Add Details to Leads</strong></p>
+<p>For each lead you captured:
+- Open their record
+- Add any details you remember
+- Note what they said, their timeline, budget hints
+- Update status if needed</p>
+<p><strong>Step 3: Schedule Follow-Ups</strong></p>
+<p>For each lead:
+1. Go to "Follow-Ups" database
+2. Create a new follow-up:
+   - <strong>Lead Name:</strong> Select from dropdown
+   - <strong>Follow-Up Date:</strong> When you will contact them (usually 1-3 days later)
+   - <strong>Method:</strong> Call, WhatsApp, or Visit
+   - <strong>Priority:</strong> Match the lead priority
+   - <strong>Status:</strong> Pending
+3. Save</p>
+<p><strong>Step 4: Log Training (Optional)</strong></p>
+<p>If you practiced scripts:
+- Go to "Training" database
+- Log your practice session
+- Rate yourself 1-10
+- Note what to improve</p>
+<hr />
+<h2>5. Managing Leads</h2>
+<h3>How to Add a New Lead</h3>
+<ol>
+<li>Open the <strong>Leads</strong> database</li>
+<li>Tap the <strong>+</strong> button at the bottom</li>
+<li>Fill in the fields:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to Enter</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>Their name or identifier</td>
+<td>"Tan Wei Ming" or "Block 123A Owner"</td>
+</tr>
+<tr>
+<td><strong>Unit</strong></td>
+<td>Unit number</td>
+<td>"12-345"</td>
+</tr>
+<tr>
+<td><strong>Block</strong></td>
+<td>Block number</td>
+<td>"123A"</td>
+</tr>
+<tr>
+<td><strong>Contact</strong></td>
+<td>Phone number</td>
+<td>"9123-4567" or "Need to get"</td>
+</tr>
+<tr>
+<td><strong>Owner/Tenant</strong></td>
+<td>Select one</td>
+<td>Owner</td>
+</tr>
+<tr>
+<td><strong>Intent</strong></td>
+<td>Their goal</td>
+<td>Sell / Buy / Exploring</td>
+</tr>
+<tr>
+<td><strong>Timeline</strong></td>
+<td>When they want to move</td>
+<td>"3-6 months"</td>
+</tr>
+<tr>
+<td><strong>Budget/Price</strong></td>
+<td>Their price range</td>
+<td>"$650k-$700k"</td>
+</tr>
+<tr>
+<td><strong>Source</strong></td>
+<td>How you met them</td>
+<td>"Door knocking"</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Current stage</td>
+<td>New / Follow-up / Viewing</td>
+</tr>
+<tr>
+<td><strong>Last Contact Date</strong></td>
+<td>When you last spoke</td>
+<td>Today's date</td>
+</tr>
+<tr>
+<td><strong>Area</strong></td>
+<td>Estate location</td>
+<td>Punggol / Serangoon</td>
+</tr>
+<tr>
+<td><strong>Priority</strong></td>
+<td>How hot is this lead</td>
+<td>High / Medium / Low</td>
+</tr>
+</tbody>
+</table>
+<h3>How to Update Lead Status</h3>
+<p>When a lead progresses:</p>
+<ol>
+<li><strong>Open their record</strong> (tap on their name)</li>
+<li><strong>Update the Status field:</strong></li>
+<li><strong>New:</strong> Just met them</li>
+<li><strong>Follow-up:</strong> You've contacted them once</li>
+<li><strong>Viewing:</strong> Scheduled or completed a property viewing</li>
+<li><strong>Closed:</strong> Deal completed</li>
+<li><strong>Lost:</strong> They're no longer interested</li>
+<li><strong>Update Last Contact Date</strong> to today</li>
+<li><strong>Add notes</strong> about what happened</li>
+</ol>
+<h3>How to Identify Serious Prospects</h3>
+<p>Look for these signs in your Leads database:</p>
+<p><strong>High Priority Indicators:</strong>
+- Timeline is specific ("within 3 months")
+- They mentioned specific needs
+- They asked about your services
+- They gave you their contact willingly
+- They're the owner (not tenant)</p>
+<p><strong>Filter View: "Hot Leads"</strong>
+- Go to Leads database
+- Look for the "Hot Leads" view (already created)
+- This shows only High priority leads
+- Focus your energy here first</p>
+<hr />
+<h2>6. Follow-Up System</h2>
+<h3>How to Schedule Follow-Ups</h3>
+<p><strong>Rule of thumb:</strong> Follow up within 24-48 hours while you're still fresh in their memory.</p>
+<p><strong>Creating a Follow-Up:</strong></p>
+<ol>
+<li>Open <strong>Follow-Ups</strong> database</li>
+<li>Tap <strong>+ New</strong></li>
+<li>Enter:</li>
+<li><strong>Lead Name:</strong> Select the person from the dropdown</li>
+<li><strong>Follow-Up Date:</strong> When you will contact them</li>
+<li><strong>Method:</strong> <ul>
+<li><strong>Call</strong> for high-priority leads</li>
+<li><strong>WhatsApp</strong> for quick updates</li>
+<li><strong>Visit</strong> if you're in the area again</li>
+</ul>
+</li>
+<li><strong>Priority:</strong> Match the lead's priority</li>
+<li><strong>Status:</strong> Pending</li>
+<li>Save</li>
+</ol>
+<h3>How to Track Conversations</h3>
+<p>When you complete a follow-up:</p>
+<ol>
+<li>Open the follow-up record</li>
+<li>Change <strong>Status</strong> to "Done"</li>
+<li>Fill in <strong>Outcome:</strong></li>
+<li>What they said</li>
+<li>Any new information</li>
+<li>Their current interest level</li>
+<li>Fill in <strong>Next Action:</strong></li>
+<li>What you promised to do</li>
+<li>When you'll contact them again</li>
+<li>Any documents to send</li>
+</ol>
+<h3>How to Know Who to Contact Today</h3>
+<p><strong>Use the "Due Today" View:</strong></p>
+<ol>
+<li>Open <strong>Follow-Ups</strong> database</li>
+<li>Switch to the "Due Today" view (at the top)</li>
+<li>This shows only follow-ups scheduled for today</li>
+<li>Work through this list first</li>
+</ol>
+<p><strong>Also Check "Overdue":</strong></p>
+<ol>
+<li>Switch to "Overdue" view</li>
+<li>These are follow-ups you missed</li>
+<li>Contact these people first (apologize for delay)</li>
+</ol>
+<p><strong>Daily Routine:</strong>
+- Check "Due Today" every morning
+- Complete or reschedule each item
+- Create new follow-ups for next steps</p>
+<hr />
+<h2>7. Understanding Your Performance</h2>
+<h3>Key Numbers Explained</h3>
+<p>Your system tracks five important numbers. Here's what they mean:</p>
+<h4>1. Doors Knocked</h4>
+<p><strong>What it is:</strong> Total doors you knocked on</p>
+<p><strong>Why it matters:</strong> Shows your activity level</p>
+<p><strong>Good target:</strong> 40-50 doors per session</p>
+<hr />
+<h4>2. Doors Opened</h4>
+<p><strong>What it is:</strong> How many people answered the door</p>
+<p><strong>Why it matters:</strong> Shows if you're knocking at good times</p>
+<p><strong>Good target:</strong> 35%+ open rate (at least 15 out of 50)</p>
+<hr />
+<h4>3. Conversations</h4>
+<p><strong>What it is:</strong> How many actual chats you had</p>
+<p><strong>Why it matters:</strong> Shows your opening line is working</p>
+<p><strong>Good target:</strong> 50%+ conversation rate (at least 8 out of 15 opens)</p>
+<hr />
+<h4>4. Leads Captured</h4>
+<p><strong>What it is:</strong> How many contact details you collected</p>
+<p><strong>Why it matters:</strong> This is your future business</p>
+<p><strong>Good target:</strong> 25%+ lead rate (at least 2 out of 8 conversations)</p>
+<hr />
+<h4>5. Appointments Set</h4>
+<p><strong>What it is:</strong> How many agreed to meet again</p>
+<p><strong>Why it matters:</strong> These are your hottest prospects</p>
+<p><strong>Good target:</strong> 40%+ of leads should become appointments</p>
+<hr />
+<h3>What Good Looks Like (Benchmarks)</h3>
+<p><strong>Weekly Targets:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+<th>If Below, Try...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sessions per week</td>
+<td>4-5</td>
+<td>Schedule specific days</td>
+</tr>
+<tr>
+<td>Doors per session</td>
+<td>40-50</td>
+<td>Stay longer or move faster</td>
+</tr>
+<tr>
+<td>Open Rate</td>
+<td>&gt;35%</td>
+<td>Try different times (evenings work best)</td>
+</tr>
+<tr>
+<td>Conversation Rate</td>
+<td>&gt;50%</td>
+<td>Practice your opening line</td>
+</tr>
+<tr>
+<td>Lead Rate</td>
+<td>&gt;25%</td>
+<td>Ask better qualifying questions</td>
+</tr>
+<tr>
+<td>Appointment Rate</td>
+<td>&gt;40%</td>
+<td>Be more specific about next steps</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Monthly Targets:</strong></p>
+<ul>
+<li><strong>100+ doors knocked</strong> (2-3 sessions per week)</li>
+<li><strong>20+ leads generated</strong></li>
+<li><strong>5+ appointments set</strong></li>
+<li><strong>1-2 deals closed</strong></li>
+</ul>
+<hr />
+<h3>Reading Your Weekly Reviews</h3>
+<p>The system automatically calculates your rates. Here's how to interpret them:</p>
+<p><strong>Example:</strong></p>
+<pre><code>Doors Knocked: 50
+Doors Opened: 20 (40% open rate ✓)
+Conversations: 12 (60% conversation rate ✓)
+Leads: 4 (33% lead rate ✓)
+</code></pre>
+<p><strong>All green?</strong> Keep doing what you're doing!</p>
+<p><strong>Open rate low?</strong> Try different times or blocks</p>
+<p><strong>Conversation rate low?</strong> Practice your opening script</p>
+<p><strong>Lead rate low?</strong> Ask more qualifying questions</p>
+<hr />
+<h2>8. Daily Routine</h2>
+<h3>Morning (5 Minutes)</h3>
+<p><strong>Before you start your day:</strong></p>
+<ul>
+<li>[ ] Open the Dashboard</li>
+<li>[ ] Check "Due Today" follow-ups</li>
+<li>[ ] Review "Hot Leads" list</li>
+<li>[ ] Plan which area/block to visit today</li>
+</ul>
+<p><strong>Quick questions:</strong>
+- Who do I need to call today?
+- Which hot leads should I prioritize?
+- Where am I knocking today?</p>
+<hr />
+<h3>Pre-Session (2 Minutes)</h3>
+<p><strong>Before you head out:</strong></p>
+<ul>
+<li>[ ] Create new session in database</li>
+<li>[ ] Review scripts for your target area</li>
+<li>[ ] Check you have flyers and cards</li>
+<li>[ ] Phone fully charged</li>
+</ul>
+<p><strong>Open Scripts database:</strong>
+- Filter by your area (Punggol or Serangoon)
+- Read the opening line 2-3 times
+- Practice saying it naturally</p>
+<hr />
+<h3>During Session</h3>
+<p><strong>Quick capture method:</strong>
+- [ ] Voice memo quick notes between doors
+- [ ] Note unit numbers of leads
+- [ ] Photo any important details
+- [ ] Create lead records immediately (or right after)</p>
+<p><strong>Remember:</strong> Safety first. Don't get distracted by your phone at the door.</p>
+<hr />
+<h3>Post-Session (10 Minutes)</h3>
+<p><strong>Within 1 hour of finishing:</strong></p>
+<ul>
+<li>[ ] Update session numbers</li>
+<li>[ ] Complete lead details</li>
+<li>[ ] Schedule follow-ups for new leads</li>
+<li>[ ] Quick note on what worked/didn't</li>
+</ul>
+<p><strong>Ask yourself:</strong>
+- What was my best conversation?
+- Which script worked best?
+- What should I do differently next time?</p>
+<hr />
+<h3>Evening (5 Minutes)</h3>
+<p><strong>Before bed:</strong></p>
+<ul>
+<li>[ ] Mark follow-ups as "Done" that you completed</li>
+<li>[ ] Review today's KPIs</li>
+<li>[ ] Plan tomorrow's actions</li>
+</ul>
+<p><strong>Takes just 5 minutes but builds the habit.</strong></p>
+<hr />
+<h2>9. Weekly Review</h2>
+<h3>Why Weekly Reviews Matter</h3>
+<p>After one week of data, you can start seeing patterns:</p>
+<ul>
+<li>Which areas give better results?</li>
+<li>What times work best?</li>
+<li>Which scripts are most effective?</li>
+<li>How are you improving?</li>
+</ul>
+<h3>How to Review Your Week</h3>
+<p><strong>Step 1: Look at Your Numbers</strong></p>
+<p>Go to "Weekly Reviews" database:
+- Check your totals for the week
+- Compare to previous weeks
+- Look at your rates (Open, Conversation, Lead)</p>
+<p><strong>Step 2: Identify Patterns</strong></p>
+<p>Ask yourself:
+- Which area had the best lead rate?
+- Which time slot had the most opens?
+- Which day of the week worked best?</p>
+<p><strong>Step 3: Adjust Your Approach</strong></p>
+<p>Based on your data:
+- Focus more on high-performing areas
+- Adjust your timing
+- Practice scripts that need work
+- Set goals for next week</p>
+<h3>Comparing Areas: Punggol vs. Serangoon</h3>
+<p><strong>Punggol (Young Families):</strong>
+- Best time: 6:30-8pm (after work)
+- Tone: Energetic, opportunity-focused
+- Hook: MOP completion, upgrading
+- Response: Usually higher energy, more curious</p>
+<p><strong>Serangoon (Mature Owners):</strong>
+- Best time: 7-8:30pm
+- Tone: Calm, advisory, authoritative
+- Hook: Infrastructure, value preservation
+- Response: More cautious, need trust first</p>
+<p><strong>What to Track:</strong>
+- Compare open rates between areas
+- Which gives more high-priority leads?
+- Where do you feel more comfortable?</p>
+<h3>Script Effectiveness</h3>
+<p>In the "Scripts" database, track:
+- <strong>Usage Count:</strong> How many times you used it
+- <strong>Effectiveness Score:</strong> Rate 1-10 after each session
+- <strong>Notes:</strong> What worked, what to change</p>
+<p><strong>Monthly Review:</strong>
+- Which script has the highest average score?
+- Which gets the most positive responses?
+- Which needs rewriting?</p>
+<hr />
+<h2>10. Tips for Success</h2>
+<h3>Keep Entries Simple</h3>
+<p><strong>Don't overthink it.</strong> Quick notes are better than perfect notes.</p>
+<p><strong>Instead of:</strong></p>
+<blockquote>
+<p>"Met Mr. Tan at 7:15pm. He was wearing a blue shirt. Very nice man. Said he's lived here 5 years. Wife works at the hospital. Two kids in primary school. Thinking about upgrading to condo because they need more space. Mentioned budget around $650k. Seemed genuinely interested but wants to think about it."</p>
+</blockquote>
+<p><strong>Just write:</strong></p>
+<blockquote>
+<p>"Mr. Tan, owner 5 years. Wants to upgrade, budget ~$650k. Genuinely interested, needs time to think."</p>
+</blockquote>
+<p><strong>The goal:</strong> Capture enough to remember the conversation, not write a novel.</p>
+<hr />
+<h3>Update Daily</h3>
+<p><strong>Consistency beats perfection.</strong></p>
+<ul>
+<li>5 minutes every day &gt; 1 hour once a week</li>
+<li>Daily updates keep the information fresh</li>
+<li>Builds the habit faster</li>
+<li>You'll actually use the data</li>
+</ul>
+<p><strong>Set a reminder:</strong> Phone alarm for "Update Notion" after each session.</p>
+<hr />
+<h3>Focus on Consistency, Not Perfection</h3>
+<p><strong>Week 1-2:</strong> Just log sessions and leads</p>
+<p><strong>Week 3-4:</strong> Add follow-ups and review numbers</p>
+<p><strong>Month 2+:</strong> Analyze patterns, refine scripts</p>
+<p><strong>Don't try to do everything perfectly from day one.</strong> Start simple and build up.</p>
+<hr />
+<h3>Mobile-First Mindset</h3>
+<p><strong>Use your phone during sessions:</strong>
+- Voice-to-text for quick notes
+- Photos of unit numbers
+- One-tap access to scripts</p>
+<p><strong>Use your computer for:</strong>
+- Weekly reviews
+- Detailed planning
+- Exporting reports</p>
+<hr />
+<h3>Backup Your Data</h3>
+<p>Notion automatically saves everything, but:
+- Export data monthly (Settings → Export)
+- Screenshot important dashboards
+- Keep a simple backup in Excel if needed</p>
+<hr />
+<h3>Get Help When Stuck</h3>
+<ul>
+<li><strong>Notion help:</strong> Tap the "?" in the app</li>
+<li><strong>System questions:</strong> Review this guide</li>
+<li><strong>Strategy questions:</strong> Ask your team lead</li>
+<li><strong>Technical issues:</strong> Check Notion's status page</li>
+</ul>
+<hr />
+<h3>Remember Your "Why"</h3>
+<p>When it feels like work, remember:
+- Each lead is a potential commission
+- Each session builds your skills
+- The data helps you work smarter
+- Organization beats hustle alone</p>
+<p><strong>The agents who track their numbers consistently outperform those who don't.</strong></p>
+<hr />
+<h2>Quick Reference Card</h2>
+<h3>Daily Checklist</h3>
+<p><strong>Morning:</strong>
+- [ ] Check follow-ups due today
+- [ ] Review hot leads
+- [ ] Plan today's area</p>
+<p><strong>Pre-Session:</strong>
+- [ ] Create new session
+- [ ] Review area scripts
+- [ ] Check supplies</p>
+<p><strong>Post-Session:</strong>
+- [ ] Update session numbers
+- [ ] Add/update leads
+- [ ] Schedule follow-ups</p>
+<p><strong>Evening:</strong>
+- [ ] Mark completed follow-ups
+- [ ] Quick review of day</p>
+<hr />
+<h3>Key Metrics to Watch</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+<th>Red Flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open Rate</td>
+<td>&gt;35%</td>
+<td>&lt;30%</td>
+</tr>
+<tr>
+<td>Conversation Rate</td>
+<td>&gt;50%</td>
+<td>&lt;40%</td>
+</tr>
+<tr>
+<td>Lead Rate</td>
+<td>&gt;25%</td>
+<td>&lt;20%</td>
+</tr>
+<tr>
+<td>Weekly Sessions</td>
+<td>4-5</td>
+<td>&lt;3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Emergency Quick Entry</h3>
+<p><strong>If you only have 30 seconds:</strong></p>
+<ol>
+<li>Photo the unit number</li>
+<li>Note the name in your phone</li>
+<li>Create the lead record later</li>
+</ol>
+<p><strong>Better to capture something than nothing.</strong></p>
+<hr />
+<h2>Conclusion</h2>
+<p>You now have everything you need to use the Door Knocking Notion System effectively.</p>
+<p><strong>Remember:</strong>
+- Start simple and build up
+- Consistency beats perfection
+- The data is your competitive advantage
+- Track it to improve it</p>
+<p><strong>Your next step:</strong> Open the system and create your first session today.</p>
+<hr />
+<p><em>Happy door knocking! 🚪</em></p>
+<p><em>For questions or support, refer back to this guide or check the setup documentation.</em></p>
+<hr />
+<p><strong>Document Version:</strong> 1.0
+<strong>Last Updated:</strong> April 2025
+<strong>System:</strong> Door Knocking Mastery System for Singapore Real Estate</p>
+</body>
+</html>
